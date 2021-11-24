@@ -1,0 +1,109 @@
+.giaovien_body {
+    width: 100%;
+    margin: auto;
+}
+
+.dropdown_giaovien .form-control {
+    border-radius: 10px;
+    border: 1px solid #333333;
+}
+
+.dropdown_giaovien {
+    margin-left: 20px;
+}
+
+.dropdown_giaovien #ccmonth {
+    font-weight: 550;
+}
+
+.dropdown_giaovien .search-class {
+    margin-top: 32px;
+    margin-right: 20px;
+    height: 50px;
+    width: 100%;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+.dropdown_giaovien .button {
+    border: none;
+    background-color: var(--primary-color) !important;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.dropdown_giaovien .add_button {
+    margin-top: 75px;
+    height: 40px;
+}
+
+.giaovien_container {
+    margin-top: 40px;
+}
+
+.giaovien_container .card {
+    border-radius: 15px;
+    margin-top: 30px;
+    height: 700px;
+    box-shadow: 0 2px 2px #e0e0e0;
+    position: relative;
+}
+
+.giaovien_container .card-img-top {
+    height: 350px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.giaovien_container .info {
+    line-height: 35px;
+    margin-bottom: 30px;
+    padding: 0 5px;
+}
+
+.giaovien_container .card-title {
+    padding: 5px 5px;
+    font-size: 18px;
+    color: #0f294a !important;
+    font-weight: 650;
+}
+
+.giaovien_container .work {
+    font-size: 15px;
+    font-weight: 550;
+    padding-left: 2px;
+}
+
+.giaovien_container .grade {
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.giaovien_container .descrip {
+    line-height: 20px;
+    padding-left: 3px;
+    padding-top: 10px;
+}
+
+.giaovien_container .button {
+    border: none;
+    background-color: var(--primary-color) !important;
+    height: 30px;
+    padding: 0 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.giaovien_container .info_button {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}

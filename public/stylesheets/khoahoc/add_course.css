@@ -1,0 +1,123 @@
+.add-course-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.add-course-dialog {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 600px;
+    display: flex;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+.add-course__box {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 800px;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+.add-course--active {
+    display: flex;
+}
+
+.add-course__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(150, 150, 150, 0.25);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.add-course__header-name {
+    left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4d4d4d;
+}
+
+.add-course__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close__add-course-icon {
+    font-size: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.add-course-container .add-course__image {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+}
+
+.add-course-container .add-course__description {
+    padding: 20px 20px 20px 0;
+}
+
+.add-course__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-course__input label {
+    margin-bottom: 2px;
+}
+
+.add-course__input input,
+.add-course__input select {
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    padding: 3px 6px;
+}
+
+.form_input {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-course-backdrop+.add-course-backdrop {
+    z-index: 1040;
+}
+
+.add-course+.add-course {
+    z-index: 1050;
+}
+
+.add-course-second {
+    z-index: 1052;
+}
+
+.add-course-backdrop.fade {
+    z-index: 1051;
+}
+
+.form_input label {
+    margin-bottom: 2px;
+}
+
+.form_input input,
+.form_input select {
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    padding: 3px 6px;
+}

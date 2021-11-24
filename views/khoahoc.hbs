@@ -77,46 +77,173 @@
             </div>
         </div>
     </div>
-</div>
 
 
-{{!---------------------------------MAIN -------------------------------------}}
-<div class="khoahoc_container">
-    <div class="row row-card">
-        {{#each CourseArray}}
-        <div class="col-sm-8 col-md-6 col-lg-3">
-            <div class="card">
-                <img class="card-img-top" src="{{this.image}}" alt="Card image cap" />
-                <div class="card-body">
-                    <div class="card-title">{{this.name}}</div>
-                    <div class="info">
-                        <div class="tuition">
-                            <div class="title" id="money"><i class="fas fa-dollar-sign mr-2"></i>Học phí: </div>
-                            <div class="value">{{this.tuition}}</div>
+
+    {{!---------------------------------MAIN -------------------------------------}}
+    <div class="khoahoc_container">
+        <div class="row row-card">
+            {{#each CourseArray}}
+            <div class="col-sm-8 col-md-6 col-lg-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap" />
+                    <div class="card-body">
+                        <div class="card-title">{{this.name}}</div>
+                        <div class="info">
+                            <div class="tuition">
+                                <div class="title" id="money"><i class="fas fa-dollar-sign mr-2"></i>Học phí: </div>
+                                <div class="value">{{this.tuition}}</div>
+                            </div>
+                            <div class="startDate">
+                                <div class="title"><i class="fas fa-calendar-alt mr-2"></i>Ngày khai giảng:</div>
+                                <div class="value">{{this.startDate}}</div>
+                            </div>
+                            <div class="submitDate">
+                                <div class="title"><i class="fas fa-calendar-alt mr-2"></i>Hạn đăng ký:</div>
+                                <div class="value">{{this.submitDate}}</div>
+                            </div>
+                            <div class="teacher">
+                                <div class="title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
+                                <div class="value">{{this.teacher}}</div>
+                            </div>
                         </div>
-                        <div class="startDate">
-                            <div class="title"><i class="fas fa-calendar-alt mr-2"></i>Ngày khai giảng:</div>
-                            <div class="value">{{this.startDate}}</div>
+                        <div class="info_button">
+                            <button class="button"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
                         </div>
-                        <div class="submitDate">
-                            <div class="title"><i class="fas fa-calendar-alt mr-2"></i>Ngày hết hạn:</div>
-                            <div class="value">{{this.submitDate}}</div>
-                        </div>
-                        <div class="teacher">
-                            <div class="title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
-                            <div class="value">{{this.teacher}}</div>
-                        </div>
+
                     </div>
-                    <div class="info_button">
-                         <button class="button"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+
+    {{!---------------------------------COURSE INFO-------------------------------------}}
+    <div class="info-course-container">
+        <div class="info__box">
+            <div class="info__header">
+                <div class="info__header-name">CHI TIẾT KHÓA HỌC </div>
+                <i class="fas fa-times close__info-icon"></i>
+            </div>
+            <div class="info__body">
+                <div class="info__image">
+                    <img src="./images/course/course_8.jpg">
+                </div>
+                <div class="info__description">
+                    <div class="course__name">Học tốt Ngữ văn 6 - Bộ Kết nối tri thức với cuộc sống</div>
+                    <hr>
+                    <div class="course__grade">
+                        <div class="course__title"><i class="fas fa-school mr-1"></i>Lớp:</div>
+                        <div class="course__value">Lớp 6</div>
                     </div>
+
+                    <div class="course__type">
+                        <div class="course__title"><i class="fas fa-graduation-cap mr-1"></i>Loại trình độ:</div>
+                        <div class="course__value">Học Tốt</div>
+                    </div>
+
+                    <div class="course__teacher">
+                        <div class="course__title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
+                        <div class="course__value">Bùi Lương Vinh Hiển</div>
+                    </div>
+
+                    <div class="course__tuition">
+                        <div class="course__title"><i class="fas fa-dollar-sign mr-2"></i>Học phí:</div>
+                        <div class="course__value">1.000.000</div>
+                    </div>
+
+                    <div class="course__startDate">
+                        <div class="course__title"><i class="fas fa-calendar-alt mr-2"></i>Ngày khai giảng:</div>
+                        <div class="course__value">24/11/2021</div>
+                    </div>
+
+                    <div class="course__endDate">
+                        <div class="course__title"><i class="fas fa-calendar-alt mr-2"></i>Ngày kết thúc:</div>
+                        <div class="course__value">24/11/2021</div>
+                    </div>
+
+                    <div class="course__submitDate">
+                        <div class="course__title"><i class="fas fa-calendar-alt mr-2"></i>Hạn đăng ký:</div>
+                        <div class="course__value">24/11/2021</div>
+                    </div>
+
+                    <div class="course__numberStudent">
+                        <div class="course__title"><i class="fas fa-user-graduate mr-2"></i>SL học viên tham gia:</div>
+                        <div class="course__value">100</div>
+                    </div>
+
+                    <div class="course__description">
+                        <i class="fas fa-info-circle"></i> Mô tả: Khóa học là gói trang bị kiến thức, bám sát phân phối
+                        chương trình bộ
+                        Kết nối tri thức với cuộc sống. Bao quát toàn bộ kiến thức trong Bộ 1 (10 bài học theo chủ
+                        đề, 4 kĩ năng Đọc – Viết – Nói – Nghe, Thực hành tiếng Việt và đọc mở rộng, Luyện tập)
+                    </div>
+
+
 
                 </div>
             </div>
+
         </div>
-        {{/each}}
     </div>
 
-</div>
+    {{!---------------------------------ADD COURSE-------------------------------------}}
+    <div class="add-course-container">
+        <div class="add-course__box">
+            <div class="add-course__header">
+                <div class="add-course__header-name">THÔNG TIN </div>
+                <i class="fas fa-times close__add-course-icon"></i>
+            </div>
+            <div class="add-course__body">
+                <div class="add-course__image">
+                    <label id='add-course__image_id'>Ảnh minh họa</label>
+                    <input type="file" name="add-course_image_file" id="add-course_image_file" value="">
+                </div>
+                <div class="add-course__description">
+                    <form action="/menu-admin/updateFood" class="add-course__input" method="POST" name="food-form">
+
+                        {{!-- <label for="">ID món ăn</label> --}}
+                        <input type="number" id="add-course_foodID" name="foodId" hidden>
+                        <label for="">Tên món ăn</label>
+                        <input type="text" id="add-course_foodName" name="name">
+                        <label for="">Giá tiền</label>
+                        <input type="number" id="add-course_foodPrice" name="price">
+                        <label for="">Loại</label>
+                        <input type="text" id="add-course_foodType" name="category">
+                        <label for="">Best seller</label>
+                        <select id="add-course_isBestSeller" name="isRecommended">
+                            <option value=1>có</option>
+                            <option value=0>không</option>
+                        </select>
+                        <label for="">Mô tả</label>
+                        <input type="text" id="add-course_foodDescribe" name="foodDescribe" value="">
+
+                        <label>Ảnh minh họa</label>
+                        <input type="text" id="add-course_image" name="image" readonly>
+
+                        <button class="btn btn-primary" type="submit">Xác nhận</button>
+                        <a href="#" class="btn btn-danger add-course__button" data-toggle="add-course"
+                            data-target="#delete-food-add-course">Xóa món ăn</a>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="delete-food-add-course" class="add-course fade add-course-second" tabindex="-1" role="dialog">
+        <div class="add-course-dialog" id="delete-food-add-course" role="document">
+            <div class="add-course-content">
+                <div class="add-course-header">
+                    <h5 class="add-course-title">Xác nhận thay đổi</h5>
+                </div>
+                <div class="add-course-footer">
+                    <button type="button" class="btn btn-primary" id="btn-delete-food">Xác nhận</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="add-course">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

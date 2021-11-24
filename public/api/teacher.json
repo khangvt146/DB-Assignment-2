@@ -1,0 +1,52 @@
+[{
+        "name": "Trần Vân Anh",
+        "place": "Trường Hanoi Adelaide School",
+        "grade": "Tiến sĩ",
+        "description": "Là một giảng viên dạy giỏi cấp cơ sở, với 17 năm kinh nghiệm trong nghề, cô luôn muốn truyền cảm hứng yêu Lịch sử đến học trò.",
+        "image": "./images/teacher/teacher_2.png"
+    },
+    {
+        "name": "Đỗ Đức Anh",
+        "place": "Trường THPT Bùi Thị Xuân, TP.HCM",
+        "grade": "Tiến sĩ",
+        "description": "Thầy giáo quốc dân với phong cách giảng dạy hài hước và tâm lí, giúp học sinh 'Học văn khôn ngoan mà không gian nan' từ đó hứng thú với môn Văn.",
+        "image": "./images/teacher/teacher_3.png"
+    },
+    {
+        "name": "Nguyễn Ngọc Anh",
+        "place": "Hệ thống Giáo dục HOCMAI",
+        "grade": "Thạc sĩ",
+        "description": "Thầy đặc biệt coi trọng việc xây dựng kiến thức căn bản, luôn khuyến khích sự sáng tạo, truyền cảm hứng và khơi gợi tình yêu Hóa học cho các học sinh.",
+        "image": "./images/teacher/teacher_4.png"
+    },
+    {
+        "name": "Trần Thị Vân Anh",
+        "place": "Học viện Báo chí và Tuyên truyền",
+        "grade": "Tiến sĩ",
+        "description": "Nhiều năm kinh nghiệm giảng dạy và luyện thi môn Ngữ văn, giọng giảng sắc sảo, tinh tế vừa giúp HS hiểu bài vừa tăng khả năng cảm thụ, khơi gợi hứng thú với môn học.",
+        "image": "./images/teacher/teacher_5.png"
+    },
+    {
+        "name": "Đặng Tú Anh",
+        "place": "Trường Phổ thông liên cấp Đa Trí Tuệ",
+        "grade": "Thạc sĩ",
+        "description": "Lấy kim chỉ nam là Tôn trọng sự khác biệt của mỗi cá nhân, đối với cô mỗi học sinh đều là một thiên tài. Cô chú trọng việc kích thích khả năng tự học và sáng tạo của HS.",
+        "image": "./images/teacher/teacher_6.png"
+    },
+    {
+        "name": "Jenny Tú Anh",
+        "place": "Hệ thống Giáo dục HOCMAI",
+        "grade": "Tiến sĩ",
+        "description": "Nghiêm túc trong công việc, phá cách trong giảng dạy, luôn cập nhật cái mới và ứng dụng vào trong bài giảng giúp cho mỗi bài giảng luôn thú vị, hấp dẫn và say mê.",
+        "image": "./images/teacher/teacher_7.png"
+    },
+    {
+        "name": "Đoàn Kiều Anh",
+        "place": "Hệ thống Giáo dục HOCMAI",
+        "grade": "Thạc sĩ",
+        "description": "Cô truyền cảm hứng và nuôi dưỡng tình yêu học tập thông qua các hoạt động tương tác, các câu hỏi khám phá giúp các em hình thành khả năng sáng tạo và tư duy độc lập.",
+        "image": "./images/teacher/teacher_8.png"
+    }
+
+
+]
