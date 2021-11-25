@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "ho": "Huỳnh",
+    "ten_lot": "Đức",
+    "ten": "Nam",
+    "ten_dang_nhap": "4dxfe",
+    "mat_khau": "a9rn9revkw",
+    "ngay_sinh": "2004-01-15",
+    "gioi_tinh": "Nam",
+    "xa_phuong": "Phường 8",
+    "quan_huyen": "Bình Liêu",
+    "tinh_tp": "Cao Bằng",
+    "email": "g5l9kupk@gmail.com",
+    "loai": "Học viên"
+  },
+  {
+    "id": "2",
+    "ho": "Nguyễn",
+    "ten_lot": "Lê Khánh",
+    "ten": "Vinh",
+    "ten_dang_nhap": "vinh123",
+    "mat_khau": "123456",
+    "ngay_sinh": "2001-01-15",
+    "gioi_tinh": "Nam",
+    "xa_phuong": "Bình Tiến",
+    "quan_huyen": "Tam Đảo",
+    "tinh_tp": "Vĩnh Phúc",
+    "email": "vinh123@gmail.com",
+    "loai": "Trợ giảng"
+  },
+  {
+    "id": "3",
+    "ho": "Nguyễn",
+    "ten_lot": "Ngọc Khánh",
+    "ten": "Ngân",
+    "ten_dang_nhap": "nnkn19",
+    "mat_khau": "12345678",
+    "ngay_sinh": "2001-06-19",
+    "gioi_tinh": "Nữ",
+    "xa_phuong": "Duy Tân",
+    "quan_huyen": "Kon Tum",
+    "tinh_tp": "Kon Tum",
+    "email": "nnkn@gmail.com",
+    "loai": "Giáo viên"
+  }
+]
