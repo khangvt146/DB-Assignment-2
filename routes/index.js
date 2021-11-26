@@ -16,8 +16,8 @@ router.get('/giaovien', function(req, res, next) {
     });
 });
 
-router.get('/user', function(req, res, next) {
-    res.render('user', {
+router.get('/hocvien', function(req, res, next) {
+    res.render('hocvien', {
         title: 'Quán lý học viên',
         UserArray: userapi,
     });

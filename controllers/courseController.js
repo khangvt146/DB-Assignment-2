@@ -4,7 +4,7 @@ class courseController {
     async getAllCourse(req, res) {
         var courseapi = require("../public/api/course.json");
         res.render('khoahoc', {
-            title: 'Online Course Management',
+            title: 'Quản lý bài giảng',
             CourseArray: courseapi,
         });
     }
