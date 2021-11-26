@@ -1,0 +1,66 @@
+<div class="dropdown_baigiang">
+    <div class="row">
+        <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
+            <div class="form-group"> <label for="GV_filter">
+                <div class="filter-title">Sắp xếp theo</div>
+                </label> <select class="form-control" id="">
+                    <option value=" "></option>
+                    <option>Mới nhất</option>
+                    <option>Cũ nhất</option>
+                    <option>Thời lượng (ngắn nhất)</option>
+                    <option>Thời lượng (dài nhất)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
+            <div class="form-group"> <label for="GV_filter">
+                    <div class="filter-title">Giáo viên</div>
+                </label> <select class="form-control" id="">
+                    <option value=" "></option>
+                    <option>Giáo viên 1</option>
+                    <option>Giáo viên 2</option>
+                    <option>Giáo viên 3</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
+            <div class="form-group"> <label for="GV_filter">
+                    <div class="filter-title">Khóa học</div>
+                </label> <select class="form-control" id="">
+                    <option value=" "></option>
+                    <option>Khóa học 1</option>
+                    <option>Khóa học 2</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
+            <div class="add_button">
+                <button class="button"><i class="fas fa-plus mr-2"></i>THÊM </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="baigiang_container">
+    <ul>
+        {{#each LessonArray}}
+        <li style="padding:10px; border-bottom: dashed 1px">
+            <h4></i>{{this.ten_bai_giang}}</h4>
+            <div class="lesson-info">
+                <span class="course mr-5"><i class="fas fa-book mr-1"></i>Khóa học: {{this.ma_kh}}</span>
+                <span class="teacher mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: {{this.ma_gv}}</span>
+                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: {{this.thoi_luong}} phút</span>
+                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: {{this.upload_time}}</span>
+            </div>
+            <div class="info_button">
+                <button class="button" id="u_btn">Sửa </button>
+                <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
