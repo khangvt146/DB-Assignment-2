@@ -1,17 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var courseapi = require("../public/api/course.json");
 var teacherapi = require("../public/api/teacher.json");
 var userapi = require("../public/api/user.json");
 var lessonapi = require("../public/api/lesson.json");
+const courseController = require('../controllers/courseController')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('khoahoc', {
-        title: 'Quản lý khóa học',
-        CourseArray: courseapi,
-    });
-});
+
+// ROUTE COURSE
+router.get('/', courseController.getAllCourse);
 
 router.get('/giaovien', function(req, res, next) {
     res.render('giaovien', {
