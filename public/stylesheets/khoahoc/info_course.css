@@ -92,6 +92,11 @@
     line-height: 35px;
 }
 
+.info-course-container .course__subject {
+    display: flex;
+    justify-content: space-between;
+}
+
 .info-course-container .course__grade {
     display: flex;
     justify-content: space-between;

@@ -13,7 +13,7 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="KH_filter">
                         <div class="filter-title">Lớp</div>
-                    </label> <select class="form-control" id="ccmonth">
+                    </label> <select class="form-control" id="filter_grade">
                         <option value=" "></option>
                         <option>Lớp 6</option>
                         <option>Lớp 7</option>
@@ -29,7 +29,7 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="KH_filter">
                         <div class="filter-title">Môn học</div>
-                    </label> <select class="form-control" id="ccmonth">
+                    </label> <select class="form-control" id="filter_subject">
                         <option value=" "></option>
                         <option>Ngữ Văn</option>
                         <option>Toán Học</option>
@@ -46,7 +46,7 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="KH_filter">
                         <div class="filter-title">Loại khóa học</div>
-                    </label> <select class="form-control" id="ccmonth">
+                    </label> <select class="form-control" id="filter_type">
                         <option value=" "></option>
                         <option>Đơn lẻ</option>
                         <option>Combo</option>
@@ -57,7 +57,7 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="KH_filter">
                         <div class="filter-title">Loại trình độ</div>
-                    </label> <select class="form-control" id="ccmonth">
+                    </label> <select class="form-control" id="filter_gradeType">
                         <option value=" "></option>
                         <option>Học Tốt</option>
                         <option>Master</option>
@@ -108,7 +108,8 @@
                             </div>
                         </div>
                         <div class="info_button">
-                            <button class="button"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+                            <button class="button" id="u_btn">Sửa </button>
+                            <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
                         </div>
 
                     </div>
@@ -133,6 +134,12 @@
                 <div class="info__description">
                     <div class="course__name">Học tốt Ngữ văn 6 - Bộ Kết nối tri thức với cuộc sống</div>
                     <hr>
+                    <div class="course__subject">
+                        <div class="course__title"><i class="fas fa-chalkboard-teacher mr-1"></i>Môn học:</div>
+                        <div class="course__value">Ngữ Văn</div>
+                    </div>
+
+
                     <div class="course__grade">
                         <div class="course__title"><i class="fas fa-school mr-1"></i>Lớp:</div>
                         <div class="course__value">Lớp 6</div>
@@ -192,58 +199,194 @@
     <div class="add-course-container">
         <div class="add-course__box">
             <div class="add-course__header">
-                <div class="add-course__header-name">THÔNG TIN </div>
+                <div class="add-course__header-name">THÊM KHÓA HỌC </div>
                 <i class="fas fa-times close__add-course-icon"></i>
             </div>
-            <div class="add-course__body">
-                <div class="add-course__image">
-                    <label id='add-course__image_id'>Ảnh minh họa</label>
-                    <input type="file" name="add-course_image_file" id="add-course_image_file" value="">
-                </div>
-                <div class="add-course__description">
-                    <form action="/menu-admin/updateFood" class="add-course__input" method="POST" name="food-form">
+            <div class="row" id="add-course__body">
+                <div class="col-lg-6 col-12">
+
+                    <form action="#" class="add-course__input" method="POST" name="food-form">
 
                         {{!-- <label for="">ID món ăn</label> --}}
-                        <input type="number" id="add-course_foodID" name="foodId" hidden>
-                        <label for="">Tên món ăn</label>
-                        <input type="text" id="add-course_foodName" name="name">
-                        <label for="">Giá tiền</label>
-                        <input type="number" id="add-course_foodPrice" name="price">
-                        <label for="">Loại</label>
-                        <input type="text" id="add-course_foodType" name="category">
-                        <label for="">Best seller</label>
-                        <select id="add-course_isBestSeller" name="isRecommended">
-                            <option value=1>có</option>
-                            <option value=0>không</option>
+
+                        <input type="text" id="add-course_courseID" name="Id" hidden>
+                        <label for="">Tên Khóa học</label>
+                        <input type="text" id="add-course_courseName" name="Name">
+
+                        <label for="">Loại khóa học</label>
+                        <select id="add-course_courseType" name="Type">
+                            <option value=1>Đơn lẻ</option>
+                            <option value=0>Combo</option>
                         </select>
-                        <label for="">Mô tả</label>
-                        <input type="text" id="add-course_foodDescribe" name="foodDescribe" value="">
+
+
+
+                        <label for="">Lớp</label>
+                        <select id="add-course_courseGrade" name="Grade">
+                            <option value=" "></option>
+                            <option>Lớp 6</option>
+                            <option>Lớp 7</option>
+                            <option>Lớp 8</option>
+                            <option>Lớp 9</option>
+                            <option>Lớp 10</option>
+                            <option>Lớp 11</option>
+                            <option>Lớp 12</option>
+                        </select>
+
+                        <label for="">Loại trình độ</label>
+                        <select id="add-course_courseGradeType" name="GradeType">
+                            <option value=" "></option>
+                            <option>Học Tốt</option>
+                            <option>Master</option>
+                            <option>MasterZ</option>
+                            <option>Bổ trợ</option>
+                            <option>Pen-I</option>
+                            <option>Pen-C</option>
+                            <option>Pen-M</option>
+                        </select>
+
+                        <label for="">Môn học</label>
+                        <select id="add-course_courseSubject" name="Subject">
+                            <option value=" "></option>
+                            <option>Ngữ Văn</option>
+                            <option>Toán Học</option>
+                            <option>Tiếng Anh</option>
+                            <option>Tin Học</option>
+                            <option>Vật Lý</option>
+                            <option>Hóa Học</option>
+                            <option>Sinh Học</option>
+                            <option>Lịch Sử</option>
+                        </select>
+
+                        <label for="">Ngày bắt đầu</label>
+                        <input type="date" id="add-course_startDate" name="StartDate">
+                    </form>
+                </div>
+
+
+                <div class="col-lg-6 col-12">
+                    <form action="#" class="add-course__input" method="POST" name="food-form">
+                        <label for="">Ngày kết thúc</label>
+                        <input type="date" id="add-course_endDate" name="EndDate">
+
+                        <label for="">Hạn đăng ký</label>
+                        <input type="date" id="add-course_submitDate" name="SubmitDate">
+
+                        <label for="">Học phí</label>
+                        <input type="text" id="add-course_tuition" name="Tuition">
 
                         <label>Ảnh minh họa</label>
-                        <input type="text" id="add-course_image" name="image" readonly>
+                        <input type="file" id="add-course_image" name="Image">
 
-                        <button class="btn btn-primary" type="submit">Xác nhận</button>
-                        <a href="#" class="btn btn-danger add-course__button" data-toggle="add-course"
-                            data-target="#delete-food-add-course">Xóa món ăn</a>
+                        <label for="">Mô tả</label>
+                        <input type="text" id="add-course_descrip" name="Description">
+
+                    </form>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>Thêm khóa
+                học</button>
+        </div>
+    </div>
+
+
+
+    {{!---------------------------------Update COURSE-------------------------------------}}
+    <div class="update-course-container">
+        <div class="update-course__box">
+            <div class="update-course__header">
+                <div class="update-course__header-name">CHỈNH SỬA KHÓA HỌC </div>
+                <i class="fas fa-times close__update-course-icon"></i>
+            </div>
+            <div class="row" id="update-course__body">
+                <div class="col-lg-6 col-12">
+
+                    <form action="#" class="update-course__input" method="POST" name="food-form">
+
+                        {{!-- <label for="">ID món ăn</label> --}}
+
+                        <input type="text" id="update-course_courseID" name="update_Id" hidden>
+                        <label for="">Tên Khóa học</label>
+                        <input type="text" id="update-course_courseName" name="update_Name">
+
+                        <label for="">Loại khóa học</label>
+                        <select id="update-course_courseType" name="update_Type">
+                            <option value=1>Đơn lẻ</option>
+                            <option value=0>Combo</option>
+                        </select>
+
+
+
+                        <label for="">Lớp</label>
+                        <select id="update-course_courseGrade" name="update_Grade">
+                            <option value=" "></option>
+                            <option>Lớp 6</option>
+                            <option>Lớp 7</option>
+                            <option>Lớp 8</option>
+                            <option>Lớp 9</option>
+                            <option>Lớp 10</option>
+                            <option>Lớp 11</option>
+                            <option>Lớp 12</option>
+                        </select>
+
+                        <label for="">Loại trình độ</label>
+                        <select id="update-course_courseGradeType" name="update_GradeType">
+                            <option value=" "></option>
+                            <option>Học Tốt</option>
+                            <option>Master</option>
+                            <option>MasterZ</option>
+                            <option>Bổ trợ</option>
+                            <option>Pen-I</option>
+                            <option>Pen-C</option>
+                            <option>Pen-M</option>
+                        </select>
+
+                        <label for="">Môn học</label>
+                        <select id="update-course_courseSubject" name="update_Subject">
+                            <option value=" "></option>
+                            <option>Ngữ Văn</option>
+                            <option>Toán Học</option>
+                            <option>Tiếng Anh</option>
+                            <option>Tin Học</option>
+                            <option>Vật Lý</option>
+                            <option>Hóa Học</option>
+                            <option>Sinh Học</option>
+                            <option>Lịch Sử</option>
+                        </select>
+
+                        <label for="">Ngày bắt đầu</label>
+                        <input type="date" id="update-course_startDate" name="update_StartDate">
+                    </form>
+                </div>
+
+
+                <div class="col-lg-6 col-12">
+                    <form action="#" class="update-course__input" method="POST" name="food-form">
+                        <label for="">Ngày kết thúc</label>
+                        <input type="date" id="update-course_endDate" name="update_EndDate">
+
+                        <label for="">Hạn đăng ký</label>
+                        <input type="date" id="update-course_submitDate" name="update_SubmitDate">
+
+                        <label for="">Học phí</label>
+                        <input type="text" id="update-course_tuition" name="update_Tuition">
+
+
+                        <label>Ảnh minh họa</label>
+                        <input type="file" id="update-course_image" name="update_Image">
+
+                        <label for="">Mô tả</label>
+                        <input type="text" id="update-course_descrip" name="update_Description">
+
                     </form>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div id="delete-food-add-course" class="add-course fade add-course-second" tabindex="-1" role="dialog">
-        <div class="add-course-dialog" id="delete-food-add-course" role="document">
-            <div class="add-course-content">
-                <div class="add-course-header">
-                    <h5 class="add-course-title">Xác nhận thay đổi</h5>
-                </div>
-                <div class="add-course-footer">
-                    <button type="button" class="btn btn-primary" id="btn-delete-food">Xác nhận</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="add-course">Hủy</button>
-                </div>
+            <div class="row">
+                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+                <button class="btn btn-primary" type="submit" id="delete_btn">Xóa khóa học</button>
             </div>
+
         </div>
     </div>
-
 </div>

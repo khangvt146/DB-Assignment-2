@@ -1,4 +1,4 @@
-.add-course-container {
+.update-course-container {
     position: fixed;
     left: 0;
     right: 0;
@@ -9,7 +9,7 @@
     display: none;
 }
 
-.add-course-dialog {
+.update-course-dialog {
     margin: auto;
     background-color: var(--white-color);
     width: 600px;
@@ -19,7 +19,7 @@
     max-width: 90%;
 }
 
-.add-course__box {
+.update-course__box {
     margin: auto;
     background-color: var(--white-color);
     width: 800px;
@@ -28,11 +28,11 @@
     max-width: 90%;
 }
 
-.add-course--active {
+.update-course--active {
     display: flex;
 }
 
-.add-course__header {
+.update-course__header {
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
@@ -41,34 +41,34 @@
     border-top-right-radius: 20px;
 }
 
-.add-course__header-name {
+.update-course__header-name {
     left: 20px;
     font-size: 18px;
     font-weight: 700;
     color: #4d4d4d;
 }
 
-#add-course__body {
+#update-course__body {
     padding: 20px 30px;
 }
 
-.close__add-course-icon {
+.close__update-course-icon {
     font-size: 20px;
     opacity: 0.7;
     cursor: pointer;
 }
 
-.add-course__input {
+.update-course__input {
     display: flex;
     flex-direction: column;
 }
 
-.add-course__input label {
+.update-course__input label {
     margin-bottom: 3px;
 }
 
-.add-course__input input,
-.add-course__input select {
+.update-course__input input,
+.update-course__input select {
     margin-bottom: 10px;
     outline: none;
     border-radius: 5px;
@@ -76,19 +76,19 @@
     padding: 3px 6px;
 }
 
-.add-course-backdrop+.add-course-backdrop {
+.update-course-backdrop+.update-course-backdrop {
     z-index: 1040;
 }
 
-.add-course+.add-course {
+.update-course+.update-course {
     z-index: 1050;
 }
 
-.add-course-second {
+.update-course-second {
     z-index: 1052;
 }
 
-.add-course-backdrop.fade {
+.update-course-backdrop.fade {
     z-index: 1051;
 }
 
@@ -105,16 +105,25 @@
     padding: 3px 6px;
 }
 
-.add-course-container .btn {
-    width: 250px;
+.update-course-container .btn {
+    width: 150px;
     background: var(--primary-color);
-    margin: auto;
+    margin-left: 15px;
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: 600;
     border-radius: 10px;
 }
 
-.add-course-container #add-course_descrip {
+.update-course-container #update_btn {
+    margin-left: 70px;
+}
+
+.update-course-container #delete_btn {
+    background-color: #b50a07;
+    border-style: none;
+}
+
+.update-course-container #update-course_descrip {
     height: 75px;
 }
