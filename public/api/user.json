@@ -12,7 +12,8 @@
     "quan_huyen": "Bình Liêu",
     "tinh_tp": "Cao Bằng",
     "email": "g5l9kupk@gmail.com",
-    "loai": "Học viên"
+    "truong": "THPT Nguyễn Thị Minh Khai",
+    "so_khoa": 3
   },
   {
     "id": "2",
@@ -27,7 +28,8 @@
     "quan_huyen": "Tam Đảo",
     "tinh_tp": "Vĩnh Phúc",
     "email": "vinh123@gmail.com",
-    "loai": "Trợ giảng"
+    "truong": "THCS Nguyễn Sinh Sắc",
+    "so_khoa": 5
   },
   {
     "id": "3",
@@ -42,6 +44,7 @@
     "quan_huyen": "Kon Tum",
     "tinh_tp": "Kon Tum",
     "email": "nnkn@gmail.com",
-    "loai": "Giáo viên"
+    "truong": "Trường THPT Lê Định Của",
+    "so_khoa": 1
   }
 ]

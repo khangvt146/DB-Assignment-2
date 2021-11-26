@@ -8,21 +8,21 @@ var lessonapi = require("../public/api/lesson.json");
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('khoahoc', {
-        title: 'Online Course Management',
+        title: 'Quản lý khóa học',
         CourseArray: courseapi,
     });
 });
 
 router.get('/giaovien', function(req, res, next) {
     res.render('giaovien', {
-        title: 'Online Course Management',
+        title: 'Quản lý giáo viên',
         TeacherArray: teacherapi,
     });
 });
 
 router.get('/user', function(req, res, next) {
     res.render('user', {
-        title: 'Quán lý người dùng',
+        title: 'Quán lý học viên',
         UserArray: userapi,
     });
 });
