@@ -205,16 +205,16 @@
             <div class="row" id="add-course__body">
                 <div class="col-lg-6 col-12">
 
-                    <form action="#" class="add-course__input" method="POST" name="food-form">
+                    <form action="#" class="add-course__input" method="POST" name="add-khoahoc-form">
 
                         {{!-- <label for="">ID món ăn</label> --}}
 
-                        <input type="text" id="add-course_courseID" name="Id" hidden>
+                        <input type="text" id="add-course_courseID" name="KH_Id" hidden>
                         <label for="">Tên Khóa học</label>
-                        <input type="text" id="add-course_courseName" name="Name">
+                        <input type="text" id="add-course_courseName" name="KH_Name">
 
                         <label for="">Loại khóa học</label>
-                        <select id="add-course_courseType" name="Type">
+                        <select id="add-course_courseType" name="KH_Type">
                             <option value=1>Đơn lẻ</option>
                             <option value=0>Combo</option>
                         </select>
@@ -222,7 +222,7 @@
 
 
                         <label for="">Lớp</label>
-                        <select id="add-course_courseGrade" name="Grade">
+                        <select id="add-course_courseGrade" name="KH_Grade">
                             <option value=" "></option>
                             <option>Lớp 6</option>
                             <option>Lớp 7</option>
@@ -234,7 +234,7 @@
                         </select>
 
                         <label for="">Loại trình độ</label>
-                        <select id="add-course_courseGradeType" name="GradeType">
+                        <select id="add-course_courseGradeType" name="KH_GradeType">
                             <option value=" "></option>
                             <option>Học Tốt</option>
                             <option>Master</option>
@@ -246,7 +246,7 @@
                         </select>
 
                         <label for="">Môn học</label>
-                        <select id="add-course_courseSubject" name="Subject">
+                        <select id="add-course_courseSubject" name="KH_Subject">
                             <option value=" "></option>
                             <option>Ngữ Văn</option>
                             <option>Toán Học</option>
@@ -259,27 +259,27 @@
                         </select>
 
                         <label for="">Ngày bắt đầu</label>
-                        <input type="date" id="add-course_startDate" name="StartDate">
+                        <input type="date" id="add-course_startDate" name="KH_StartDate">
                     </form>
                 </div>
 
 
                 <div class="col-lg-6 col-12">
-                    <form action="#" class="add-course__input" method="POST" name="food-form">
+                    <form action="#" class="add-course__input" method="POST" name="add-khoahoc-form">
                         <label for="">Ngày kết thúc</label>
-                        <input type="date" id="add-course_endDate" name="EndDate">
+                        <input type="date" id="add-course_endDate" name="KH_EndDate">
 
                         <label for="">Hạn đăng ký</label>
-                        <input type="date" id="add-course_submitDate" name="SubmitDate">
+                        <input type="date" id="add-course_submitDate" name="KH_SubmitDate">
 
                         <label for="">Học phí</label>
-                        <input type="text" id="add-course_tuition" name="Tuition">
+                        <input type="text" id="add-course_tuition" name="KH_Tuition">
 
                         <label>Ảnh minh họa</label>
-                        <input type="file" id="add-course_image" name="Image">
+                        <input type="file" id="add-course_image" name="KH_Image">
 
                         <label for="">Mô tả</label>
-                        <input type="text" id="add-course_descrip" name="Description">
+                        <input type="text" id="add-course_descrip" name="KH_Description">
 
                     </form>
                 </div>
@@ -301,16 +301,16 @@
             <div class="row" id="update-course__body">
                 <div class="col-lg-6 col-12">
 
-                    <form action="#" class="update-course__input" method="POST" name="food-form">
+                    <form action="#" class="update-course__input" method="POST" name="update-khoahoc-form">
 
                         {{!-- <label for="">ID món ăn</label> --}}
 
-                        <input type="text" id="update-course_courseID" name="update_Id" hidden>
+                        <input type="text" id="update-course_courseID" name="update_KH_Id" hidden>
                         <label for="">Tên Khóa học</label>
-                        <input type="text" id="update-course_courseName" name="update_Name">
+                        <input type="text" id="update-course_courseName" name="update_KH_Name">
 
                         <label for="">Loại khóa học</label>
-                        <select id="update-course_courseType" name="update_Type">
+                        <select id="update-course_courseType" name="update_KH_Type">
                             <option value=1>Đơn lẻ</option>
                             <option value=0>Combo</option>
                         </select>
@@ -318,7 +318,7 @@
 
 
                         <label for="">Lớp</label>
-                        <select id="update-course_courseGrade" name="update_Grade">
+                        <select id="update-course_courseGrade" name="update_KH_Grade">
                             <option value=" "></option>
                             <option>Lớp 6</option>
                             <option>Lớp 7</option>
@@ -330,7 +330,7 @@
                         </select>
 
                         <label for="">Loại trình độ</label>
-                        <select id="update-course_courseGradeType" name="update_GradeType">
+                        <select id="update-course_courseGradeType" name="update_KH_GradeType">
                             <option value=" "></option>
                             <option>Học Tốt</option>
                             <option>Master</option>
@@ -342,7 +342,7 @@
                         </select>
 
                         <label for="">Môn học</label>
-                        <select id="update-course_courseSubject" name="update_Subject">
+                        <select id="update-course_courseSubject" name="update_KH_Subject">
                             <option value=" "></option>
                             <option>Ngữ Văn</option>
                             <option>Toán Học</option>
@@ -355,28 +355,28 @@
                         </select>
 
                         <label for="">Ngày bắt đầu</label>
-                        <input type="date" id="update-course_startDate" name="update_StartDate">
+                        <input type="date" id="update-course_startDate" name="update_KH_StartDate">
                     </form>
                 </div>
 
 
                 <div class="col-lg-6 col-12">
-                    <form action="#" class="update-course__input" method="POST" name="food-form">
+                    <form action="#" class="update-course__input" method="POST" name="update-khoahoc-form">
                         <label for="">Ngày kết thúc</label>
-                        <input type="date" id="update-course_endDate" name="update_EndDate">
+                        <input type="date" id="update-course_endDate" name="update_KH_EndDate">
 
                         <label for="">Hạn đăng ký</label>
-                        <input type="date" id="update-course_submitDate" name="update_SubmitDate">
+                        <input type="date" id="update-course_submitDate" name="update_KH_SubmitDate">
 
                         <label for="">Học phí</label>
-                        <input type="text" id="update-course_tuition" name="update_Tuition">
+                        <input type="text" id="update-course_tuition" name="update_KH_Tuition">
 
 
                         <label>Ảnh minh họa</label>
-                        <input type="file" id="update-course_image" name="update_Image">
+                        <input type="file" id="update-course_image" name="update_KH_Image">
 
                         <label for="">Mô tả</label>
-                        <input type="text" id="update-course_descrip" name="update_Description">
+                        <input type="text" id="update-course_descrip" name="update_KH_Description">
 
                     </form>
                 </div>

@@ -53,6 +53,9 @@ outUpdate.onclick = function(e) {
     var tem = document.querySelector(".update-course-container");
     tem.classList.remove("update-course--active");
 };
+
+
+
 /* Call function */
 SetShowDetail();
 SetAddCourse();

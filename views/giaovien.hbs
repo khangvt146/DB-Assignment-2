@@ -72,16 +72,221 @@
 
                         </div>
                     </div>
-                     <div class="info_button">
-                            <button class="button"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
-                        </div>
+                    <div class="info_button">
+                        <button class="button" id="u_btn">Sửa </button>
+                        <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+                    </div>
                 </div>
             </div>
             {{/each}}
         </div>
-   </div>
+    </div>
 
-    {{!
-    -------------------------------------------------INFO COURSE------------------------------------------------------- }}
-    
+    {{!-------------------------------------------------INFO GIAO VIEN-------------------------------------------------------}}
+    <div class="info-giaovien-container">
+        <div class="info__box">
+            <div class="info__header">
+                <div class="info__header-name">CHI TIẾT GIÁO VIÊN </div>
+                <i class="fas fa-times close__info-giaovien-icon"></i>
+            </div>
+            <div class="info__body">
+                <div class="info__image">
+                    <img src="./images/teacher/teacher_8.png">
+                </div>
+                <div class="info__description">
+
+                    <div class="giaovien__name">
+                        <div class="giaovien__title"><i class="fas fa-user mr-2"></i>Họ và tên:</div>
+                        <div class="giaovien__value">Trần Vân Anh</div>
+                    </div>
+
+                    <hr>
+                    <div class="giaovien__workplace">
+                        <div class="giaovien__title"><i class="fas fa-map-marker-alt mr-2"></i>Nơi công tác:</div>
+                        <div class="giaovien__value">Trường THPT Bùi Thị Xuân</div>
+                    </div>
+
+                    <hr>
+                    <div class="giaovien__subject">
+                        <div class="giaovien__title"><i class="fas fa-book mr-2"></i>Môn giảng dạy:</div>
+                        <div class="giaovien__value">Lịch Sử</div>
+                    </div>
+
+                    <hr>
+                    <div class="giaovien__degree">
+                        <div class="giaovien__title"><i class="fas fa-graduation-cap mr-2"></i>Bằng cấp:</div>
+                        <div class="giaovien__value">Chứng chỉ tin học đạt chuẩn kỹ năng sử dụng công nghệ thông tin cơ
+                            bản</div>
+                    </div>
+
+                    <hr>
+                    <div class="giaovien__email">
+                        <div class="giaovien__title"><i class="fas fa-envelope mr-2"></i>Email:</div>
+                        <div class="giaovien__value">builuongvinhhien@hcmut.edu.vn</div>
+                    </div>
+
+                    <hr>
+                    <div class="giaovien__studentFollow">
+                        <div class="giaovien__title"><i class="fas fa-user-graduate mr-2"></i>Số lượng học viên
+                            theo dõi:</div>
+                        <div class="giaovien__value">100</div>
+                    </div>
+
+                    <hr>
+                    <div class="giaovien__description">
+                        <i class="fas fa-info-circle mr-2"></i>Mô tả: Quan điểm giảng dạy: "Muốn giáo dục cho con trẻ,
+                        mỗi người thầy cần
+                        là một tấm gương sáng về nhân cách, tự học và sáng tạo"
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {{!---------------------------------ADD GIAO VIEN-------------------------------------}}
+    <div class="add-giaovien-container">
+        <div class="add-giaovien__box">
+            <div class="add-giaovien__header">
+                <div class="add-giaovien__header-name">THÊM GIÁO VIÊN </div>
+                <i class="fas fa-times close__add-giaovien-icon"></i>
+            </div>
+            <div class="row" id="add-giaovien__body">
+                <div class="col-lg-6 col-12">
+
+                    <form action="#" class="add-giaovien__input" method="POST" name="add-giaovien-form">
+
+                        {{!-- <label for="">ID món ăn</label> --}}
+
+                        <input type="text" id="add-giaovien_ID" name="GV_ID" hidden>
+                        <label for="">Họ</label>
+                        <input type="text" id="add-giaovien_FName" name="GV_F-Name">
+
+                        <label for="">Tên lót</label>
+                        <input type="text" id="add-giaovien_MName" name="GV_M-Name">
+
+                        <label for="">Tên</label>
+                        <input type="text" id="add-giaovien_LName" name="GV_L-Name">
+
+                        <label for="">Ngày sinh</label>
+                        <input type="date" id="add-giaovien_Birthday" name="GV_Birthday">
+
+                        <label for="">Giới tính</label>
+                        <select id="add-giaovien_Sex" name="GV_Sex">
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                        </select>
+
+                        <label for="">Email</label>
+                        <input type="text" id="add-giaovien_Email" name="GV_Mail">
+
+                        <label for="">Tỉnh, thành phố sinh sống</label>
+                        <input type="text" id="add-giaovien_City" name="GV_City">
+                    </form>
+                </div>
+
+
+                <div class="col-lg-6 col-12">
+                    <form action="#" class="add-giaovien__input" method="POST" name="add-giaovien-form">
+                        <label for="">Quận, huyện</label>
+                        <input type="text" id="add-giaovien_District" name="GV_District">
+
+                        <label for="">Xã, phường</label>
+                        <input type="text" id="add-giaovien_Ward" name="GV_Ward">
+
+                        <label for="">Tên đăng nhập</label>
+                        <input type="text" id="add-giaovien_LoginName" name="GV_Login-Name">
+
+                        <label for="">Mật khẩu</label>
+                        <input type="password" id="add-giaovien_Password" name="GV_Password">
+
+                        <label for="">Nơi công tác hiện tại</label>
+                        <input type="text" id="add-giaovien_Workplace" name="GV_Workplace">
+
+                        <label for="">Mô tả</label>
+                        <input type="text" id="add-giaovien_description" name="GV_Description">
+
+                    </form>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>Thêm giáo
+                viên</button>
+        </div>
+    </div>
+    {{!---------------------------------Update GIAO VIEN-------------------------------------}}
+    <div class="update-giaovien-container">
+        <div class="update-giaovien__box">
+            <div class="update-giaovien__header">
+                <div class="update-giaovien__header-name">CHỈNH SỬA THÔNG TIN GIÁO VIÊN </div>
+                <i class="fas fa-times close__update-giaovien-icon"></i>
+            </div>
+            <div class="row" id="update-giaovien__body">
+                <div class="col-lg-6 col-12">
+
+                    <form action="#" class="update-giaovien__input" method="POST" name="update-giaovien-form">
+
+                        {{!-- <label for="">ID món ăn</label> --}}
+
+                        <input type="text" id="update-giaovien_ID" name="update-GV_ID" hidden>
+                        <label for="">Họ</label>
+                        <input type="text" id="update-giaovien_FName" name="update-GV_F-Name">
+
+                        <label for="">Tên lót</label>
+                        <input type="text" id="update-giaovien_MName" name="update-GV_M-Name">
+
+                        <label for="">Tên</label>
+                        <input type="text" id="update-giaovien_LName" name="update-GV_L-Name">
+
+                        <label for="">Ngày sinh</label>
+                        <input type="date" id="update-giaovien_Birthday" name="update-GV_Birthday">
+
+                        <label for="">Giới tính</label>
+                        <select id="update-giaovien_Sex" name="update-GV_Sex">
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                        </select>
+
+                        <label for="">Email</label>
+                        <input type="text" id="update-giaovien_Email" name="update-GV_Mail">
+
+                        <label for="">Tỉnh, thành phố sinh sống</label>
+                        <input type="text" id="update-giaovien_City" name="update-GV_City">
+                    </form>
+                </div>
+
+
+                <div class="col-lg-6 col-12">
+                    <form action="#" class="update-giaovien__input" method="POST" name="update-giaovien-form">
+                        <label for="">Quận, huyện</label>
+                        <input type="text" id="update-giaovien_District" name="update-GV_District">
+
+                        <label for="">Xã, phường</label>
+                        <input type="text" id="update-giaovien_Ward" name="update-GV_Ward">
+
+                        <label for="">Tên đăng nhập</label>
+                        <input type="text" id="update-giaovien_LoginName" name="update-GV_Login-Name">
+
+                        <label for="">Mật khẩu</label>
+                        <input type="password" id="update-giaovien_Password" name="update-GV_Password">
+
+                        <label for="">Nơi công tác hiện tại</label>
+                        <input type="text" id="update-giaovien_Workplace" name="update-GV_Workplace">
+
+                        <label for="">Mô tả</label>
+                        <input type="text" id="update-giaovien_description" name="update-GV_Description">
+
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+                <button class="btn btn-primary" type="submit" id="delete_btn">Xóa giáo viên</button>
+            </div>
+        </div>
+    </div>
+
+
 </div>

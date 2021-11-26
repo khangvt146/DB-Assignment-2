@@ -60,7 +60,6 @@
 }
 
 .giaovien_container .info {
-    line-height: 35px;
     margin-bottom: 30px;
     padding: 0 5px;
 }
@@ -76,17 +75,21 @@
     font-size: 15px;
     font-weight: 550;
     padding-left: 2px;
+    padding-top: 5px;
 }
 
 .giaovien_container .grade {
     font-size: 15px;
     font-weight: 550;
+    padding-top: 20px;
+    text-align: justify;
 }
 
 .giaovien_container .descrip {
     line-height: 20px;
     padding-left: 3px;
-    padding-top: 10px;
+    padding-top: 20px;
+    text-align: justify;
 }
 
 .giaovien_container .button {
@@ -106,4 +109,9 @@
     width: 100%;
     padding-right: 15px;
     padding-bottom: 15px;
+}
+
+.giaovien_container #u_btn {
+    margin-right: 5px;
+    background-color: #db5c35 !important;
 }
