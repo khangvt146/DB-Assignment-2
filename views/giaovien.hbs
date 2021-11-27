@@ -59,16 +59,20 @@
         <div class="row row-card">
             {{#each TeacherArray}}
             <div class="col-sm-8 col-md-6 col-lg-3">
-                <div class="card">
+                <div class="card teacher-content">
                     <img class="card-img-top" src="{{this.image}}" alt="Card image cap" />
                     <div class="card-body">
-                        <div class="card-title">{{this.name}}</div>
+                        <div class="card-title">{{this.ho_va_ten}}</div>
                         <div class="info">
-                            <div class="work"><i class="fas fa-briefcase mr-2"></i>{{this.place}}</div>
+                            <div class="work"><i class="fas fa-briefcase mr-2"></i>{{this.noi_cong_tac}}</div>
 
-                            <div class="grade"><i class="fas fa-graduation-cap mr-2"></i>{{this.grade}}</div>
+                            <div class="grade"><i class="fas fa-graduation-cap mr-2"></i>{{this.bang_cap}}</div>
 
-                            <div class="descrip"><i class="fas fa-info-circle mr-2"></i>{{this.description}}</div>
+                            <div class="descrip"><i class="fas fa-info-circle mr-2"></i>{{this.mo_ta}}</div>
+
+                            <div type="hidden" id="course-t" style="display: none;"> {{this.ten_mon}} </div>
+                            <div type="hidden" id="email-t" style="display: none;"> {{this.email}} </div>
+                            <div type="hidden" id="follow-t" style="display: none;"> {{this.so_luong_theo_doi}} </div>
 
                         </div>
                     </div>

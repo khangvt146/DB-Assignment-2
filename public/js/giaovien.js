@@ -5,6 +5,9 @@ function teacherShowDetail() {
         teacher.onclick = function(e) {
             var tem = document.querySelector(".info-giaovien-container");
             tem.classList.add("info-giaovien--active");
+            var info = teacher.innerText.split("\n");
+            console.log(info[0]);
+            // SetDetail(info[0]);
         };
         return teacher;
     });
