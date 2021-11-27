@@ -85,7 +85,7 @@ function setUpdate(id) {
     let courseSelected = courseList.find((course) => {
         return $(course).find("#u_btn").data('id') === id;
     });
-    console.log(courseSelected);
+    document.getElementById('update-course-courseID').value = ($(courseSelected).find("#course-id").text());
     document.getElementById('update-course-name').value = ($(courseSelected).find("#course-name").text());
     document.getElementById('update-course-tuition').value = ($(courseSelected).find("#course-tuition").text());
     document.getElementById('update-course-startDate').value = formatDate($(courseSelected).find("#course-startDate").text());
