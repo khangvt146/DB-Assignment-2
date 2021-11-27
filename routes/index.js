@@ -8,6 +8,7 @@ const courseController = require('../controllers/courseController')
 
 // ROUTE COURSE
 router.get('/', courseController.getAllCourse);
+router.post('/course/filter', courseController.filterCourse);
 
 router.get('/giaovien', function(req, res, next) {
     res.render('giaovien', {

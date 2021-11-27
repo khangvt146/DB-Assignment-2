@@ -34,7 +34,6 @@ function setDetail(id) {
     console.log($(courseSelected).find("#course-class").text())
     $('#detail-course-class').text($(courseSelected).find("#course-class").text());
     $('#detail-course-level').text($(courseSelected).find("#course-level").text());
-
 }
 
 
@@ -158,6 +157,48 @@ function getLevel(str) {
     }
 }
 
+
+
+const filter_grade = document.querySelector("#filter_grade");
+const filter_subject = document.querySelector("#filter_subject");
+const filter_type = document.querySelector("#filter_type");
+const filter_gradeType = document.querySelector("#filter_gradeType");
+const filterForm = document.forms['filter-form'];
+
+console.log(document.getElementById('filter_grade_form'))
+
+
+filter_grade.onchange = function (e) {
+    document.getElementById('filter_grade_form').value = filter_grade.value;
+    document.getElementById('filter_subject_form').value = filter_subject.value;
+    document.getElementById('filter_type_form').value = filter_type.value;
+    document.getElementById('filter_gradeType_form').value = filter_gradeType.value;
+    filterForm.submit();
+};
+
+filter_subject.onchange = function (e) {
+    document.getElementById('filter_grade_form').value = filter_grade.value;
+    document.getElementById('filter_subject_form').value = filter_subject.value;
+    document.getElementById('filter_type_form').value = filter_type.value;
+    document.getElementById('filter_gradeType_form').value = filter_gradeType.value;
+    filterForm.submit();
+};
+
+filter_type.onchange = function (e) {
+    document.getElementById('filter_grade_form').value = filter_grade.value;
+    document.getElementById('filter_subject_form').value = filter_subject.value;
+    document.getElementById('filter_type_form').value = filter_type.value;
+    document.getElementById('filter_gradeType_form').value = filter_gradeType.value;
+    filterForm.submit();
+};
+
+filter_gradeType.onchange = function (e) {
+    document.getElementById('filter_grade_form').value = filter_grade.value;
+    document.getElementById('filter_subject_form').value = filter_subject.value;
+    document.getElementById('filter_type_form').value = filter_type.value;
+    document.getElementById('filter_gradeType_form').value = filter_gradeType.value;
+    filterForm.submit();
+};
 /* Call function */
 SetShowDetail();
 SetAddCourse();
