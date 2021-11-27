@@ -94,14 +94,9 @@ function setUpdate(id) {
     document.getElementById('update-course-description').value = ($(courseSelected).find("#course-description").text());
     document.getElementById('update-course-courseType').value = Number($(courseSelected).find("#course-courseType").text());
     document.getElementById('update-course-subject').value = Number($(courseSelected).find("#course-subject").text());
-    console.log(document.getElementById('update-course-class').text)
-    document.getElementById('update-course-class').value = $(courseSelected).find("#course-class").text();
-    console.log(document.getElementById('update-course-class').text)
-
-    document.getElementById('update-course-level').value = $(courseSelected).find("#course-level").text();
-
+    document.getElementById('update-course-class').value = getClass($(courseSelected).find("#course-class").text());
+    document.getElementById('update-course-level').value = getLevel($(courseSelected).find("#course-level").text());
 }
-
 
 var outUpdate = document.querySelector(".close__update-course-icon");
 outUpdate.onclick = function (e) {
@@ -113,6 +108,54 @@ function formatDate(date) {
     date = date.replace(/\s+/g, '');
     var tmpArray = date.split('-');
     return [tmpArray[2], tmpArray[1], tmpArray[0]].join('-');
+}
+
+function getClass(str) {
+    if (str.match("Lớp 6")) {
+        return "Lớp 6"
+    }
+    else if (str.match("Lớp 7")) {
+        return "Lớp 7"
+    }
+    else if (str.match("Lớp 8")) {
+        return "Lớp 8"
+    }
+    else if (str.match("Lớp 9")) {
+        return "Lớp 9"
+    }
+    else if (str.match("Lớp 10")) {
+        return "Lớp 10"
+    }
+    else if (str.match("Lớp 11")) {
+        return "Lớp 11"
+    }
+    else if (str.match("Lớp 12")) {
+        return "Lớp 12"
+    }
+}
+
+function getLevel(str) {
+    if (str.match("HOCTOT")) {
+        return "HOCTOT"
+    }
+    else if (str.match("MASTER")) {
+        return "MASTER"
+    }
+    else if (str.match("MASTERZ")) {
+        return "MASTERZ"
+    }
+    else if (str.match("BOTRO")) {
+        return "BOTRO"
+    }
+    else if (str.match("PEN-I")) {
+        return "PEN-I"
+    }
+    else if (str.match("PEN-C")) {
+        return "PEN-C"
+    }
+    else if (str.match("PEN-M")) {
+        return "PEN-M"
+    }
 }
 
 /* Call function */
