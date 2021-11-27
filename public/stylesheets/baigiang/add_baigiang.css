@@ -1,0 +1,120 @@
+.add-baigiang-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.add-baigiang-dialog {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 600px;
+    display: flex;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+.add-baigiang__box {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 800px;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+.add-baigiang--active {
+    display: flex;
+}
+
+.add-baigiang__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(150, 150, 150, 0.25);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.add-baigiang__header-name {
+    left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4d4d4d;
+}
+
+#add-baigiang__body {
+    padding: 20px 30px;
+}
+
+.close__add-baigiang-icon {
+    font-size: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.add-baigiang__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-baigiang__input label {
+    margin-bottom: 3px;
+}
+
+.add-baigiang__input input,
+.add-baigiang__input select {
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    padding: 3px 6px;
+}
+
+.add-baigiang-backdrop+.add-baigiang-backdrop {
+    z-index: 1040;
+}
+
+.add-baigiang+.add-baigiang {
+    z-index: 1050;
+}
+
+.add-baigiang-second {
+    z-index: 1052;
+}
+
+.add-baigiang-backdrop.fade {
+    z-index: 1051;
+}
+
+.form_input label {
+    margin-bottom: 2px;
+}
+
+.form_input input,
+.form_input select {
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    padding: 3px 6px;
+}
+
+.add-baigiang-container .btn {
+    width: 250px;
+    background: var(--primary-color);
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.add-baigiang-container #add-baigiang_descrip {
+    height: 75px;
+}

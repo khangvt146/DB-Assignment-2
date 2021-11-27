@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require("hbs");
 var indexRouter = require('./routes/index');
+const moment = require("moment");
 
 
 var app = express();
@@ -13,6 +14,30 @@ var app = express();
 hbs.registerPartials(__dirname + "/views/partials");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerHelper("NumberWithCommas", function (x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x)) x = x.replace(pattern, "$1.$2");
+    return x;
+})
+
+
+hbs.registerHelper("formatDate", function (datetime) {
+    var DateFormats = {
+        short: "DD-MM-YYYY",
+        long: "dddd DD.MM.YYYY HH:mm"
+    };
+    // Use UI.registerHelper..
+    if (true) {
+        // can use other formats like 'lll' too
+        format = DateFormats['short'];
+        return moment(datetime).format(format);
+    }
+    else {
+        return datetime;
+    }
+});
 
 app.use(logger('dev'));
 app.use(express.json());

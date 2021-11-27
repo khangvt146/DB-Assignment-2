@@ -1,0 +1,129 @@
+.update-hocvien-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.update-hocvien-dialog {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 600px;
+    display: flex;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+.update-hocvien__box {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 800px;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+.update-hocvien--active {
+    display: flex;
+}
+
+.update-hocvien__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: rgba(150, 150, 150, 0.25);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.update-hocvien__header-name {
+    left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4d4d4d;
+}
+
+#update-hocvien__body {
+    padding: 20px 30px;
+}
+
+.close__update-hocvien-icon {
+    font-size: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.update-hocvien__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-hocvien__input label {
+    margin-bottom: 3px;
+}
+
+.update-hocvien__input input,
+.update-hocvien__input select {
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    padding: 3px 6px;
+}
+
+.update-hocvien-backdrop+.update-hocvien-backdrop {
+    z-index: 1040;
+}
+
+.update-hocvien+.update-hocvien {
+    z-index: 1050;
+}
+
+.update-hocvien-second {
+    z-index: 1052;
+}
+
+.update-hocvien-backdrop.fade {
+    z-index: 1051;
+}
+
+.form_input label {
+    margin-bottom: 2px;
+}
+
+.form_input input,
+.form_input select {
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+    padding: 3px 6px;
+}
+
+.update-hocvien-container .btn {
+    width: 150px;
+    background: var(--primary-color);
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.update-hocvien-container #update_btn {
+    margin-left: 270px;
+}
+
+.update-hocvien-container #delete_btn {
+    background-color: #b50a07;
+    border-style: none;
+}
+
+.update-hocvien-container #update-hocvien_descrip {
+    height: 75px;
+}
