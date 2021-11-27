@@ -76,7 +76,6 @@
                     <button class="button"><i class="fas fa-plus mr-2"></i>THÊM </button>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -88,7 +87,7 @@
             {{#each CourseArray}}
             <div class="col-sm-8 col-md-6 col-lg-3">
                 <div class="card course-content">
-                    <img class="card-img-top" src="./images/course/hocmai.jpg" alt="Card image cap" />
+                    <img class="card-img-top" id="course-image" src="{{this.hinh_anh}}" alt="Card image cap" />
                     <div class="card-body">
                         <div class="card-title" id="course-name">{{this.ten_kh}}</div>
                         <div class="info">
@@ -139,11 +138,7 @@
             </div>
             <div class="info__body">
                 <div class="info__image">
-<<<<<<< HEAD
-                    <img src="./images/course/course_3.png">
-=======
-                    <img src="./images/course/hocmai.jpg">
->>>>>>> 5304eef7efa68834eb81e668b377efb2bfdac384
+                    <img src="./images/course/hocmai.jpg" id="detail-course-image">
                 </div>
                 <div class="info__description">
                     <div class="course__name" id="detail-course-name">Học tốt Ngữ văn 6 - Bộ Kết nối tri thức với cuộc
@@ -410,15 +405,21 @@
                 <button class="btn btn-primary" type="submit" id="delete_btn">Xóa khóa học</button>
             </div>
 
-
-            <form action="/course/filter" method="POST" role="form" name="filter-form">
+            {{#if filterFlag}}
+            <form action="/course-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_grade_form" name="filter_grade_form" hidden value="{{filters.filter_grade_form}}">
+                <input type="text" class="form-control" id="filter_subject_form" name="filter_subject_form" hidden value="{{filters.filter_subject_form}}">
+                <input type="text" class="form-control" id="filter_type_form" name="filter_type_form" hidden value="{{filters.filter_type_form}}">
+                <input type="text" class="form-control" id="filter_gradeType_form" name="filter_gradeType_form" hidden value="{{filters.filter_gradeType_form}}">
+            </form>
+            {{else}}
+            <form action="/course-filter" method="POST" role="form" name="filter-form">
                 <input type="text" class="form-control" id="filter_grade_form" name="filter_grade_form" hidden>
                 <input type="text" class="form-control" id="filter_subject_form" name="filter_subject_form" hidden>
                 <input type="text" class="form-control" id="filter_type_form" name="filter_type_form" hidden>
                 <input type="text" class="form-control" id="filter_gradeType_form" name="filter_gradeType_form" hidden>
             </form>
-
-
+            {{/if}}
         </div>
     </div>
 </div>

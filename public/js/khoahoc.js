@@ -34,6 +34,7 @@ function setDetail(id) {
     console.log($(courseSelected).find("#course-class").text())
     $('#detail-course-class').text($(courseSelected).find("#course-class").text());
     $('#detail-course-level').text($(courseSelected).find("#course-level").text());
+    document.getElementById("detail-course-image").src = ($(courseSelected).find("#course-image").attr('src'));
 }
 
 
@@ -165,9 +166,6 @@ const filter_type = document.querySelector("#filter_type");
 const filter_gradeType = document.querySelector("#filter_gradeType");
 const filterForm = document.forms['filter-form'];
 
-console.log(document.getElementById('filter_grade_form'))
-
-
 filter_grade.onchange = function (e) {
     document.getElementById('filter_grade_form').value = filter_grade.value;
     document.getElementById('filter_subject_form').value = filter_subject.value;
@@ -199,6 +197,13 @@ filter_gradeType.onchange = function (e) {
     document.getElementById('filter_gradeType_form').value = filter_gradeType.value;
     filterForm.submit();
 };
+
+
+filter_grade.value = document.getElementById('filter_grade_form').value;
+filter_subject.value = document.getElementById('filter_subject_form').value;
+filter_type.value = document.getElementById('filter_type_form').value;
+filter_gradeType.value = document.getElementById('filter_gradeType_form').value;
+
 /* Call function */
 SetShowDetail();
 SetAddCourse();
