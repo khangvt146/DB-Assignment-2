@@ -10,8 +10,8 @@ function SetAddhocvien() {
     });
 }
 
-var outAdd = document.querySelector(".close__add-hocvien-icon");
-outAdd.onclick = function(e) {
+var outAddHocvien = document.querySelector(".close__add-hocvien-icon");
+outAddHocvien.onclick = function(e) {
     var tem = document.querySelector(".add-hocvien-container");
     tem.classList.remove("add-hocvien--active");
 };
@@ -29,8 +29,8 @@ function SetUpdatehocvien() {
     });
 }
 
-var outUpdate = document.querySelector(".close__update-hocvien-icon");
-outUpdate.onclick = function(e) {
+var outUpdateHocvien = document.querySelector(".close__update-hocvien-icon");
+outUpdateHocvien.onclick = function(e) {
     var tem = document.querySelector(".update-hocvien-container");
     tem.classList.remove("update-hocvien--active");
 };
