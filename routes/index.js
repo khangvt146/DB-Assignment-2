@@ -1,28 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var courseapi = require("../public/api/course.json");
 var teacherapi = require("../public/api/teacher.json");
 var userapi = require("../public/api/user.json");
 var lessonapi = require("../public/api/lesson.json");
+const courseController = require('../controllers/courseController')
+const teacherController = require('../controllers/teacherController')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('khoahoc', {
-        title: 'Online Course Management',
-        CourseArray: courseapi,
-    });
-});
 
-router.get('/giaovien', function(req, res, next) {
-    res.render('giaovien', {
-        title: 'Online Course Management',
-        TeacherArray: teacherapi,
-    });
-});
+// ROUTE COURSE
+router.get('/', courseController.getAllCourse);
 
-router.get('/user', function(req, res, next) {
-    res.render('user', {
-        title: 'Quán lý người dùng',
+router.get('/giaovien', teacherController.getAllteacher);
+
+router.get('/hocvien', function(req, res, next) {
+    res.render('hocvien', {
+        title: 'Quản lý học viên',
         UserArray: userapi,
     });
 });
@@ -33,5 +25,7 @@ router.get('/baigiang', function(req, res, next) {
         LessonArray: lessonapi,
     });
 });
+
+
 
 module.exports = router;

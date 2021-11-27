@@ -1,4 +1,4 @@
-.update-course-container {
+.add-hocvien-container {
     position: fixed;
     left: 0;
     right: 0;
@@ -9,7 +9,7 @@
     display: none;
 }
 
-.update-course-dialog {
+.add-hocvien-dialog {
     margin: auto;
     background-color: var(--white-color);
     width: 600px;
@@ -19,7 +19,7 @@
     max-width: 90%;
 }
 
-.update-course__box {
+.add-hocvien__box {
     margin: auto;
     background-color: var(--white-color);
     width: 800px;
@@ -28,11 +28,11 @@
     max-width: 90%;
 }
 
-.update-course--active {
+.add-hocvien--active {
     display: flex;
 }
 
-.update-course__header {
+.add-hocvien__header {
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
@@ -41,34 +41,34 @@
     border-top-right-radius: 20px;
 }
 
-.update-course__header-name {
+.add-hocvien__header-name {
     left: 20px;
     font-size: 18px;
     font-weight: 700;
     color: #4d4d4d;
 }
 
-#update-course__body {
+#add-hocvien__body {
     padding: 20px 30px;
 }
 
-.close__update-course-icon {
+.close__add-hocvien-icon {
     font-size: 20px;
     opacity: 0.7;
     cursor: pointer;
 }
 
-.update-course__input {
+.add-hocvien__input {
     display: flex;
     flex-direction: column;
 }
 
-.update-course__input label {
+.add-hocvien__input label {
     margin-bottom: 3px;
 }
 
-.update-course__input input,
-.update-course__input select {
+.add-hocvien__input input,
+.add-hocvien__input select {
     margin-bottom: 10px;
     outline: none;
     border-radius: 5px;
@@ -76,19 +76,19 @@
     padding: 3px 6px;
 }
 
-.update-course-backdrop+.update-course-backdrop {
+.add-hocvien-backdrop+.add-hocvien-backdrop {
     z-index: 1040;
 }
 
-.update-course+.update-course {
+.add-hocvien+.add-hocvien {
     z-index: 1050;
 }
 
-.update-course-second {
+.add-hocvien-second {
     z-index: 1052;
 }
 
-.update-course-backdrop.fade {
+.add-hocvien-backdrop.fade {
     z-index: 1051;
 }
 
@@ -105,25 +105,16 @@
     padding: 3px 6px;
 }
 
-.update-course-container .btn {
-    width: 150px;
+.add-hocvien-container .btn {
+    width: 250px;
     background: var(--primary-color);
-    margin-left: 15px;
+    margin: auto;
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: 600;
     border-radius: 10px;
 }
 
-.update-course-container #update_btn {
-    margin-left: 270px;
-}
-
-.update-course-container #delete_btn {
-    background-color: #b50a07;
-    border-style: none;
-}
-
-.update-course-container #update-course_descrip {
+.add-hocvien-container #add-hocvien_descrip {
     height: 75px;
 }
