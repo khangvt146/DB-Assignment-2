@@ -9,6 +9,7 @@
 .khoahoc_container .card-img-top {
     border-radius: 20px;
     padding: 10px;
+    height: 200px;
 }
 
 .khoahoc_container .card-body {

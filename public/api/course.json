@@ -4,7 +4,7 @@
         "startDate": "10/11/2021",
         "submitDate": "20/11/2021",
         "teacher": "Nguyễn Hoàng Anh",
-        "image": "./images/course/course_3.jpg"
+        "image": "./images/course/course_1.png"
     },
     {
         "name": "Học tốt Ngữ văn 6 - Bộ Chân trời sáng tạo",
@@ -12,7 +12,7 @@
         "startDate": "10/11/2021",
         "submitDate": "20/11/2021",
         "teacher": "Nguyễn Thanh Vân",
-        "image": "./images/course/course_4.jpg"
+        "image": "./images/course/course_1.png"
     },
     {
         "name": "Học tốt Ngữ văn 6 - Bộ Cánh diều",
@@ -20,7 +20,7 @@
         "startDate": "10/11/2021",
         "submitDate": "20/11/2021",
         "teacher": "Trịnh Minh Đức",
-        "image": "./images/course/course_5.jpg"
+        "image": "./images/course/course_5.png"
     },
     {
         "name": "MASTER Ngữ văn 6 (12 tuần)",
@@ -28,7 +28,7 @@
         "startDate": "21/11/2021",
         "submitDate": "30/11/2021",
         "teacher": "Bùi Lương Vinh Hiển",
-        "image": "./images/course/course_6.jpg"
+        "image": "./images/course/course_6.png"
     },
     {
         "name": "MASTER Ngữ văn 6 (24 tuần)",
@@ -36,7 +36,7 @@
         "startDate": "21/11/2021",
         "submitDate": "30/11/2021",
         "teacher": "Bùi Lương Vinh Hiển",
-        "image": "./images/course/course_7.jpg"
+        "image": "./images/course/course_7.png"
     },
     {
         "name": "MASTER Ngữ văn 6 (36 tuần)",
@@ -44,7 +44,7 @@
         "startDate": "21/11/2021",
         "submitDate": "20/11/2021",
         "teacher": "Bùi Lương Vinh Hiển",
-        "image": "./images/course/course_8.jpg"
+        "image": "./images/course/course_8.png"
     },
     {
         "name": "MASTER Ngữ văn 6 (24 tuần)",
@@ -52,7 +52,7 @@
         "startDate": "21/11/2021",
         "submitDate": "30/11/2021",
         "teacher": "Bùi Lương Vinh Hiển",
-        "image": "./images/course/course_7.jpg"
+        "image": "./images/course/course_7.png"
     },
     {
         "name": "MASTER Ngữ văn 6 (36 tuần)",
@@ -60,7 +60,7 @@
         "startDate": "21/11/2021",
         "submitDate": "20/11/2021",
         "teacher": "Bùi Lương Vinh Hiển",
-        "image": "./images/course/course_8.jpg"
+        "image": "./images/course/course_8.png"
     }
 
 ]
