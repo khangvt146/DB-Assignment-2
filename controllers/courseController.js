@@ -6,7 +6,7 @@ class courseController {
         let course = await courseModel.getAllCourse();
         console.log(course)
         res.render('khoahoc', {
-            title: 'Online Course Management',
+            title: 'Quản lý bài giảng',
             CourseArray: course,
         });
     }

@@ -1,0 +1,148 @@
+ul {
+    list-style-type: none;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 90%;
+}
+
+.search-class {
+    width: 100%;
+    display: flex;
+    padding: 5px 30px;
+    font-size: 18px;
+}
+
+.search-input {
+    outline: none;
+    border-radius: 10px;
+    padding: 6px 14px;
+    border: 1px solid #333333;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.search-button {
+    background-color: var(--primary-color);
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: none;
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.search-button:focus {
+    outline: none;
+}
+
+.dropdown_baigiang .form-control {
+    border-radius: 10px;
+    border: 1px solid #333333;
+}
+
+.dropdown_baigiang {
+    margin-left: 60px;
+}
+
+.dropdown_baigiang #ccmonth {
+    font-weight: 550;
+}
+
+.filter-title {
+    font-size: 18px;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.dropdown_baigiang .add_button {
+    margin-top: 70px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: right;
+}
+
+.dropdown_baigiang .button {
+    border: none;
+    background-color: var(--primary-color) !important;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.baigiang_container {
+    margin-top: 30px;
+}
+
+.baigiang_container .info {
+    line-height: 25px;
+    width: 100%;
+    padding: 5px 5px;
+}
+
+.baigiang_container .tuition {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baigiang_container .startDate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baigiang_container .submitDate {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baigiang_container .teacher {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baigiang_container .value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.baigiang_container #money {
+    padding-left: 5px;
+}
+
+.baigiang_container .button {
+    border: none;
+    background-color: var(--primary-color) !important;
+    height: 30px;
+    padding: 0 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.baigiang_container .info_button {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.baigiang_container .button:hover {
+    cursor: pointer;
+}
+
+.baigiang_container #u_btn {
+    margin-right: 10px;
+    background-color: #db5c35 !important;
+}
