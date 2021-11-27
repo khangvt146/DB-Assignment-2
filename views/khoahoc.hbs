@@ -405,6 +405,24 @@
                 <button class="btn btn-primary" type="submit" id="delete_btn">Xóa khóa học</button>
             </div>
 
+<<<<<<< HEAD
+=======
+            {{#if filterFlag}}
+            <form action="/course-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_grade_form" name="filter_grade_form" hidden value="{{filters.filter_grade_form}}">
+                <input type="text" class="form-control" id="filter_subject_form" name="filter_subject_form" hidden value="{{filters.filter_subject_form}}">
+                <input type="text" class="form-control" id="filter_type_form" name="filter_type_form" hidden value="{{filters.filter_type_form}}">
+                <input type="text" class="form-control" id="filter_gradeType_form" name="filter_gradeType_form" hidden value="{{filters.filter_gradeType_form}}">
+            </form>
+            {{else}}
+            <form action="/course-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_grade_form" name="filter_grade_form" hidden value=" ">
+                <input type="text" class="form-control" id="filter_subject_form" name="filter_subject_form" hidden value=" ">
+                <input type="text" class="form-control" id="filter_type_form" name="filter_type_form" hidden value=" ">
+                <input type="text" class="form-control" id="filter_gradeType_form" name="filter_gradeType_form" hidden value=" ">
+            </form>
+            {{/if}}
+>>>>>>> 3157d66f798fc56adde7f8d9c942d9208e101c49
         </div>
     </div>
 </div>

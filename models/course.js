@@ -4,7 +4,7 @@ let connection = mysql.createConnection({
     user: "root",
     password: "",
     database: "database assignment 2",
-    port: 3306
+    //port: 3306
 });
 
 exports.getAllCourse = async function() {
