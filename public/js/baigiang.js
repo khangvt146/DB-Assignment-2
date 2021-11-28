@@ -11,7 +11,7 @@ function SetShowDetailBaigiang() {
     });
 }
 
-var outBaigiangInfo = document.querySelector(".close__info-icon");
+var outBaigiangInfo = document.querySelector(".close__info_baigiang-icon");
 outBaigiangInfo.onclick = function(e) {
     var tem = document.querySelector(".info-baigiang-container");
     tem.classList.remove("info__active");
