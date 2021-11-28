@@ -58,21 +58,19 @@
 
     {{!---------------------------------MAIN -------------------------------------}}
     <div class="baigiang_container">
-        <ul>
-            {{#each LessonArray}}
-            <li style="padding:10px; border-bottom: dashed 1px">
-                <h4></i>{{this.ten_bai_giang}}</h4>
-                <div class="lesson-info">
-                    <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: {{this.ma_kh}}</span>
-                    <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: {{this.ma_gv}}</span>
-                    <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: {{this.thoi_luong}} phút</span>
-                    <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: {{this.upload_time}}</span>
-                    <button class="button" id="u_btn">Sửa </button>
-                    <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
-                </div>
-            </li>
-            {{/each}}
-        </ul>
+        {{#each LessonArray}}
+        <div class="baigiang_item">
+            <h4></i>{{this.ten_bai_giang}}</h4>
+            <div class="lesson-info">
+                <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: {{this.ma_kh}}</span>
+                <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: {{this.ma_gv}}</span>
+                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: {{this.thoi_luong}} phút</span>
+                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: {{this.upload_time}}</span>
+                <button class="button" id="u_btn">Sửa </button>
+                <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+            </div>
+        </div>
+        {{/each}}
     </div>
 
     {{!---------------------------------baigiang INFO-------------------------------------}}
