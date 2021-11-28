@@ -5,7 +5,8 @@
     "ma_kh": "Học tốt Ngữ Văn 6",
     "ten_bai_giang": "Bài giảng số 1",
     "thoi_luong": 22,
-    "upload_time": "2021-11-01"
+    "upload_time": "2021-11-01",
+    "link_video": "https://www.youtube.com/embed/hAqjzHFD0EE"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "ma_kh": "Học tốt Ngữ Văn 6",
     "ten_bai_giang": "Bài giảng số 2",
     "thoi_luong": 15,
-    "upload_time": "2021-11-01"
+    "upload_time": "2021-11-01",
+    "link_video": "https://www.youtube.com/embed/hAqjzHFD0EE"
   },
   {
     "id": 3,
@@ -21,6 +23,7 @@
     "ma_kh": "Học tốt Ngữ Văn 6",
     "ten_bai_giang": "Bài giảng số 3",
     "thoi_luong": 13,
-    "upload_time": "2021-11-01"
+    "upload_time": "2021-11-01",
+    "link_video": "https://www.youtube.com/embed/hAqjzHFD0EE"
   }
 ]

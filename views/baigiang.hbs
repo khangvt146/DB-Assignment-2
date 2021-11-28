@@ -2,8 +2,8 @@
     {{!-------------------------------------- SEARCH BAR -------------------------------------}}
     <div class="search-class">
         <form class="search-class" action="#" method="post">
-            <input type="text" name="search" class="search-input" placeholder="Nhập tên khóa học cần tìm">
-            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+            <input type="text" name="search" class="search-input" placeholder="Tìm bài giảng theo giáo viên">
+            <button class="search-baigiang-button" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
 
@@ -11,7 +11,7 @@
     <div class="dropdown_baigiang">
         <div class="row">
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> <label for="GV_filter">
+                <div class="form-group"> <label for="baigiang_filter_time">
                     <div class="filter-title">Sắp xếp theo</div>
                     </label> <select class="form-control" id="">
                         <option value=" "></option>
@@ -24,30 +24,32 @@
             </div>
 
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> <label for="GV_filter">
+                <div class="form-group"> <label for="baigiang_filter_giaovien">
                         <div class="filter-title">Giáo viên</div>
                     </label> <select class="form-control" id="">
                         <option value=" "></option>
                         <option>Giáo viên 1</option>
                         <option>Giáo viên 2</option>
                         <option>Giáo viên 3</option>
+                        <option>.... (lấy từ db)</option>
                     </select>
                 </div>
             </div>
 
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> <label for="GV_filter">
+                <div class="form-group"> <label for="baigiang_filter_khoahoc">
                         <div class="filter-title">Khóa học</div>
                     </label> <select class="form-control" id="">
                         <option value=" "></option>
                         <option>Khóa học 1</option>
                         <option>Khóa học 2</option>
+                        <option>.... (lấy từ db)</option>
                     </select>
                 </div>
             </div>
 
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="add_button">
+                <div class="add_baigiang_button">
                     <button class="button"><i class="fas fa-plus mr-2"></i>THÊM </button>
                 </div>
             </div>
@@ -58,21 +60,19 @@
 
     {{!---------------------------------MAIN -------------------------------------}}
     <div class="baigiang_container">
-        <ul>
-            {{#each LessonArray}}
-            <li style="padding:10px; border-bottom: dashed 1px">
-                <h4></i>{{this.ten_bai_giang}}</h4>
-                <div class="lesson-info">
-                    <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: {{this.ma_kh}}</span>
-                    <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: {{this.ma_gv}}</span>
-                    <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: {{this.thoi_luong}} phút</span>
-                    <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: {{this.upload_time}}</span>
-                    <button class="button" id="u_btn">Sửa </button>
-                    <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
-                </div>
-            </li>
-            {{/each}}
-        </ul>
+        {{#each LessonArray}}
+        <div class="baigiang_item">
+            <h4>{{this.ten_bai_giang}}</h4>
+            <div class="lesson-info">
+                <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: <b>{{this.ma_kh}}</b></span>
+                <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: <b>{{this.ma_gv}}</b></span>
+                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: <b>{{this.thoi_luong}}</b> phút</span>
+                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: <b>{{this.upload_time}}</b></span>
+                <button class="button mr-2" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết</button>
+                <button class="button mr-2" id="u_btn"><i class="fas fa-pen mr-2"></i>Sửa</button>
+            </div>
+        </div>
+        {{/each}}
     </div>
 
     {{!---------------------------------baigiang INFO-------------------------------------}}
@@ -80,29 +80,29 @@
         <div class="info__box">
             <div class="info__header">
                 <div class="info__header-name">CHI TIẾT BÀI GIẢNG</div>
-                <i class="fas fa-times close__info-icon"></i>
+                <i class="fas fa-times close__info_baigiang-icon"></i>
             </div>
             <div class="info__body">
                 <div class="info__description_baigiang">
                     <div class="baigiang__name">Bài giảng số 1</div>
                     <hr>
-                    <div style="justify-content: center;">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/wLXFynJCoF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="youtube-video">
+                        <iframe width="560" height="315" src='https://www.youtube.com/embed/vVN8vdMaHRE' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <hr>
-                    <div class="baigiang__subject">
-                        <div class="baigiang__title"><i class="fas fa-chalkboard-teacher mr-1"></i>Môn học:</div>
-                        <div class="baigiang__value">Ngữ Văn</div>
+                    <div class="baigiang_subject">
+                        <div class="baigiang_subject_title"><i class="fas fa-chalkboard-teacher mr-1"></i>Môn học:</div>
+                        <div class="baigiang_subject_value">Ngữ Văn</div>
                     </div>
 
-                    <div class="baigiang__teacher">
-                        <div class="baigiang__title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
-                        <div class="baigiang__value">Bùi Lương Vinh Hiển</div>
+                    <div class="baigiang_teacher">
+                        <div class="baigiang_teacher_title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
+                        <div class="baigiang_teacher_value">Bùi Lương Vinh Hiển</div>
                     </div>
 
-                    <div class="baigiang__startDate">
-                        <div class="baigiang__title"><i class="fas fa-calendar-alt mr-2"></i>Thời điểm đưa lên hệ thống:</div>
-                        <div class="baigiang__value">24/11/2021</div>
+                    <div class="baigiang_startDate">
+                        <div class="baigiang_startDate_title"><i class="fas fa-calendar-alt mr-2"></i>Thời điểm đưa lên hệ thống:</div>
+                        <div class="baigiang_startDate_value">24/11/2021</div>
                     </div>
                 </div>
             </div>
@@ -120,41 +120,41 @@
                 <div class="col-12">
 
                     <form action="#" class="add-baigiang__input" method="POST" name="add-baigiang-form">
-                        <input type="text" id="add-baigiang_baigiangID" name="KH_Id" hidden>
+                        <input type="text" id="add-baigiang_id" name="id_baigiang" hidden>
 
                         <label for="">Tên bài giảng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="ten_bai_giang">
+                        <input type="text" id="add-baigiang_ten" name="ten_bai_giang">
 
                         <label for="">Khóa học</label>
-                        <select id="add-baigiang_baigiangGrade" name="khoa_hoc">
+                        <select id="add-baigiang_khoahoc" name="baigiang_khoa_hoc">
                             <option value=" "></option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Giáo viên</label>
-                        <select id="add-baigiang_baigiangGradeType" name="giao_vien">
+                        <select id="add-baigiang_giaovien" name="baigiang_giao_vien">
                             <option value=" "></option>
                             <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
+                            <option>Nguyễn Văn B</option>
+                            <option>Nguyễn Văn C</option>
+                            <option>Nguyễn Văn D</option>
+                            <option>Nguyễn Văn E</option>
+                            <option>Nguyễn Văn F</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Thời lượng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="thoi_luong">
+                        <input type="text" id="add-baigiang_thoiluong" name="baigiang_thoi_luong">
+
+                        <label for="">Đường dẫn video</label>
+                        <input type="text" id="add-baigiang_videolink" name="baigiang_videolink">
 
 
                         <label for="">Thời điểm upload</label>
-                        <input type="date" id="add-baigiang_startDate" name="upload-time">
+                        <input type="date" id="add-baigiang_uploadtime" name="baigiang_upload-time">
                     </form>
                 </div>
 
@@ -181,25 +181,22 @@
 
                         {{!-- <label for="">ID món ăn</label> --}}
 
-                        <input type="text" id="add-baigiang_baigiangID" name="KH_Id_update" hidden>
+                        <input type="text" id="update-baigiang_id" name="id_baigiang_update" hidden>
 
                         <label for="">Tên bài giảng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="ten_bai_giang_update">
+                        <input type="text" id="update-baigiang_ten" name="ten_bai_giang_update">
 
                         <label for="">Khóa học</label>
-                        <select id="add-baigiang_baigiangGrade" name="khoa_hoc_update">
+                        <select id="update-baigiang_khoahoc" name="baigiang_khoa_hoc_update">
                             <option value=" "></option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Giáo viên</label>
-                        <select id="add-baigiang_baigiangGradeType" name="giao_vien_update">
+                        <select id="update-baigiang_giaovien" name="baigiang_giao_vien_update">
                             <option value=" "></option>
                             <option>Nguyễn Văn A</option>
                             <option>Nguyễn Văn A</option>
@@ -208,22 +205,26 @@
                             <option>Nguyễn Văn A</option>
                             <option>Nguyễn Văn A</option>
                             <option>Nguyễn Văn A</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Thời lượng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="thoi_luong_update">
+                        <input type="text" id="update-baigiang_thoiluong" name="baigiang_thoi_luong_update">
+
+                        <label for="">Đường dẫn video</label>
+                        <input type="text" id="update-baigiang_videolink" name="baigiang_videolink_update">
 
 
                         <label for="">Thời điểm upload</label>
-                        <input type="date" id="add-baigiang_startDate" name="upload-time_update">
+                        <input type="date" id="update-baigiang_uploadtime" name="baigiang_upload-time_update">
                     </form>
                 </div>
 
             </div>
 
-            <div class="row">
-                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-                <button class="btn btn-primary" type="submit" id="delete_btn">Xóa bài giảng</button>
+            <div class="row baigiang-button-list">
+                <button class="btn btn-primary" type="submit" id="update_baigiang_btn">Cập nhật</button>
+                <button class="btn btn-primary" type="submit" id="delete_baigiang_btn">Xóa bài giảng</button>
             </div>
 
         </div>

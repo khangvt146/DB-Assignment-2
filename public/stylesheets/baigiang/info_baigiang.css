@@ -16,7 +16,7 @@
 .info__box {
     margin: auto;
     background-color: var(--white-color);
-    width: 800px;
+    width: 650px;
     border-radius: 20px;
     display: block;
     max-width: 90%;
@@ -49,6 +49,10 @@
     font-size: 20px;
     opacity: 0.7;
     cursor: pointer;
+}
+
+.close__info-icon:hover {
+    color: #b50a07;
 }
 
 
@@ -85,55 +89,27 @@
 
 .info-baigiang-container .baigiang__name {
     color: var(--primary-color);
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 650;
+    text-align: center;
+    line-height: 5px;
 }
 
 .info-baigiang-container .info__description_baigiang {
     line-height: 25px;
 }
 
-.info-baigiang-container .baigiang__subject {
+.info-baigiang-container .baigiang_teacher {
     display: flex;
     justify-content: space-between;
 }
 
-.info-baigiang-container .baigiang__grade {
+.info-baigiang-container .baigiang_startDate {
     display: flex;
     justify-content: space-between;
 }
 
-.info-baigiang-container .baigiang__type {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-baigiang-container .baigiang__tuition {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-baigiang-container .baigiang__startDate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-baigiang-container .baigiang__endDate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-baigiang-container .baigiang__submitDate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-baigiang-container .baigiang__numberStudent {
-    display: flex;
-    justify-content: space-between;
-}
-
-.info-baigiang-container .baigiang__teacher {
+.info-baigiang-container .baigiang_subject {
     display: flex;
     justify-content: space-between;
 }
@@ -149,3 +125,12 @@
     padding-top: 10px;
     text-align: justify;
 }
+
+.youtube-video {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+}
+
+

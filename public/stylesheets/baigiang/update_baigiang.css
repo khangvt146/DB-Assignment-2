@@ -22,7 +22,7 @@
 .update-baigiang__box {
     margin: auto;
     background-color: var(--white-color);
-    width: 800px;
+    width: 620px;
     border-radius: 20px;
     display: block;
     max-width: 90%;
@@ -56,6 +56,10 @@
     font-size: 20px;
     opacity: 0.7;
     cursor: pointer;
+}
+
+.close__update-baigiang-icon:hover {
+    color: #b50a07;
 }
 
 .update-baigiang__input {
@@ -115,11 +119,12 @@
     border-radius: 10px;
 }
 
-.update-baigiang-container #update_btn {
-    margin-left: 270px;
+.baigiang-button-list {
+    display: flex;
+    justify-content: center;
 }
 
-.update-baigiang-container #delete_btn {
+.update-baigiang-container #delete_baigiang_btn {
     background-color: #b50a07;
     border-style: none;
 }

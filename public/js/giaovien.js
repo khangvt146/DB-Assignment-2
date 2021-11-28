@@ -1,5 +1,4 @@
-/* Teacher info js */
-console.log('helll');
+    /* Teacher info js */
 function teacherShowDetail() {
     var teacherInfo = document.querySelectorAll(".giaovien_container #i_btn");
     teacherInfo.forEach((teacher) => {
