@@ -16,7 +16,7 @@
 .info__box {
     margin: auto;
     background-color: var(--white-color);
-    width: 800px;
+    width: 620px;
     border-radius: 20px;
     display: block;
     max-width: 90%;
@@ -148,4 +148,11 @@
     line-height: 25px;
     padding-top: 10px;
     text-align: justify;
+}
+
+.youtbube-video {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
 }
