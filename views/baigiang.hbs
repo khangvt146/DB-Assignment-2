@@ -31,6 +31,7 @@
                         <option>Giáo viên 1</option>
                         <option>Giáo viên 2</option>
                         <option>Giáo viên 3</option>
+                        <option>.... (lấy từ db)</option>
                     </select>
                 </div>
             </div>
@@ -42,6 +43,7 @@
                         <option value=" "></option>
                         <option>Khóa học 1</option>
                         <option>Khóa học 2</option>
+                        <option>.... (lấy từ db)</option>
                     </select>
                 </div>
             </div>
@@ -93,9 +95,9 @@
                         <div class="baigiang_subject_value">Ngữ Văn</div>
                     </div>
 
-                    <div class="baigiang__teacher">
-                        <div class="baigiang__teacher_title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
-                        <div class="baigiang__teacher_value">Bùi Lương Vinh Hiển</div>
+                    <div class="baigiang_teacher">
+                        <div class="baigiang_teacher_title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
+                        <div class="baigiang_teacher_value">Bùi Lương Vinh Hiển</div>
                     </div>
 
                     <div class="baigiang_startDate">
@@ -118,41 +120,38 @@
                 <div class="col-12">
 
                     <form action="#" class="add-baigiang__input" method="POST" name="add-baigiang-form">
-                        <input type="text" id="add-baigiang_baigiangID" name="KH_Id" hidden>
+                        <input type="text" id="add-baigiang_id" name="id_baigiang" hidden>
 
                         <label for="">Tên bài giảng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="ten_bai_giang">
+                        <input type="text" id="add-baigiang_ten" name="ten_bai_giang">
 
                         <label for="">Khóa học</label>
-                        <select id="add-baigiang_baigiangGrade" name="khoa_hoc">
+                        <select id="add-baigiang_khoahoc" name="baigiang_khoa_hoc">
                             <option value=" "></option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Giáo viên</label>
-                        <select id="add-baigiang_baigiangGradeType" name="giao_vien">
+                        <select id="add-baigiang_giaovien" name="baigiang_giao_vien">
                             <option value=" "></option>
                             <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
+                            <option>Nguyễn Văn B</option>
+                            <option>Nguyễn Văn C</option>
+                            <option>Nguyễn Văn D</option>
+                            <option>Nguyễn Văn E</option>
+                            <option>Nguyễn Văn F</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Thời lượng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="thoi_luong">
+                        <input type="text" id="add-baigiang_thoiluong" name="baigiang_thoi_luong">
 
 
                         <label for="">Thời điểm upload</label>
-                        <input type="date" id="add-baigiang_startDate" name="upload-time">
+                        <input type="date" id="add-baigiang_uploadtime" name="baigiang_upload-time">
                     </form>
                 </div>
 
@@ -179,25 +178,22 @@
 
                         {{!-- <label for="">ID món ăn</label> --}}
 
-                        <input type="text" id="add-baigiang_baigiangID" name="KH_Id_update" hidden>
+                        <input type="text" id="update-baigiang_id" name="id_baigiang_update" hidden>
 
                         <label for="">Tên bài giảng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="ten_bai_giang_update">
+                        <input type="text" id="update-baigiang_ten" name="ten_bai_giang_update">
 
                         <label for="">Khóa học</label>
-                        <select id="add-baigiang_baigiangGrade" name="khoa_hoc_update">
+                        <select id="update-baigiang_khoahoc" name="baigiang_khoa_hoc_update">
                             <option value=" "></option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
                             <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Giáo viên</label>
-                        <select id="add-baigiang_baigiangGradeType" name="giao_vien_update">
+                        <select id="update-baigiang_giaovien" name="baigiang_giao_vien_update">
                             <option value=" "></option>
                             <option>Nguyễn Văn A</option>
                             <option>Nguyễn Văn A</option>
@@ -206,22 +202,23 @@
                             <option>Nguyễn Văn A</option>
                             <option>Nguyễn Văn A</option>
                             <option>Nguyễn Văn A</option>
+                            <option>.... (lấy từ db)</option>
                         </select>
 
                         <label for="">Thời lượng</label>
-                        <input type="text" id="add-baigiang_baigiangName" name="thoi_luong_update">
+                        <input type="text" id="update-baigiang_thoiluong" name="baigiang_thoi_luong_update">
 
 
                         <label for="">Thời điểm upload</label>
-                        <input type="date" id="add-baigiang_startDate" name="upload-time_update">
+                        <input type="date" id="update-baigiang_uploadtime" name="baigiang_upload-time_update">
                     </form>
                 </div>
 
             </div>
 
             <div class="row">
-                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-                <button class="btn btn-primary" type="submit" id="delete_btn">Xóa bài giảng</button>
+                <button class="btn btn-primary" type="submit" id="update_baigiang_btn">Cập nhật</button>
+                <button class="btn btn-primary" type="submit" id="delete_baigiang_btn">Xóa bài giảng</button>
             </div>
 
         </div>

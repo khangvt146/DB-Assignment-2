@@ -115,11 +115,11 @@
     border-radius: 10px;
 }
 
-.update-baigiang-container #update_btn {
+.update-baigiang-container #update_baigiang_btn {
     margin-left: 270px;
 }
 
-.update-baigiang-container #delete_btn {
+.update-baigiang-container #delete_baigiang_btn {
     background-color: #b50a07;
     border-style: none;
 }
