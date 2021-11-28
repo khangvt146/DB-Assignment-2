@@ -1,16 +1,33 @@
 /* Teacher info js */
+console.log('helll');
 function teacherShowDetail() {
     var teacherInfo = document.querySelectorAll(".giaovien_container #i_btn");
     teacherInfo.forEach((teacher) => {
         teacher.onclick = function(e) {
             var tem = document.querySelector(".info-giaovien-container");
             tem.classList.add("info-giaovien--active");
-            var info = teacher.innerText.split("\n");
-            console.log(info[0]);
-            // SetDetail(info[0]);
+            var id = $(this).data("id");
+            setDetail(id)
         };
         return teacher;
     });
+}
+
+function setDetail(id) {
+    var teacherList = document.querySelectorAll(".teacher-content");
+    teacherList = Array.from(teacherList);
+    let teacherSelected = teacherList.find((teacher) => {
+        return $(teacher).find("#i_btn").data('id') === id;
+    });
+    console.log(teacherSelected);
+    $('#detail-teacher-name').text($(teacherSelected).find("#teacher-name").text());
+    $('#detail-teacher-school').text($(teacherSelected).find("#teacher-school").text());
+    $('#detail-teacher-subject').text($(teacherSelected).find("#teacher-subject").text());
+    $('#detail-teacher-degree').text($(teacherSelected).find("#teacher-degree").text());
+    $('#detail-teacher-email').text($(teacherSelected).find("#teacher-email").text());
+    $('#detail-teacher-follow').text($(teacherSelected).find("#teacher-follow").text());
+    $('#detail-teacher-description').text($(teacherSelected).find("#teacher-des").text());
+    document.getElementById("detail-teacher-image").src = ($(teacherSelected).find("#teacher-image").attr('src'));
 }
 
 var outTeacherInfo = document.querySelector(".close__info-giaovien-icon");
@@ -49,13 +66,24 @@ function updateTeacher() {
         return teacher;
     });
 }
+const filter_gra = document.querySelector("#filter_grade-t");
+const filter_sub = document.querySelector("#filter_subject-t");
+const filterF = document.forms['filter-form'];
 
-var outUpdateTeacher = document.querySelector(".close__update-giaovien-icon");
-outUpdateTeacher.onclick = function(e) {
-    var tem = document.querySelector(".update-giaovien-container");
-    tem.classList.remove("update-giaovien--active");
+filter_gra.onchange = function (e) {
+    document.getElementById('filter_grade_form').value = filter_gra.value;
+    document.getElementById('filter_subject_form').value = filter_sub.value;
+    filterF.submit();
 };
 
+filter_sub.onchange = function (e) {
+    document.getElementById('filter_grade_form').value = filter_gra.value;
+    document.getElementById('filter_subject_form').value = filter_sub.value;
+    filterF.submit();
+};
+
+filter_gra.value = document.getElementById('filter_grade_form').value;
+filter_sub.value = document.getElementById('filter_subject_form').value;
 
 /* Call function */
 teacherShowDetail();

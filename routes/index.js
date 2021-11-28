@@ -12,6 +12,7 @@ router.get('/', courseController.getAllCourse);
 router.post('/course-filter', courseController.filterCourse);
 
 router.get('/giaovien', teacherController.getAllteacher);
+router.post('/teacher-filter', teacherController.filterTeacher);
 
 router.get('/hocvien', function(req, res, next) {
     res.render('hocvien', {
