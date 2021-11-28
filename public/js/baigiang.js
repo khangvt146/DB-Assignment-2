@@ -19,7 +19,7 @@ outBaigiangInfo.onclick = function(e) {
 
 /* Add baigiang js */
 function SetAddbaigiang() {
-    var baigiangAdd = document.querySelectorAll(".dropdown_baigiang .add_button");
+    var baigiangAdd = document.querySelectorAll(".dropdown_baigiang .add_baigiang_button");
     baigiangAdd.forEach((baigiang) => {
         baigiang.onclick = function(e) {
             var tem = document.querySelector(".add-baigiang-container");

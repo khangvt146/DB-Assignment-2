@@ -16,7 +16,7 @@
 .info__box {
     margin: auto;
     background-color: var(--white-color);
-    width: 1000px;
+    width: 650px;
     border-radius: 20px;
     display: block;
     max-width: 90%;
@@ -49,6 +49,10 @@
     font-size: 20px;
     opacity: 0.7;
     cursor: pointer;
+}
+
+.close__info-icon:hover {
+    color: #b50a07;
 }
 
 
@@ -85,8 +89,10 @@
 
 .info-baigiang-container .baigiang__name {
     color: var(--primary-color);
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 650;
+    text-align: center;
+    line-height: 5px;
 }
 
 .info-baigiang-container .info__description_baigiang {
@@ -126,3 +132,5 @@
     align-items: center; 
     text-align: center;
 }
+
+

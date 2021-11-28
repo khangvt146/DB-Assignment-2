@@ -19,7 +19,7 @@
     margin-right: 15px;
 }
 
-.search-button {
+.search-baigiang-button {
     background-color: var(--primary-color);
     padding: 5px 30px;
     border-radius: 10px;
@@ -28,12 +28,12 @@
     font-weight: 600;
 }
 
-.search-button:hover {
+.search-baigiang-button:hover {
     cursor: pointer;
     opacity: 0.7;
 }
 
-.search-button:focus {
+.search-baigiang-button:focus {
     outline: none;
 }
 
@@ -57,11 +57,16 @@
     font-weight: 600;
 }
 
-.dropdown_baigiang .add_button {
+.dropdown_baigiang .add_baigiang_button {
     margin-top: 70px;
     margin-left: 30px;
     display: flex;
     justify-content: right;
+}
+
+.dropdown_baigiang .add_baigiang_button:hover {
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 .dropdown_baigiang .button {
@@ -76,7 +81,7 @@
 }
 
 .baigiang_container {
-    margin: 5%;
+    margin: 3%;
     margin-top: 10px;
 }
 
@@ -137,6 +142,7 @@
 
 .baigiang_container .button:hover {
     cursor: pointer;
+    opacity: 0.7;
 }
 
 .baigiang_container #u_btn {
@@ -147,4 +153,18 @@
 .baigiang_item {
     padding: 10px;
     border-bottom: dashed 1px;
+}
+
+.baigiang_item .lesson-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.baigiang_container h4 {
+    font-weight: bold;
+}
+
+.close__add-baigiang-icon:hover {
+    color: #db5c35;
 }

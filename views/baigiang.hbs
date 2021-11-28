@@ -3,7 +3,7 @@
     <div class="search-class">
         <form class="search-class" action="#" method="post">
             <input type="text" name="search" class="search-input" placeholder="Tìm bài giảng theo giáo viên">
-            <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+            <button class="search-baigiang-button" type="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
 
@@ -49,7 +49,7 @@
             </div>
 
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="add_button">
+                <div class="add_baigiang_button">
                     <button class="button"><i class="fas fa-plus mr-2"></i>THÊM </button>
                 </div>
             </div>
@@ -62,14 +62,14 @@
     <div class="baigiang_container">
         {{#each LessonArray}}
         <div class="baigiang_item">
-            <h4></i>{{this.ten_bai_giang}}</h4>
+            <h4>{{this.ten_bai_giang}}</h4>
             <div class="lesson-info">
-                <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: {{this.ma_kh}}</span>
-                <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: {{this.ma_gv}}</span>
-                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: {{this.thoi_luong}} phút</span>
-                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: {{this.upload_time}}</span>
-                <button class="button" id="u_btn">Sửa </button>
-                <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+                <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: <b>{{this.ma_kh}}</b></span>
+                <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: <b>{{this.ma_gv}}</b></span>
+                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: <b>{{this.thoi_luong}}</b> phút</span>
+                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: <b>{{this.upload_time}}</b></span>
+                <button class="button mr-2" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết</button>
+                <button class="button mr-2" id="u_btn"><i class="fas fa-pen mr-2"></i>Sửa</button>
             </div>
         </div>
         {{/each}}
@@ -149,6 +149,9 @@
                         <label for="">Thời lượng</label>
                         <input type="text" id="add-baigiang_thoiluong" name="baigiang_thoi_luong">
 
+                        <label for="">Đường dẫn video</label>
+                        <input type="text" id="add-baigiang_videolink" name="baigiang_videolink">
+
 
                         <label for="">Thời điểm upload</label>
                         <input type="date" id="add-baigiang_uploadtime" name="baigiang_upload-time">
@@ -208,6 +211,9 @@
                         <label for="">Thời lượng</label>
                         <input type="text" id="update-baigiang_thoiluong" name="baigiang_thoi_luong_update">
 
+                        <label for="">Đường dẫn video</label>
+                        <input type="text" id="update-baigiang_videolink" name="baigiang_videolink_update">
+
 
                         <label for="">Thời điểm upload</label>
                         <input type="date" id="update-baigiang_uploadtime" name="baigiang_upload-time_update">
@@ -216,7 +222,7 @@
 
             </div>
 
-            <div class="row">
+            <div class="row baigiang-button-list">
                 <button class="btn btn-primary" type="submit" id="update_baigiang_btn">Cập nhật</button>
                 <button class="btn btn-primary" type="submit" id="delete_baigiang_btn">Xóa bài giảng</button>
             </div>

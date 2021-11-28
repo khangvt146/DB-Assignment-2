@@ -58,6 +58,10 @@
     cursor: pointer;
 }
 
+.close__update-baigiang-icon:hover {
+    color: #b50a07;
+}
+
 .update-baigiang__input {
     display: flex;
     flex-direction: column;
@@ -115,8 +119,9 @@
     border-radius: 10px;
 }
 
-.update-baigiang-container #update_baigiang_btn {
-    margin-left: 270px;
+.baigiang-button-list {
+    display: flex;
+    justify-content: center;
 }
 
 .update-baigiang-container #delete_baigiang_btn {
