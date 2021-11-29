@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 const moment = require("moment");
 
 
+
 var app = express();
 
 // view engine setup
@@ -36,6 +37,14 @@ hbs.registerHelper("formatDate", function (datetime) {
     }
     else {
         return datetime;
+    }
+});
+
+hbs.registerHelper('formatGender', function (gender) {
+    if (gender==1){
+        return 'Nam';
+    }else{
+        return 'Nữ';
     }
 });
 

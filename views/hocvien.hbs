@@ -72,6 +72,7 @@
               <th>Họ</th>
               <th>Tên lót</th>
               <th>Tên</th>
+              <th>Giới tính</th>
               <th>Trường theo học</th>
               <th>Số khóa tham gia</th>
               <th>Xem chi tiết</th>
@@ -85,6 +86,7 @@
                 <td id = 'student-ho'>{{this.ho}}</td>
                 <td id = 'student-ten_lot'>{{this.ten_lot}}</td>
                 <td id = 'student-ten'>{{this.ten}}</td>
+                <td>{{formatGender this.gioi_tinh}}</td>
                 <td id = 'student-truong_hoc'>{{this.truong_hoc}}</td>
                 <td id = 'student-KHTG'>{{this.so_KHTG}}</td>
                 <td>
@@ -120,7 +122,7 @@
                         <td id = 'student-xa'>{{this.xa_phuong}}</td>
                         <td id = 'student-huyen'>{{this.quan_huyen}}</td>
                         <td id = 'student-tinh'>{{this.tinh_tp}}</td>
-                        <td id = 'student-ngaysinh'>{{this.ngay_sinh}}</td>
+                        <td id = 'student-ngaysinh'>{{formatDate this.ngay_sinh}}</td>
                       </tr>
                     </tbody>
                   </table>

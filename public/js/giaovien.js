@@ -90,6 +90,11 @@ filter_sub.onchange = function (e) {
 filter_gra.value = document.getElementById('filter_grade_form').value;
 filter_sub.value = document.getElementById('filter_subject_form').value;
 
+
+function convertGender(){
+    var gender = document.querySelector("")
+}
+
 /* Call function */
 teacherShowDetail();
 addTeacher();
