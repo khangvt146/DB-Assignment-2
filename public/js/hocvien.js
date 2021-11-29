@@ -18,7 +18,7 @@ outAddHocvien.onclick = function(e) {
 
 /* Info hocvien js */
 function infoHocvien() {
-    var infoHV = document.querySelectorAll(".hocvien_container .i_btn");
+    var infoHV = document.querySelectorAll(".hocvien_container #i_btn");
     infoHV.forEach((hocvien) => {
         hocvien.onclick = function(e) {
             var tem = document.querySelector(".info-hocvien-container");
@@ -80,7 +80,7 @@ function formatDateStu(date) {
     date = date.replace(/\s+/g, '');
     var tmpArray = date.split('-');
     return [tmpArray[2], tmpArray[1], tmpArray[0]].join('-');
-   
+
 }
 
 function setHocVienUpdate(id) {
@@ -94,9 +94,9 @@ function setHocVienUpdate(id) {
     document.getElementById('update-user-ten_lot').value = ($(studentSelected).find("#student-ten_lot").text());
     document.getElementById('update-user-ten').value = ($(studentSelected).find("#student-ten_semi").text());
     document.getElementById('update-user-ngay_sinh').value = formatDateStu($(studentSelected).find("#student-ngay_sinh").text());
-    if (Number($(studentSelected).find("#student-gioi_tinh").text())==0){
+    if (Number($(studentSelected).find("#student-gioi_tinh").text()) == 0) {
         document.getElementById('update-hocvien_hocvienType').value = 'Nam';
-    }else{
+    } else {
         document.getElementById('update-hocvien_hocvienType').value = 'Nữ'
     }
     document.getElementById('update-user-email').value = ($(studentSelected).find("#student-email").text());
@@ -156,11 +156,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var btnDeleteFood = document.getElementById('delete_btn');
     studentForm = document.forms['update-hocvien-form'];
     console.log(studentForm);
-    btnDeleteFood.onclick = function () {
-    studentForm.action = '/student-delete';
-    studentForm.submit();
-  }
-  });
+    btnDeleteFood.onclick = function() {
+        studentForm.action = '/student-delete';
+        studentForm.submit();
+    }
+});
 
 
 /* Call function */
