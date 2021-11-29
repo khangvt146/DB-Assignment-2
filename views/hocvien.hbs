@@ -39,10 +39,10 @@
             <div class="filter-title">Số khóa tham gia</div>
           </label> <select class="form-control" id="filter_hocvien_num">
             <option value=" "></option>
-            <option >0 - 2</option>
-            <option >3 - 5</option>
-            <option >5 - 8</option>
-            <option >Nhiều hơn 8</option>
+            <option>0 - 2</option>
+            <option>3 - 5</option>
+            <option>5 - 8</option>
+            <option>Nhiều hơn 8</option>
           </select>
         </div>
       </div>
@@ -87,32 +87,32 @@
             <th>Chỉnh sửa</th>
           </tr>
         </thead>
-        
+
         <tbody>
           {{#each UserArray}}
-                <tr class="sub-container student-content" style="text-align:center">
-                    <td id = 'student-id'>{{this.id}}</td>
-                    <td id = 'student-ten'>{{this.ho_va_ten}}</td>
-                    <td id = 'student-ngay_sinh'>{{formatDate this.ngay_sinh}}</td>
-                    <td id = 'student-gioi_tinh'>{{formatGender this.gioi_tinh}}</td>
-                    <td id = 'student-sdt'>{{this.sdt}}</td>
-                    <td id = 'student-KHTG'>{{this.so_KHTG}}</td>
-                    <td>
-                    <button type="button" class="btn btn-success exploder i_btn" id="i_btn" data-id="{{this.id}}">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                    </td>
-                    <td>
-                    <button type="button" class="btn" id="u_btn" data-id="{{this.id}}"></button>
-                    </td>
-                    <td style="display:none;" id = "student-email">{{this.email}}</td>
-                    <td style="display:none;" id="student-truong">{{this.truong_hoc}}</td>
-                    <td style="display:none;" id="student-huyen">{{this.quan_huyen}}</td>
-                    <td style="display:none;" id="student-xa">{{this.xa_phuong}}</td>
-                    <td style="display:none;" id="student-tinh">{{this.tinh_tp}}</td>
-                    <td style="display:none;" id="student-diem">{{this.tong_diem}}</td>
+          <tr class="sub-container student-content" style="text-align:center">
+            <td id='student-id'>{{this.id}}</td>
+            <td id='student-ten'>{{this.ho_va_ten}}</td>
+            <td id='student-ngay_sinh'>{{formatDate this.ngay_sinh}}</td>
+            <td id='student-gioi_tinh'>{{formatGender this.gioi_tinh}}</td>
+            <td id='student-sdt'>{{this.sdt}}</td>
+            <td id='student-KHTG'>{{this.so_KHTG}}</td>
+            <td>
+              <button type="button" class="btn btn-success exploder i_btn" id="i_btn" data-id="{{this.id}}">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn" id="u_btn" data-id="{{this.id}}"></button>
+            </td>
+            <td style="display:none;" id="student-email">{{this.email}}</td>
+            <td style="display:none;" id="student-truong">{{this.truong_hoc}}</td>
+            <td style="display:none;" id="student-huyen">{{this.quan_huyen}}</td>
+            <td style="display:none;" id="student-xa">{{this.xa_phuong}}</td>
+            <td style="display:none;" id="student-tinh">{{this.tinh_tp}}</td>
+            <td style="display:none;" id="student-diem">{{this.tong_diem}}</td>
 
-                </tr>
+          </tr>
 
           {{/each}}
         </tbody>
@@ -121,8 +121,7 @@
     </div>
   </div>
 
-  {{!-------------------------------------------------INFO HOC
-  VIEN-------------------------------------------------------}}
+  {{!-------------------------------------------------INFO HOC VIEN------------------------------------------}}
   <div class="info-hocvien-container" id="detail-hocvien-modal">
     <div class="info__box">
       <div class="info__header">
@@ -202,97 +201,11 @@
             <div class="hocvien__value" id="detail-student-grade">9.5</div>
 
           </div>
-
-
-    {{!---------------------------------MAIN -------------------------------------}}
-    {{!-- <div class="hocvien_container">
-      <div
-        class="container first-container col-sm-12 pull-left"
-        style="padding: 15px"
-      >
-        <table class="table table-condensed">
-          <thead style="text-align:center">
-            <tr>
-              <th>ID</th>
-              <th>Họ</th>
-              <th>Tên lót</th>
-              <th>Tên</th>
-              <th>Giới tính</th>
-              <th>Trường theo học</th>
-              <th>Số khóa tham gia</th>
-              <th>Xem chi tiết</th>
-              <th>Chỉnh sửa</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each UserArray}}
-              <tr class="sub-container" style="text-align:center">
-                <td id = 'student-id'>{{this.id}}</td>
-                <td id = 'student-ho'>{{this.ho}}</td>
-                <td id = 'student-ten_lot'>{{this.ten_lot}}</td>
-                <td id = 'student-ten'>{{this.ten}}</td>
-                <td>{{formatGender this.gioi_tinh}}</td>
-                <td id = 'student-truong_hoc'>{{this.truong_hoc}}</td>
-                <td id = 'student-KHTG'>{{this.so_KHTG}}</td>
-                <td>
-                  <button type="button" class="btn btn-success exploder">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </button>
-                </td>
-                <td>
-                    <button type="button" class="btn" id="u_btn"></button>
-                </td>
-                
-              </tr>
-
-              <tr class="explode hide">
-                <td colspan="8" style="background: #CCC; display: none;">
-                  <table class="table table-condensed">
-                    <thead style="text-align:center">
-                      <tr>
-                        <th >Email</th>
-                        <th >Tên đăng nhập</th>
-                        <th >Mật khẩu</th>
-                        <th >Xã/phường</th>
-                        <th >Quận/huyện</th>
-                        <th >Tỉnh/thành phố</th>
-                        <th >Ngày sinh</th>
-                      </tr>
-                    </thead>
-                    <tbody style="text-align:center">
-                      <tr>
-                        <td id = 'student-email'>{{this.email}}</td>
-                        <td id = 'student-username'>{{this.ten_dang_nhap}}</td>
-                        <td id = 'student-pass'>{{this.mat_khau}}</td>
-                        <td id = 'student-xa'>{{this.xa_phuong}}</td>
-                        <td id = 'student-huyen'>{{this.quan_huyen}}</td>
-                        <td id = 'student-tinh'>{{this.tinh_tp}}</td>
-                        <td id = 'student-ngaysinh'>{{formatDate this.ngay_sinh}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-
-        <script>
-          $(".exploder").click(function(){ $(this).toggleClass("btn-success btn-danger"); 
-            $(this).children("span").toggleClass("glyphicon-search glyphicon-zoom-out"); 
-            $(this).closest("tr").next("tr").toggleClass("hide");
-            
-            if ($(this).closest("tr").next("tr").hasClass("hide")) 
-            {
-              $(this).closest("tr").next("tr").children("td").slideUp(); 
-            } else {
-              $(this).closest("tr").next("tr").children("td").slideDown(350); 
-            }
-            });
-        </script>
         </div>
-      </div> --}}
 
+
+
+      </div>
     </div>
   </div>
 
@@ -462,4 +375,3 @@
 
     </div>
   </div>
-</div>

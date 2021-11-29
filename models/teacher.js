@@ -3,10 +3,9 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "dbs_211",
-    port: 3310
+    database: "database assignment 2",
+    //port: 3310
 });
-
 exports.getAllTeacher = async function() {
     return await connection.awaitQuery(`SELECT CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, email, so_luong_theo_doi, noi_cong_tac, mo_ta, ten_mon, bang_cap, hinh_anh, semi_info.id
     FROM
