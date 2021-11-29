@@ -94,7 +94,7 @@ exports.deleteOneTeacher = async function(values) {
         `DELETE FROM giao_vien WHERE id = ?`,[values]
     );
     await connection.awaitQuery(
-        `DELETE FROM nguoi_dung WHERE id = ?;`, [values, values]
+        `DELETE FROM nguoi_dung WHERE id = ?;`, [values]
     );
 };
 

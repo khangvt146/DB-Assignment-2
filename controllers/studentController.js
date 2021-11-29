@@ -1,4 +1,12 @@
 const studentModel = require("../models/student")
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+var ID = 0;
+
+
 class studentController {
 
     async getAllstudent(req, res) {
@@ -64,7 +72,59 @@ class studentController {
 
         
 
+    };
+
+
+    async updateStudent(req, res, next) {
+        console.log(req.body);
+        var  truonghoc= req.body.truong_hoc;
+        var id_nd = req.body.id;
+        delete req.body.truong_hoc;
+        if(req.body.gioi_tinh == "Nam"){
+            req.body.gioi_tinh = 1;
+        }{
+            req.body.gioi_tinh = 0;
+        }
+        req.body.id = Number(req.body.id);
+        await studentModel.updateOneStudent(req.body);
+        await studentModel.updateStudent(Number(id_nd), {truong_hoc: truonghoc})
+        res.redirect('/');
+
+    };
+
+    async deleteStudent(req, res) {
+        await studentModel.deleteOneStudent(Number(req.body.id));
+        res.redirect('/');
     }
+
+
+    async addStudent(req, res) {
+        console.log('hello');
+        console.log(req.body);
+        ID = getRndInteger(1, 1000);
+            while (true) {
+                var check = false;
+                await studentModel.checkID(ID).then(function(result) {
+                    if (result.length > 0) {
+                        ID = getRndInteger(1, 1000);
+                    } else {
+                        check = true;
+                    }
+                });
+                if (check) {
+                    break;
+                }
+            }
+        req.body.id = ID;
+        console.log(ID);
+        var  truonghoc = req.body.truong_hoc;
+        delete req.body.truong_hoc;
+        req.body.gioi_tinh = Number(req.body.gioi_tinh);
+        await studentModel.addOneStudent(req.body);
+        await studentModel.addStudent({ma_hv:ID, truong_hoc: truonghoc});
+        res.redirect('/');
+    }
+
 
 
 };
