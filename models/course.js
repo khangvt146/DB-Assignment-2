@@ -4,7 +4,7 @@ let connection = mysql.createConnection({
     user: "root",
     password: "",
     database: "dbs_211",
-    //port: 3310
+    port: 3310
 });
 
 exports.getAllCourse = async function() {
@@ -28,6 +28,7 @@ exports.deleteOneCourse = async function(id) {
 };
 
 exports.updateOneCourse = async function(values) {
+    console.log(values);
     return await connection.awaitQuery(
         'UPDATE khoa_hoc SET ? WHERE ma_kh = ?', [values, values.ma_kh]
     );

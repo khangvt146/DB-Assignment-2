@@ -28,7 +28,37 @@ class teacherController {
             filters: filters,
             filterFlag: true
         });
+    };
 
+    async updateTeacher(req, res, next) {
+        console.log(req.body);
+        var  noicongtac= req.body.noi_cong_tac;
+        var  mota = req.body.mo_ta;
+        var id_nd = req.body.id;
+        delete req.body.noi_cong_tac;
+        delete req.body.mo_ta
+        if(req.body.gioi_tinh == "Nam"){
+            req.body.gioi_tinh = 1;
+        }{
+            req.body.gioi_tinh = 0;
+        }
+        req.body.id = Number(req.body.id);
+        console.log(req.body);
+        await teacherModel.updateOneTeacher(req.body);
+        await teacherModel.updateTeacher(Number(id_nd), {noi_cong_tac:noicongtac, mo_ta:mota})
+        res.redirect('/');
+
+    };
+
+    async deleteTeacher(req, res) {
+        await teacherModel.deleteOneTeacher(Number(req.body.id));
+        res.redirect('/');
+    }
+    async addTeacher(req, res) {
+        console.log('hello');
+        console.log(req.body);
+        // await teacherModel.deleteOneTeacher(Number(req.body.id));
+        // res.redirect('/');
     }
 
 

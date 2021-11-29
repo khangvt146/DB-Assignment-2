@@ -111,7 +111,11 @@
             <td style="display:none;" id="student-xa">{{this.xa_phuong}}</td>
             <td style="display:none;" id="student-tinh">{{this.tinh_tp}}</td>
             <td style="display:none;" id="student-diem">{{this.tong_diem}}</td>
-
+            <td style="display:none;" id="student-ho">{{this.ho}}</td>
+            <td style="display:none;" id="student-ten_semi">{{this.ten}}</td>
+            <td style="display:none;" id="student-ten_lot">{{this.ten_lot}}</td>
+            <td style="display:none;" id="student-ten_dn">{{this.ten_dang_nhap}}</td>
+            <td style="display:none;" id="student-mk">{{this.mat_khau}}</td>
           </tr>
 
           {{/each}}
@@ -219,69 +223,62 @@
         <i class="fas fa-times close__add-hocvien-icon"></i>
       </div>
       <div class="row" id="add-hocvien__body">
-        <div class="col-lg-6 col-12">
+        
 
-          <form action="#" class="add-hocvien__input" method="POST" name="food-form">
+          <form action="student-add" class="add-hocvien__input" method="POST" name="food-form">
 
             {{!-- <label for="">ID món ăn</label> --}}
+            <div class="col-lg-6 col-12">
+              <input type="text" id="add-user-userID" name="id" hidden>
 
-            <input type="text" id="add-user-userID" name="Id" hidden>
+              <label for="">Họ</label>
+              <input type="text" id="add-user-ho" name="ho">
 
-            <label for="">Họ</label>
-            <input type="text" id="add-user-ho" name="ho">
+              <label for="">Tên lót</label>
+              <input type="text" id="add-user-ten_lot" name="ten_lot">
 
-            <label for="">Tên lót</label>
-            <input type="text" id="add-user-ten_lot" name="ten_lot">
+              <label for="">Tên</label>
+              <input type="text" id="add-user-ten" name="ten">
 
-            <label for="">Tên</label>
-            <input type="text" id="add-user-ten" name="ten">
+              <label for="">Giới tính</label>
+              <select id="add-hocvien_hocvienType" name="gioi_tinh">
+                <option value=" "></option>
+                <option value=1>Nam</option>
+                <option value=0>Nữ</option>
+              </select>
 
-            <label for="">Giới tính</label>
-            <select id="add-hocvien_hocvienType" name="gioi_tinh">
-              <option value=" "></option>
-              <option value=1>Nam</option>
-              <option value=0>Nữ</option>
-            </select>
+              <label for="">Ngày sinh</label>
+              <input type="date" id="add-user-ngay_sinh" name="ngay_sinh">
 
-            <label for="">Ngày sinh</label>
-            <input type="date" id="add-user-ngay_sinh" name="ngay_sinh">
+              <label for="">Email</label>
+              <input type="text" id="add-user-email" name="email">
+            </div>
+          <div class="col-lg-6 col-12">
+              <label for="">Tên đăng nhập</label>
+              <input type="text" id="add-user-ten_dn" name="ten_dang_nhap">
 
-            <label for="">Email</label>
-            <input type="text" id="add-user-email" name="email">
+              <label for="">Mật khẩu</label>
+              <input type="text" id="add-user-mat_khau" name="mat_khau">
 
+              <label for="">Xã/phường</label>
+              <input type="text" id="add-user-xa_phuong" name="xa_phuong">
 
+              <label for="">Quận/huyện</label>
+              <input type="text" id="add-user-quan_huyen" name="quan_huyen">
+
+              <label for="">Tỉnh/thành phố</label>
+              <input type="text" id="add-user-tinh_tp" name="tinh_tp">
+
+              <label for="">Trường theo học</label>
+              <input type="text" id="add-user-truong" name="truong_hoc">
+
+          </div>
+              <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
+              Thêm học viên
+            </button>
           </form>
-        </div>
-
-
-        <div class="col-lg-6 col-12">
-          <form action="#" class="add-hocvien__input" method="POST" name="food-form">
-            <label for="">Tên đăng nhập</label>
-            <input type="text" id="add-user-ten_dn" name="ten_dn">
-
-            <label for="">Mật khẩu</label>
-            <input type="text" id="add-user-mat_khau" name="mat_khau">
-
-            <label for="">Xã/phường</label>
-            <input type="text" id="add-user-xa_phuong" name="xa_phuong">
-
-            <label for="">Quận/huyện</label>
-            <input type="text" id="add-user-quan_huyen" name="quan_huyen">
-
-            <label for="">Tỉnh/thành phố</label>
-            <input type="text" id="add-user-tinh_tp" name="tinh_tp">
-
-            <label for="">Trường theo học</label>
-            <input type="text" id="add-user-truong" name="truong">
-
-
-
-          </form>
-        </div>
       </div>
-      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
-        Thêm học viên
-      </button>
+
     </div>
   </div>
 
@@ -295,66 +292,64 @@
         <i class="fas fa-times close__update-hocvien-icon"></i>
       </div>
       <div class="row" id="update-hocvien__body">
-        <div class="col-lg-6 col-12">
+        
 
-          <form action="#" class="update-hocvien__input" method="POST" name="food-form">
+          <form action="/student-update" class="update-hocvien__input" method="POST" name="update-hocvien-form">
 
             {{!-- <label for="">ID món ăn</label> --}}
+            <div class="col-lg-6 form-group row">
+              <input type="text" id="update-user-id" name="id" hidden>
+              <label for="">Họ</label>
+              <input type="text" id="update-user-ho" name="ho">
 
-            <label for="">Họ</label>
-            <input type="text" id="update-user-ho" name="updated_ho">
+              <label for="">Tên lót</label>
+              <input type="text" id="update-user-ten_lot" name="ten_lot">
 
-            <label for="">Tên lót</label>
-            <input type="text" id="update-user-ten_lot" name="updated_ten_lot">
+              <label for="">Tên</label>
+              <input type="text" id="update-user-ten" name="ten">
 
-            <label for="">Tên</label>
-            <input type="text" id="update-user-ten" name="updated_ten">
+              <label for="">Giới tính</label>
+              <select id="update-hocvien_hocvienType" name="gioi_tinh">
+                <option >Nam</option>
+                <option >Nữ</option>
+              </select>
 
-            <label for="">Giới tính</label>
-            <select id="update-hocvien_hocvienType" name="updated_gioi_tinh">
-              <option value=" "></option>
-              <option value=1>Nam</option>
-              <option value=0>Nữ</option>
-            </select>
-
-            <label for="">Ngày sinh</label>
-            <input type="date" id="update-user-ngay_sinh" name="updated_ngay_sinh">
+              <label for="">Ngày sinh</label>
+              <input type="date" id="update-user-ngay_sinh" name="ngay_sinh">
 
 
-            <label for="">Email</label>
-            <input type="text" id="update-user-email" name="updated_email">
+              <label for="">Email</label>
+              <input type="text" id="update-user-email" name="email">
+            </div>
+            <div class="col-lg-6 form-group row">
+              <label for="">Tên đăng nhập</label>
+              <input type="text" id="update-user-ten_dn" name="ten_dang_nhap">
+
+              <label for="">Mật khẩu</label>
+              <input type="text" id="update-user-mat_khau" name="mat_khau">
+
+              <label for="">Xã/phường</label>
+              <input type="text" id="update-user-xa_phuong" name="xa_phuong">
+
+              <label for="">Quận/huyện</label>
+              <input type="text" id="update-user-quan_huyen" name="quan_huyen">
+
+              <label for="">Tỉnh/thành phố</label>
+              <input type="text" id="update-user-tinh_tp" name="tinh_tp">
+
+              <label for="">Trường theo học</label>
+              <input type="text" id="update-user-truong" name="truong_hoc">
+            </div>
+
+          <div class="row">
+                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+                <a href = '' class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</a>
+          </div>
           </form>
-        </div>
 
-
-        <div class="col-lg-6 col-12">
-          <form action="#" class="update-hocvien__input" method="POST" name="updated_food-form">
-            <label for="">Tên đăng nhập</label>
-            <input type="text" id="update-user-ten_dn" name="updated_ten_dn">
-
-            <label for="">Mật khẩu</label>
-            <input type="text" id="update-user-mat_khau" name="updated_mat_khau">
-
-            <label for="">Xã/phường</label>
-            <input type="text" id="update-user-xa_phuong" name="updated_xa_phuong">
-
-            <label for="">Quận/huyện</label>
-            <input type="text" id="update-user-quan_huyen" name="updated_quan_huyen">
-
-            <label for="">Tỉnh/thành phố</label>
-            <input type="text" id="update-user-tinh_tp" name="updated_tinh_tp">
-
-            <label for="">Trường theo học</label>
-            <input type="text" id="update-user-truong" name="updated_truong">
-
-          </form>
-        </div>
       </div>
 
-      <div class="row">
-        <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-        <button class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</button>
-      </div>
+    
 
       {{#if filterFlag}}
       <form action="/student-filter" method="POST" role="form" name="filter-form">
