@@ -28,12 +28,24 @@ class studentController {
                 student = await studentModel.getStudentNA();
             }else if(filters.filter_sort === 'Tên (giảm dần)'){
                 student = await studentModel.getStudentND();
+            }else if(filters.filter_sort === 'Năm sinh (tăng dần)'){
+                student = await studentModel.getStudentNSA();
+            }else if(filters.filter_sort === 'Năm sinh (giảm dần)'){
+                student = await studentModel.getStudentNSD();
             }
         }else{
             student = await studentModel.getAllStudent();
         }
         if (filters.filter_student_num !== ' ')
-            student = student.filter( function (c) {return c.so_KHTG === Number(filters.filter_student_num)})
+            if(filters.filter_student_num === '0 - 2'){
+                student = student.filter( function (c) {return c.so_KHTG >=0 && c.so_KHTG <=2});
+            }else if(filters.filter_student_num === '3 - 5'){
+                student = student.filter( function (c) {return c.so_KHTG >=3 && c.so_KHTG <=5})
+            }else if(filters.filter_student_num === '5 - 8'){
+                student = student.filter( function (c) {return c.so_KHTG >=6 && c.so_KHTG <=8})
+            }else{
+                student = student.filter( function (c) {return c.so_KHTG >8})
+            }
 
         if (filters.filter_sex !== ' '){
             if(filters.filter_sex==='Nam'){

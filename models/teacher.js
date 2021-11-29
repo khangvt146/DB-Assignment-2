@@ -72,6 +72,3 @@ exports.getFullTeacher = async function() {
     WHERE ten_mail.id = semi_info.id
     ORDER BY ten, ten_lot, ho;`);
 };
-
-
-

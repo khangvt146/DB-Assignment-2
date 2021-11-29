@@ -27,7 +27,7 @@ exports.deleteOneCourse = async function(id) {
     );
 };
 
-exports.updateOneCourse= async function(values) {
+exports.updateOneCourse = async function(values) {
     return await connection.awaitQuery(
         'UPDATE khoa_hoc SET ? WHERE ma_kh = ?', [values, values.ma_kh]
     );

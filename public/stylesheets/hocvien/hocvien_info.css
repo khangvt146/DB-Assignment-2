@@ -1,0 +1,118 @@
+.info-hocvien-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.info-hocvien--active {
+    display: flex;
+}
+
+.info-hocvien-container .info__box {
+    margin: auto;
+    background-color: var(--white-color);
+    width: 800px;
+    border-radius: 20px;
+    display: block;
+    max-width: 90%;
+}
+
+
+/* ===================================== */
+
+.close__info-hocvien-icon {
+    font-size: 20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+/* ===================================== */
+
+.info__image {
+    flex: 0.4;
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 0;
+}
+
+.info__image img {
+    width: 100%;
+}
+
+.info__description {
+    padding: 35px;
+    flex: 0.6;
+}
+
+.info-hocvien-container .hocvien__name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__sex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__date-of-birth {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__phone {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__school {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__email {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__xa-phuong {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__quan-huyen {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__tinh-TP {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__tham-gia {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__grade {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-hocvien-container .hocvien__value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.info-hocvien-container .hocvien__degree .hocvien__value {
+    text-align: right;
+    width: 70%;
+    line-height: 25px;
+}

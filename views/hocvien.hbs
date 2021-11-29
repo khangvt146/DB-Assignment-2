@@ -1,66 +1,211 @@
-<div class="body">
+<div class="hocvien-body">
 
-    {{!---------------------------------DROPDOWN FILTER -------------------------------------}}
-    <div class="dropdown_hocvien">
-        <div class="row">
-            <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> 
-                    <label for="HV_sort">
-                        <div class="filter-title">Sắp xếp theo</div>
-                    </label> 
-                    <select class="form-control" id="sort">
-                        <option value=" "></option>
-                        <option>ID (tăng dần)</option>
-                        <option>ID (giảm dần)</option>
-                        <option>Họ (tăng dần)</option>
-                        <option>Họ (giảm dần)</option>
-                        <option>Tên (tăng dần)</option>
-                        <option>Tên (giảm dần)</option>
-                    </select>
-                </div>
-            </div>
+  {{!---------------------------------DROPDOWN FILTER -------------------------------------}}
+  <div class="dropdown_hocvien">
 
-            <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> 
-                    <label for="HV_filter">
-                        <div class="filter-title">Số khóa tham gia</div>
-                    </label> <select class="form-control" id="filter_hocvien_num">
-                        <option value=" "></option>
-                        <option value=0>0</option>
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                        <option value=6>6</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> <label for="KH_filter">
-                        <div class="filter-title">Giới tính</div>
-                    </label> <select class="form-control" id="filter_gender">
-                        <option value=" "></option>
-                        <option value="Nam">Nam</option>
-                        <option value="Nữ">Nữ</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="add_button">
-                    <button class="button"><i class="fas fa-plus mr-2"></i>THÊM </button>
-                </div>
-            </div>
-            
-        </div>
+    <div class="row">
+      <div class="search-class">
+        <form class="search-class" action="#" method="POST">
+          <input type="text" name="search" class="search-input" placeholder="Nhập tên học viên cần tìm">
+          <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
     </div>
 
 
+    <div class="row" id="drop">
+      <div class="col-lg-3 col-md-5 col-sm-12 mr-4">
+        <div class="form-group">
+          <label for="HV_sort">
+            <div class="filter-title">Sắp xếp</div>
+          </label>
+          <select class="form-control" id="sort">
+            <option value=" "></option>
+            <option>ID (tăng dần)</option>
+            <option>ID (giảm dần)</option>
+            <option>Họ (tăng dần)</option>
+            <option>Họ (giảm dần)</option>
+            <option>Tên (tăng dần)</option>
+            <option>Tên (giảm dần)</option>
+            <option>Năm sinh (tăng dần)</option>
+            <option>Năm sinh (giảm dần)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-5 col-sm-12 mr-4">
+        <div class="form-group">
+          <label for="HV_filter">
+            <div class="filter-title">Số khóa tham gia</div>
+          </label> <select class="form-control" id="filter_hocvien_num">
+            <option value=" "></option>
+            <option >0 - 2</option>
+            <option >3 - 5</option>
+            <option >5 - 8</option>
+            <option >Nhiều hơn 8</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-5 col-sm-12">
+        <div class="form-group"> <label for="KH_filter">
+            <div class="filter-title">Giới tính</div>
+          </label> <select class="form-control" id="filter_gender">
+            <option value=" "></option>
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-5 col-sm-12">
+        <div class="add_button">
+          <button class="button"><i class="fas fa-plus mr-2"></i>THÊM </button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  {{!---------------------------------MAIN -------------------------------------}}
+  <div class="hocvien_container">
+    <div class="container first-container col-sm-12 pull-left" style="padding: 15px">
+      <table class="table table-condensed">
+        <thead class="thead-light" style="text-align:center">
+          <tr>
+            <th>ID</th>
+            <th>Họ và tên</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
+            <th>SĐT</th>
+            <th>Số khóa tham gia</th>
+            <th>Xem chi tiết</th>
+            <th>Chỉnh sửa</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          {{#each UserArray}}
+                <tr class="sub-container student-content" style="text-align:center">
+                    <td id = 'student-id'>{{this.id}}</td>
+                    <td id = 'student-ten'>{{this.ho_va_ten}}</td>
+                    <td id = 'student-ngay_sinh'>{{formatDate this.ngay_sinh}}</td>
+                    <td id = 'student-gioi_tinh'>{{formatGender this.gioi_tinh}}</td>
+                    <td id = 'student-sdt'>{{this.sdt}}</td>
+                    <td id = 'student-KHTG'>{{this.so_KHTG}}</td>
+                    <td>
+                    <button type="button" class="btn btn-success exploder i_btn" id="i_btn" data-id="{{this.id}}">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    </td>
+                    <td>
+                    <button type="button" class="btn" id="u_btn" data-id="{{this.id}}"></button>
+                    </td>
+                    <td style="display:none;" id = "student-email">{{this.email}}</td>
+                    <td style="display:none;" id="student-truong">{{this.truong_hoc}}</td>
+                    <td style="display:none;" id="student-huyen">{{this.quan_huyen}}</td>
+                    <td style="display:none;" id="student-xa">{{this.xa_phuong}}</td>
+                    <td style="display:none;" id="student-tinh">{{this.tinh_tp}}</td>
+                    <td style="display:none;" id="student-diem">{{this.tong_diem}}</td>
+
+                </tr>
+
+          {{/each}}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  {{!-------------------------------------------------INFO HOC
+  VIEN-------------------------------------------------------}}
+  <div class="info-hocvien-container" id="detail-hocvien-modal">
+    <div class="info__box">
+      <div class="info__header">
+        <div class="info__header-name">CHI TIẾT HỌC VIÊN </div>
+        <i class="fas fa-times close__info-hocvien-icon"></i>
+      </div>
+      <div class="info__body">
+        <div class="info__image">
+          <img src="./images/teacher/teacher_8.png" id="detail-student-image">
+        </div>
+        <div class="info__description">
+
+          <div class="hocvien__name">
+            <div class="hocvien__title"><i class="fas fa-user mr-2"></i>Họ và tên:</div>
+            <div class="hocvien__value" id="detail-student-name">Trần Vân Anh</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__sex">
+            <div class="hocvien__title"><i class="fas fa-map-marker-alt mr-2"></i>Giới tính:</div>
+            <div class="hocvien__value" id="detail-student-gender">Nam</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__date-of-birth">
+            <div class="hocvien__title"><i class="fas fa-map-marker-alt mr-2"></i>Ngày sinh:</div>
+            <div class="hocvien__value" id="detail-student-birthday">14/06/2001</div>
+          </div>
+
+
+          <hr>
+          <div class="hocvien__phone">
+            <div class="hocvien__title"><i class="fas fa-book mr-2"></i>Số điện thoại:</div>
+            <div class="hocvien__value" id="detail-student-phone">0912344567</div>
+          </div>
+
+
+          <hr>
+          <div class="hocvien__email">
+            <div class="hocvien__title"><i class="fas fa-envelope mr-2"></i>Email:</div>
+            <div class="hocvien__value" id="detail-student-email">builuongvinhhien@hcmut.edu.vn</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__school">
+            <div class="hocvien__title"><i class="fas fa-envelope mr-2"></i>Trường theo học:</div>
+            <div class="hocvien__value" id="detail-student-school">THPT Bùi Thị Xuân</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__xa-phuong">
+            <div class="hocvien__title"><i class="fas fa-envelope mr-2"></i>Xã, phường:</div>
+            <div class="hocvien__value" id="detail-student-ward">Phường 8</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__quan-huyen">
+            <div class="hocvien__title"><i class="fas fa-envelope mr-2"></i>Quận, huyện:</div>
+            <div class="hocvien__value" id="detail-student-district">Không</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__tinh-TP">
+            <div class="hocvien__title"><i class="fas fa-envelope mr-2"></i>Tỉnh, thành phố:</div>
+            <div class="hocvien__value" id="detail-student-provine">Đà Lạt</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__tham-gia">
+            <div class="hocvien__title"><i class="fas fa-user-graduate mr-2"></i>Số lượng khóa học tham gia:</div>
+            <div class="hocvien__value" id="detail-student-attend">100</div>
+          </div>
+
+          <hr>
+          <div class="hocvien__grade">
+            <div class="hocvien__title"><i class="fas fa-user-graduate mr-2"></i>Điểm cao nhất đạt được:</div>
+            <div class="hocvien__value" id="detail-student-grade">9.5</div>
+
+          </div>
+
 
     {{!---------------------------------MAIN -------------------------------------}}
-    <div class="hocvien_container">
+    {{!-- <div class="hocvien_container">
       <div
         class="container first-container col-sm-12 pull-left"
         style="padding: 15px"
@@ -145,173 +290,176 @@
             }
             });
         </script>
+        </div>
+      </div> --}}
+
+    </div>
+  </div>
+
+
+
+  {{!---------------------------------Thêm user-------------------------------------}}
+  <div class="add-hocvien-container">
+    <div class="add-hocvien__box">
+      <div class="add-hocvien__header">
+        <div class="add-hocvien__header-name">THÊM HỌC VIÊN</div>
+        <i class="fas fa-times close__add-hocvien-icon"></i>
       </div>
-    </div>
+      <div class="row" id="add-hocvien__body">
+        <div class="col-lg-6 col-12">
+
+          <form action="#" class="add-hocvien__input" method="POST" name="food-form">
+
+            {{!-- <label for="">ID món ăn</label> --}}
+
+            <input type="text" id="add-user-userID" name="Id" hidden>
+
+            <label for="">Họ</label>
+            <input type="text" id="add-user-ho" name="ho">
+
+            <label for="">Tên lót</label>
+            <input type="text" id="add-user-ten_lot" name="ten_lot">
+
+            <label for="">Tên</label>
+            <input type="text" id="add-user-ten" name="ten">
+
+            <label for="">Giới tính</label>
+            <select id="add-hocvien_hocvienType" name="gioi_tinh">
+              <option value=" "></option>
+              <option value=1>Nam</option>
+              <option value=0>Nữ</option>
+            </select>
+
+            <label for="">Ngày sinh</label>
+            <input type="date" id="add-user-ngay_sinh" name="ngay_sinh">
+
+            <label for="">Email</label>
+            <input type="text" id="add-user-email" name="email">
 
 
-    {{!---------------------------------Thêm user-------------------------------------}}
-    <div class="add-hocvien-container">
-        <div class="add-hocvien__box">
-            <div class="add-hocvien__header">
-                <div class="add-hocvien__header-name">THÊM HỌC VIÊN</div>
-                <i class="fas fa-times close__add-hocvien-icon"></i>
-            </div>
-            <div class="row" id="add-hocvien__body">
-                <div class="col-lg-6 col-12">
-
-                    <form action="#" class="add-hocvien__input" method="POST" name="food-form">
-
-                        {{!-- <label for="">ID món ăn</label> --}}
-
-                        <input type="text" id="add-user-userID" name="Id" hidden>
-
-                        <label for="">Họ</label>
-                        <input type="text" id="add-user-ho" name="ho">
-
-                        <label for="">Tên lót</label>
-                        <input type="text" id="add-user-ten_lot" name="ten_lot">
-
-                        <label for="">Tên</label>
-                        <input type="text" id="add-user-ten" name="ten">
-
-                        <label for="">Giới tính</label>
-                        <select id="add-hocvien_hocvienType" name="gioi_tinh">
-                            <option value=" "></option>
-                            <option value=1>Nam</option>
-                            <option value=0>Nữ</option>
-                        </select>
-
-                        <label for="">Trường theo học</label>
-                        <input type="text" id="add-user-truong" name="truong">
-
-                        <label for="">Email</label>
-                        <input type="text" id="add-user-email" name="email">
-
-                        
-                    </form>
-                </div>
-
-
-                <div class="col-lg-6 col-12">
-                    <form action="#" class="add-hocvien__input" method="POST" name="food-form">
-                        <label for="">Tên đăng nhập</label>
-                        <input type="text" id="add-user-ten_dn" name="ten_dn">
-
-                        <label for="">Mật khẩu</label>
-                        <input type="text" id="add-user-mat_khau" name="mat_khau">  
-
-                        <label for="">Xã/phường</label>
-                        <input type="text" id="add-user-xa_phuong" name="xa_phuong"> 
-
-                        <label for="">Quận/huyện</label>
-                        <input type="text" id="add-user-quan_huyen" name="quan_huyen">    
-
-                        <label for="">Tỉnh/thành phố</label>
-                        <input type="text" id="add-user-tinh_tp" name="tinh_tp">                        
-
-                        <label for="">Ngày sinh</label>
-                        <input type="date" id="add-user-ngay_sinh" name="ngay_sinh">
-
-                    </form>
-                </div>
-            </div>
-            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
-                Thêm học viên
-            </button>
+          </form>
         </div>
-    </div>
+
+
+        <div class="col-lg-6 col-12">
+          <form action="#" class="add-hocvien__input" method="POST" name="food-form">
+            <label for="">Tên đăng nhập</label>
+            <input type="text" id="add-user-ten_dn" name="ten_dn">
+
+            <label for="">Mật khẩu</label>
+            <input type="text" id="add-user-mat_khau" name="mat_khau">
+
+            <label for="">Xã/phường</label>
+            <input type="text" id="add-user-xa_phuong" name="xa_phuong">
+
+            <label for="">Quận/huyện</label>
+            <input type="text" id="add-user-quan_huyen" name="quan_huyen">
+
+            <label for="">Tỉnh/thành phố</label>
+            <input type="text" id="add-user-tinh_tp" name="tinh_tp">
+
+            <label for="">Trường theo học</label>
+            <input type="text" id="add-user-truong" name="truong">
 
 
 
-    {{!---------------------------------Update hocvien-------------------------------------}}
-    <div class="update-hocvien-container">
-        <div class="update-hocvien__box">
-            <div class="update-hocvien__header">
-                <div class="update-hocvien__header-name">CHỈNH SỬA THÔNG TIN HỌC VIÊN</div>
-                <i class="fas fa-times close__update-hocvien-icon"></i>
-            </div>
-            <div class="row" id="update-hocvien__body">
-                <div class="col-lg-6 col-12">
-
-                    <form action="#" class="update-hocvien__input" method="POST" name="food-form">
-
-                        {{!-- <label for="">ID món ăn</label> --}}
-
-                        <label for="">Họ</label>
-                        <input type="text" id="update-user-ho" name="updated_ho">
-
-                        <label for="">Tên lót</label>
-                        <input type="text" id="update-user-ten_lot" name="updated_ten_lot">
-
-                        <label for="">Tên</label>
-                        <input type="text" id="update-user-ten" name="updated_ten">
-
-                        <label for="">Giới tính</label>
-                        <select id="update-hocvien_hocvienType" name="updated_gioi_tinh">
-                            <option value=" "></option>
-                            <option value=1>Nam</option>
-                            <option value=0>Nữ</option>
-                        </select>
-
-                        <label for="">Trường theo học</label>
-                        <input type="text" id="update-user-truong" name="updated_truong">
-
-                        <label for="">Email</label>
-                        <input type="text" id="update-user-email" name="updated_email">
-                    </form>
-                </div>
-
-
-                <div class="col-lg-6 col-12">
-                    <form action="#" class="update-hocvien__input" method="POST" name="updated_food-form">
-                        <label for="">Tên đăng nhập</label>
-                        <input type="text" id="update-user-ten_dn" name="updated_ten_dn">
-
-                        <label for="">Mật khẩu</label>
-                        <input type="text" id="update-user-mat_khau" name="updated_mat_khau">  
-
-                        <label for="">Xã/phường</label>
-                        <input type="text" id="update-user-xa_phuong" name="updated_xa_phuong"> 
-
-                        <label for="">Quận/huyện</label>
-                        <input type="text" id="update-user-quan_huyen" name="updated_quan_huyen">    
-
-                        <label for="">Tỉnh/thành phố</label>
-                        <input type="text" id="update-user-tinh_tp" name="updated_tinh_tp">                        
-
-                        <label for="">Ngày sinh</label>
-                        <input type="date" id="update-user-ngay_sinh" name="updated_ngay_sinh">
-
-                    </form>
-                </div>
-            </div>
-
-            <div class="row">
-                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-                <button class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</button>
-            </div>
-
-            {{#if filterFlag}}
-            <form action="/student-filter" method="POST" role="form" name="filter-form">
-                <input type="text" class="form-control" id="filter_sort" name="filter_sort" hidden
-                    value="{{filters.filter_sort}}">
-                <input type="text" class="form-control" id="filter_student_num" name="filter_student_num" hidden
-                    value="{{filters.filter_student_num}}">
-                <input type="text" class="form-control" id="filter_sex" name="filter_sex" hidden
-                    value="{{filters.filter_sex}}">
-
-            </form>
-            {{else}}
-            <form action="/student-filter" method="POST" role="form" name="filter-form">
-                <input type="text" class="form-control" id="filter_sort" name="filter_sort" hidden
-                    value=" ">
-                <input type="text" class="form-control" id="filter_student_num" name="filter_student_num" hidden
-                    value=" ">
-                <input type="text" class="form-control" id="filter_sex" name="filter_sex" hidden
-                    value=" ">
-            </form>
-            {{/if}}
-
+          </form>
         </div>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
+        Thêm học viên
+      </button>
     </div>
+  </div>
+
+
+
+  {{!---------------------------------Update hocvien-------------------------------------}}
+  <div class="update-hocvien-container">
+    <div class="update-hocvien__box">
+      <div class="update-hocvien__header">
+        <div class="update-hocvien__header-name">CHỈNH SỬA THÔNG TIN HỌC VIÊN</div>
+        <i class="fas fa-times close__update-hocvien-icon"></i>
+      </div>
+      <div class="row" id="update-hocvien__body">
+        <div class="col-lg-6 col-12">
+
+          <form action="#" class="update-hocvien__input" method="POST" name="food-form">
+
+            {{!-- <label for="">ID món ăn</label> --}}
+
+            <label for="">Họ</label>
+            <input type="text" id="update-user-ho" name="updated_ho">
+
+            <label for="">Tên lót</label>
+            <input type="text" id="update-user-ten_lot" name="updated_ten_lot">
+
+            <label for="">Tên</label>
+            <input type="text" id="update-user-ten" name="updated_ten">
+
+            <label for="">Giới tính</label>
+            <select id="update-hocvien_hocvienType" name="updated_gioi_tinh">
+              <option value=" "></option>
+              <option value=1>Nam</option>
+              <option value=0>Nữ</option>
+            </select>
+
+            <label for="">Ngày sinh</label>
+            <input type="date" id="update-user-ngay_sinh" name="updated_ngay_sinh">
+
+
+            <label for="">Email</label>
+            <input type="text" id="update-user-email" name="updated_email">
+          </form>
+        </div>
+
+
+        <div class="col-lg-6 col-12">
+          <form action="#" class="update-hocvien__input" method="POST" name="updated_food-form">
+            <label for="">Tên đăng nhập</label>
+            <input type="text" id="update-user-ten_dn" name="updated_ten_dn">
+
+            <label for="">Mật khẩu</label>
+            <input type="text" id="update-user-mat_khau" name="updated_mat_khau">
+
+            <label for="">Xã/phường</label>
+            <input type="text" id="update-user-xa_phuong" name="updated_xa_phuong">
+
+            <label for="">Quận/huyện</label>
+            <input type="text" id="update-user-quan_huyen" name="updated_quan_huyen">
+
+            <label for="">Tỉnh/thành phố</label>
+            <input type="text" id="update-user-tinh_tp" name="updated_tinh_tp">
+
+            <label for="">Trường theo học</label>
+            <input type="text" id="update-user-truong" name="updated_truong">
+
+          </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+        <button class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</button>
+      </div>
+
+      {{#if filterFlag}}
+      <form action="/student-filter" method="POST" role="form" name="filter-form">
+        <input type="text" class="form-control" id="filter_sort" name="filter_sort" hidden
+          value="{{filters.filter_sort}}">
+        <input type="text" class="form-control" id="filter_student_num" name="filter_student_num" hidden
+          value="{{filters.filter_student_num}}">
+        <input type="text" class="form-control" id="filter_sex" name="filter_sex" hidden value="{{filters.filter_sex}}">
+
+      </form>
+      {{else}}
+      <form action="/student-filter" method="POST" role="form" name="filter-form">
+        <input type="text" class="form-control" id="filter_sort" name="filter_sort" hidden value=" ">
+        <input type="text" class="form-control" id="filter_student_num" name="filter_student_num" hidden value=" ">
+        <input type="text" class="form-control" id="filter_sex" name="filter_sex" hidden value=" ">
+      </form>
+      {{/if}}
+
+    </div>
+  </div>
 </div>
