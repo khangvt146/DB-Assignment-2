@@ -16,6 +16,25 @@ outAddHocvien.onclick = function(e) {
     tem.classList.remove("add-hocvien--active");
 };
 
+/* Info hocvien js */
+function infoHocvien() {
+    var infoHV = document.querySelectorAll(".hocvien_container .i_btn");
+    infoHV.forEach((hocvien) => {
+        hocvien.onclick = function(e) {
+            var tem = document.querySelector(".info-hocvien-container");
+            tem.classList.add("info-hocvien--active");
+        };
+        return hocvien;
+    });
+}
+
+var outInfoHocvien = document.querySelector(".close__info-hocvien-icon");
+outInfoHocvien.onclick = function(e) {
+    var tem = document.querySelector(".info-hocvien-container");
+    tem.classList.remove("info-hocvien--active");
+};
+
+
 
 /* Update hocvien js */
 function SetUpdatehocvien() {
@@ -41,14 +60,14 @@ const filter_num = document.querySelector("#filter_hocvien_num");
 const filter_gender = document.querySelector("#filter_gender");
 const filterform = document.forms['filter-form'];
 
-filter_sort.onchange = function (e) {
+filter_sort.onchange = function(e) {
     document.getElementById('filter_sort').value = filter_sort.value;
     document.getElementById('filter_student_num').value = filter_num.value;
     document.getElementById('filter_sex').value = filter_gender.value;
     filterform.submit();
 };
 
-filter_num.onchange = function (e) {
+filter_num.onchange = function(e) {
     console.log(filter_num.value);
     console.log(filter_sort.value);
     console.log(filter_gender.value);
@@ -58,7 +77,7 @@ filter_num.onchange = function (e) {
     filterform.submit();
 };
 
-filter_gender.onchange = function (e) {
+filter_gender.onchange = function(e) {
     document.getElementById('filter_sort').value = filter_sort.value;
     document.getElementById('filter_student_num').value = filter_num.value;
     document.getElementById('filter_sex').value = filter_gender.value;
@@ -77,3 +96,4 @@ filter_gender.value = document.getElementById('filter_sex').value;
 /* Call function */
 SetAddhocvien();
 SetUpdatehocvien();
+infoHocvien();

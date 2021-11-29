@@ -3,8 +3,8 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "dbs_211",
-    port: 3310
+    database: "database assignment 2",
+    //port: 3310
 });
 
 exports.getAllTeacher = async function() {
@@ -72,6 +72,3 @@ exports.getFullTeacher = async function() {
     WHERE ten_mail.id = semi_info.id
     ORDER BY ten, ten_lot, ho;`);
 };
-
-
-

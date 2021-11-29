@@ -3,8 +3,8 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "dbs_211",
-    port: 3310
+    database: "database assignment 2",
+    //port: 3310
 });
 
 exports.getAllStudent = async function() {
@@ -91,4 +91,3 @@ exports.getStudentND = async function() {
     WHERE info.ma_hv = nguoi_dung.id
     ORDER BY nguoi_dung.ten DESC`);
 };
-

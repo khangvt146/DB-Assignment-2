@@ -1,8 +1,9 @@
-.search-class {
-    width: 100%;
-    display: flex;
+.dropdown_hocvien .search-class {
+    width: 80%;
+    margin: auto;
     padding: 5px 30px;
     font-size: 18px;
+    margin-top: 20px;
 }
 
 .search-input {
@@ -38,11 +39,12 @@
 }
 
 .dropdown_hocvien {
-    margin-left: 60px;
+    margin-top: 20px;
+    padding-bottom: 40px;
 }
 
-.dropdown_hocvien #ccmonth {
-    font-weight: 550;
+.dropdown_hocvien #drop {
+    margin-left: 100px;
 }
 
 .filter-title {
@@ -54,7 +56,7 @@
 
 .dropdown_hocvien .add_button {
     margin-top: 70px;
-    margin-left: 30px;
+    margin-left: 130px;
     display: flex;
     justify-content: right;
 }
@@ -68,46 +70,6 @@
     color: #ffffff;
     font-size: 15px;
     font-weight: 550;
-}
-
-.hocvien_container {
-    margin-top: 30px;
-}
-
-.hocvien_container .info {
-    line-height: 25px;
-    width: 100%;
-    padding: 5px 5px;
-}
-
-.hocvien_container .tuition {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hocvien_container .startDate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hocvien_container .submitDate {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hocvien_container .teacher {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hocvien_container .value {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-.hocvien_container #money {
-    padding-left: 5px;
 }
 
 .hocvien_container .button {

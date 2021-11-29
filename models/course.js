@@ -3,8 +3,8 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "db_assignment2"
-    // port: 3308
+    database: "database assignment 2"
+        // port: 3308
 });
 
 exports.getAllCourse = async function() {
@@ -27,7 +27,7 @@ exports.deleteOneCourse = async function(id) {
     );
 };
 
-exports.updateOneCourse= async function(values) {
+exports.updateOneCourse = async function(values) {
     return await connection.awaitQuery(
         'UPDATE khoa_hoc SET ? WHERE ma_kh = ?', [values, values.ma_kh]
     );
