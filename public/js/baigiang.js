@@ -4,18 +4,29 @@
 //     baigiangSelected.forEach((baigiang) => {
 //         baigiang.onclick = function(e) {
 //             var tem = document.querySelector(".info-baigiang-container");
+<<<<<<< HEAD
 //             tem.classList.add("info-baigiang__active");
+=======
+//             tem.classList.add("info__active");
+>>>>>>> e419ecf4b48bdb168aec24dccb70e872d5477068
 //             var info = baigiang.innerText.split("\n");
 //         };
 //         return baigiang;
 //     });
+<<<<<<< HEAD
 //     info
+=======
+>>>>>>> e419ecf4b48bdb168aec24dccb70e872d5477068
 // }
 
 // var outBaigiangInfo = document.querySelector(".close__info-icon");
 // outBaigiangInfo.onclick = function(e) {
 //     var tem = document.querySelector(".info-baigiang-container");
+<<<<<<< HEAD
 //     tem.classList.remove("info-baigiang__active");
+=======
+//     tem.classList.remove("info__active");
+>>>>>>> e419ecf4b48bdb168aec24dccb70e872d5477068
 // };
 
 // /* Add baigiang js */
@@ -60,4 +71,8 @@
 // /* Call function */
 // SetShowDetailBaigiang();
 // SetAddbaigiang();
+<<<<<<< HEAD
 // SetUpdatebaigiang();
+=======
+// SetUpdatebaigiang();
+>>>>>>> e419ecf4b48bdb168aec24dccb70e872d5477068
