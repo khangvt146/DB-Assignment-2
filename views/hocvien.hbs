@@ -16,8 +16,6 @@
                         <option>Họ (giảm dần)</option>
                         <option>Tên (tăng dần)</option>
                         <option>Tên (giảm dần)</option>
-                        <option>Ngày sinh (tăng dần)</option>
-                        <option>Ngày sinh (giảm dần)</option>
                     </select>
                 </div>
             </div>
@@ -28,13 +26,13 @@
                         <div class="filter-title">Số khóa tham gia</div>
                     </label> <select class="form-control" id="filter_hocvien_num">
                         <option value=" "></option>
-                        <option value=1>0</option>
-                        <option value=2>1</option>
-                        <option value=3>2</option>
-                        <option value=4>3</option>
-                        <option value=5>4</option>
-                        <option value=6>5</option>
-                        <option value=7>6</option>
+                        <option value=0>0</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
                     </select>
                 </div>
             </div>
@@ -44,8 +42,8 @@
                         <div class="filter-title">Giới tính</div>
                     </label> <select class="form-control" id="filter_gender">
                         <option value=" "></option>
-                        <option>Nam</option>
-                        <option>Nữ</option>
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
                     </select>
                 </div>
             </div>
@@ -74,7 +72,6 @@
               <th>Họ</th>
               <th>Tên lót</th>
               <th>Tên</th>
-              <th>Giới tính</th>
               <th>Trường theo học</th>
               <th>Số khóa tham gia</th>
               <th>Xem chi tiết</th>
@@ -84,13 +81,12 @@
           <tbody>
             {{#each UserArray}}
               <tr class="sub-container" style="text-align:center">
-                <td>{{this.id}}</td>
-                <td>{{this.ho}}</td>
-                <td>{{this.ten_lot}}</td>
-                <td>{{this.ten}}</td>
-                <td>{{this.gioi_tinh}}</td>
-                <td>{{this.truong}}</td>
-                <td>{{this.so_khoa}}</td>
+                <td id = 'student-id'>{{this.id}}</td>
+                <td id = 'student-ho'>{{this.ho}}</td>
+                <td id = 'student-ten_lot'>{{this.ten_lot}}</td>
+                <td id = 'student-ten'>{{this.ten}}</td>
+                <td id = 'student-truong_hoc'>{{this.truong_hoc}}</td>
+                <td id = 'student-KHTG'>{{this.so_KHTG}}</td>
                 <td>
                   <button type="button" class="btn btn-success exploder">
                     <span class="glyphicon glyphicon-search"></span>
@@ -107,24 +103,24 @@
                   <table class="table table-condensed">
                     <thead style="text-align:center">
                       <tr>
-                        <th>Email</th>
-                        <th>Tên đăng nhập</th>
-                        <th>Mật khẩu</th>
-                        <th>Xã/phường</th>
-                        <th>Quận/huyện</th>
-                        <th>Tỉnh/thành phố</th>
-                        <th>Ngày sinh</th>
+                        <th >Email</th>
+                        <th >Tên đăng nhập</th>
+                        <th >Mật khẩu</th>
+                        <th >Xã/phường</th>
+                        <th >Quận/huyện</th>
+                        <th >Tỉnh/thành phố</th>
+                        <th >Ngày sinh</th>
                       </tr>
                     </thead>
                     <tbody style="text-align:center">
                       <tr>
-                        <td>{{this.email}}</td>
-                        <td>{{this.ten_dang_nhap}}</td>
-                        <td>{{this.mat_khau}}</td>
-                        <td>{{this.xa_phuong}}</td>
-                        <td>{{this.quan_huyen}}</td>
-                        <td>{{this.tinh_tp}}</td>
-                        <td>{{this.ngay_sinh}}</td>
+                        <td id = 'student-email'>{{this.email}}</td>
+                        <td id = 'student-username'>{{this.ten_dang_nhap}}</td>
+                        <td id = 'student-pass'>{{this.mat_khau}}</td>
+                        <td id = 'student-xa'>{{this.xa_phuong}}</td>
+                        <td id = 'student-huyen'>{{this.quan_huyen}}</td>
+                        <td id = 'student-tinh'>{{this.tinh_tp}}</td>
+                        <td id = 'student-ngaysinh'>{{this.ngay_sinh}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -292,6 +288,27 @@
                 <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
                 <button class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</button>
             </div>
+
+            {{#if filterFlag}}
+            <form action="/student-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_sort" name="filter_sort" hidden
+                    value="{{filters.filter_sort}}">
+                <input type="text" class="form-control" id="filter_student_num" name="filter_student_num" hidden
+                    value="{{filters.filter_student_num}}">
+                <input type="text" class="form-control" id="filter_sex" name="filter_sex" hidden
+                    value="{{filters.filter_sex}}">
+
+            </form>
+            {{else}}
+            <form action="/student-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_sort" name="filter_sort" hidden
+                    value=" ">
+                <input type="text" class="form-control" id="filter_student_num" name="filter_student_num" hidden
+                    value=" ">
+                <input type="text" class="form-control" id="filter_sex" name="filter_sex" hidden
+                    value=" ">
+            </form>
+            {{/if}}
 
         </div>
     </div>

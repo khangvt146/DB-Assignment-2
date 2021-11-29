@@ -5,6 +5,7 @@ var userapi = require("../public/api/user.json");
 var lessonapi = require("../public/api/lesson.json");
 const courseController = require('../controllers/courseController')
 const teacherController = require('../controllers/teacherController')
+const studentController = require('../controllers/studentController')
 
 
 // ROUTE COURSE
@@ -16,13 +17,11 @@ router.post('/course-delete', courseController.deleteCourse);
 
 
 router.get('/giaovien', teacherController.getAllteacher);
+router.post('/teacher-filter', teacherController.filterTeacher);
 
-router.get('/hocvien', function(req, res, next) {
-    res.render('hocvien', {
-        title: 'Quản lý học viên',
-        UserArray: userapi,
-    });
-});
+router.get('/hocvien', studentController.getAllstudent);
+router.post('/student-filter', studentController.filterStudent);
+
 
 router.get('/baigiang', function(req, res, next) {
     res.render('baigiang', {

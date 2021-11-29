@@ -5,7 +5,7 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="GV_filter">
                         <div class="filter-title">Lớp</div>
-                    </label> <select class="form-control" id="ccmonth">
+                    </label> <select class="form-control course_filter" id="filter_grade-t">
                         <option value=" "></option>
                         <option>Lớp 6</option>
                         <option>Lớp 7</option>
@@ -21,7 +21,7 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="GV_filter">
                         <div class="filter-title">Môn học</div>
-                    </label> <select class="form-control" id="ccmonth">
+                    </label> <select class="form-control course_filter" id="filter_subject-t">
                         <option value=" "></option>
                         <option>Ngữ Văn</option>
                         <option>Toán Học</option>
@@ -37,7 +37,7 @@
 
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="search-class">
-                    <form class="search-class" action="#" method="post">
+                    <form class="search-class" action="#" method="POST">
                         <input type="text" name="search" class="search-input" placeholder="Nhập tên giáo viên cần tìm">
                         <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
                     </form>
@@ -60,25 +60,25 @@
             {{#each TeacherArray}}
             <div class="col-sm-8 col-md-6 col-lg-3">
                 <div class="card teacher-content">
-                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap" />
+                    <img class="card-img-top" id="teacher-image" src="{{this.hinh_anh}}" alt="Card image cap" />
                     <div class="card-body">
-                        <div class="card-title">{{this.ho_va_ten}}</div>
+                        <div class="card-title" id="teacher-name">{{this.ho_va_ten}}</div>
                         <div class="info">
-                            <div class="work"><i class="fas fa-briefcase mr-2"></i>{{this.noi_cong_tac}}</div>
+                            <div class="work" id="teacher-school"><i class="fas fa-briefcase mr-2"></i>{{this.noi_cong_tac}}</div>
 
-                            <div class="grade"><i class="fas fa-graduation-cap mr-2"></i>{{this.bang_cap}}</div>
+                            <div class="grade" id="teacher-degree"><i class="fas fa-graduation-cap mr-2"></i>{{this.bang_cap}}</div>
 
-                            <div class="descrip"><i class="fas fa-info-circle mr-2"></i>{{this.mo_ta}}</div>
+                            <div class="descrip" id="teacher-des"><i class="fas fa-info-circle mr-2"></i>{{this.mo_ta}}</div>
 
-                            <div type="hidden" id="course-t" style="display: none;"> {{this.ten_mon}} </div>
-                            <div type="hidden" id="email-t" style="display: none;"> {{this.email}} </div>
-                            <div type="hidden" id="follow-t" style="display: none;"> {{this.so_luong_theo_doi}} </div>
+                            <div type="hidden" id="teacher-subject" style="display: none;"> {{this.ten_mon}} </div>
+                            <div type="hidden" id="teacher-email" style="display: none;"> {{this.email}} </div>
+                            <div type="hidden" id="teacher-follow" style="display: none;"> {{this.so_luong_theo_doi}} </div>
 
                         </div>
                     </div>
                     <div class="info_button">
-                        <button class="button" id="u_btn">Sửa </button>
-                        <button class="button" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+                        <button class="button" id="u_btn" data-id="{{this.id}}">Sửa </button>
+                        <button class="button" id="i_btn" data-id="{{this.id}}"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
     </div>
 
     {{!-------------------------------------------------INFO GIAO VIEN-------------------------------------------------------}}
-    <div class="info-giaovien-container">
+    <div class="info-giaovien-container" id="detail-teacher-modal">
         <div class="info__box">
             <div class="info__header">
                 <div class="info__header-name">CHI TIẾT GIÁO VIÊN </div>
@@ -95,52 +95,52 @@
             </div>
             <div class="info__body">
                 <div class="info__image">
-                    <img src="./images/teacher/teacher_8.png">
+                    <img src="./images/teacher/teacher_8.png" id="detail-teacher-image">
                 </div>
                 <div class="info__description">
 
                     <div class="giaovien__name">
                         <div class="giaovien__title"><i class="fas fa-user mr-2"></i>Họ và tên:</div>
-                        <div class="giaovien__value">Trần Vân Anh</div>
+                        <div class="giaovien__value" id = "detail-teacher-name">Trần Vân Anh</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__workplace">
                         <div class="giaovien__title"><i class="fas fa-map-marker-alt mr-2"></i>Nơi công tác:</div>
-                        <div class="giaovien__value">Trường THPT Bùi Thị Xuân</div>
+                        <div class="giaovien__value" id="detail-teacher-school">Trường THPT Bùi Thị Xuân</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__subject">
                         <div class="giaovien__title"><i class="fas fa-book mr-2"></i>Môn giảng dạy:</div>
-                        <div class="giaovien__value">Lịch Sử</div>
+                        <div class="giaovien__value" id="detail-teacher-subject">Lịch Sử</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__degree">
                         <div class="giaovien__title"><i class="fas fa-graduation-cap mr-2"></i>Bằng cấp:</div>
-                        <div class="giaovien__value">Chứng chỉ tin học đạt chuẩn kỹ năng sử dụng công nghệ thông tin cơ
+                        <div class="giaovien__value" id="detail-teacher-degree">Chứng chỉ tin học đạt chuẩn kỹ năng sử dụng công nghệ thông tin cơ
                             bản</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__email">
                         <div class="giaovien__title"><i class="fas fa-envelope mr-2"></i>Email:</div>
-                        <div class="giaovien__value">builuongvinhhien@hcmut.edu.vn</div>
+                        <div class="giaovien__value" id="detail-teacher-email">builuongvinhhien@hcmut.edu.vn</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__studentFollow">
                         <div class="giaovien__title"><i class="fas fa-user-graduate mr-2"></i>Số lượng học viên
                             theo dõi:</div>
-                        <div class="giaovien__value">100</div>
+                        <div class="giaovien__value" id = "detail-teacher-follow">100</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__description">
-                        <i class="fas fa-info-circle mr-2"></i>Mô tả: Quan điểm giảng dạy: "Muốn giáo dục cho con trẻ,
+                        <i class="fas fa-info-circle mr-2"></i><div id="detail-teacher-description">Mô tả: Quan điểm giảng dạy: "Muốn giáo dục cho con trẻ,
                         mỗi người thầy cần
-                        là một tấm gương sáng về nhân cách, tự học và sáng tạo"
+                        là một tấm gương sáng về nhân cách, tự học và sáng tạo"</div>
                     </div>
 
 
@@ -204,8 +204,8 @@
                         <label for="">Tên đăng nhập</label>
                         <input type="text" id="add-giaovien_LoginName" name="GV_Login-Name">
 
-                        <label for="">Mật khẩu</label>
-                        <input type="password" id="add-giaovien_Password" name="GV_Password">
+                        {{!-- <label for="">Mật khẩu</label>
+                        <input type="password" id="add-giaovien_Password" name="GV_Password"> --}}
 
                         <label for="">Nơi công tác hiện tại</label>
                         <input type="text" id="add-giaovien_Workplace" name="GV_Workplace">
@@ -273,8 +273,8 @@
                         <label for="">Tên đăng nhập</label>
                         <input type="text" id="update-giaovien_LoginName" name="update-GV_Login-Name">
 
-                        <label for="">Mật khẩu</label>
-                        <input type="password" id="update-giaovien_Password" name="update-GV_Password">
+                        {{!-- <label for="">Mật khẩu</label>
+                        <input type="password" id="update-giaovien_Password" name="update-GV_Password"> --}}
 
                         <label for="">Nơi công tác hiện tại</label>
                         <input type="text" id="update-giaovien_Workplace" name="update-GV_Workplace">
@@ -289,6 +289,22 @@
                 <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
                 <button class="btn btn-primary" type="submit" id="delete_btn">Xóa giáo viên</button>
             </div>
+
+            {{#if filterFlag}}
+            <form action="/teacher-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_grade_form" name="filter_grade_form" hidden
+                    value="{{filters.filter_grade_form}}">
+                <input type="text" class="form-control" id="filter_subject_form" name="filter_subject_form" hidden
+                    value="{{filters.filter_subject_form}}">
+            </form>
+            {{else}}
+            <form action="/teacher-filter" method="POST" role="form" name="filter-form">
+                <input type="text" class="form-control" id="filter_grade_form" name="filter_grade_form" hidden
+                    value=" ">
+                <input type="text" class="form-control" id="filter_subject_form" name="filter_subject_form" hidden
+                    value=" ">
+            </form>
+            {{/if}}
         </div>
     </div>
 
