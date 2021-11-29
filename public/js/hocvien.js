@@ -24,13 +24,13 @@ function infoHocvien() {
             var tem = document.querySelector(".info-hocvien-container");
             tem.classList.add("info-hocvien--active");
             var id = $(this).data("id");
-            setDetail(id);
+            setStudentDetail(id);
         };
         return hocvien;
     });
 }
 
-function setDetail(id) {
+function setStudentDetail(id) {
     var studentList = document.querySelectorAll(".student-content");
     studentList = Array.from(studentList);
     console.log(id);

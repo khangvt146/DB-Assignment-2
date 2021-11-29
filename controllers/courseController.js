@@ -69,7 +69,6 @@ class courseController {
         else {
             req.body.hinh_anh = "./images/course/" + req.body.hinh_anh
         }
-        // res.json(req.body)
         courseModel.updateOneCourse(req.body).then(() => res.redirect('/')).catch(error => next(error));
     }
 

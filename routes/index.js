@@ -18,6 +18,9 @@ router.post('/course-delete', courseController.deleteCourse);
 
 router.get('/giaovien', teacherController.getAllteacher);
 router.post('/teacher-filter', teacherController.filterTeacher);
+router.post('/teacher-update', teacherController.updateTeacher);
+router.post('/teacher-delete', teacherController.deleteTeacher);
+router.post('/teacher-add', teacherController.addTeacher);
 
 router.get('/hocvien', studentController.getAllstudent);
 router.post('/student-filter', studentController.filterStudent);
