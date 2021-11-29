@@ -15,11 +15,11 @@
                     <label for="BG_sort">
                         <div class="filter-title">Sắp xếp theo</div>
                     </label> <select class="form-control" id="baigiang_sort">
-                        <option value=" "></option>
-                        <option>Mới nhất</option>
-                        <option>Cũ nhất</option>
-                        <option>Thời lượng (ngắn nhất)</option>
-                        <option>Thời lượng (dài nhất)</option>
+                        <option value=""></option>
+                        <option value=0>Mới nhất</option>
+                        <option value=1>Cũ nhất</option>
+                        <option value=2>Thời lượng (ngắn nhất)</option>
+                        <option value=3>Thời lượng (dài nhất)</option>
                     </select>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="form-group"> <label for="BG_filter">
                         <div class="filter-title">Lớp</div>
                     </label> <select class="form-control course_filter" id="baigiang_filter_grade">
-                        <option value=" "></option>
+                        <option value=""></option>
                         <option value="Lớp 6">Lớp 6</option>
                         <option value="Lớp 7">Lớp 7</option>
                         <option value="Lớp 8">Lớp 8</option>
@@ -44,7 +44,7 @@
                 <div class="form-group"> <label for="BG_filter">
                         <div class="filter-title">Môn học</div>
                     </label> <select class="form-control course_filter" id="baigiang_filter_subject">
-                        <option value=" "></option>
+                        <option value=""></option>
                         <option value=0>Tổng hợp nhiều môn</option>
                         <option value=1>Ngữ Văn</option>
                         <option value=2>Toán Học</option>
@@ -62,7 +62,7 @@
                 <div class="form-group"> <label for="BG_filter">
                         <div class="filter-title">Giáo viên</div>
                     </label> <select class="form-control" id="baigiang_filter_giaovien">
-                        <option value=" "></option>
+                        <option value=""></option>
                         {{#each TeacherArray}}
                         <option value='{{this.id}}'>{{this.ho_va_ten}}</option>
                         {{/each}}
@@ -73,8 +73,8 @@
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
                 <div class="form-group"> <label for="BG_filter">
                         <div class="filter-title">Khóa học</div>
-                    </label> <select class="form-control" id="">
-                        <option value=" "></option>
+                    </label> <select class="form-control" id="baigiang_filter_course">
+                        <option value=""></option>
                         {{#each CourseArray}}
                         <option value='{{this.ma_kh}}'>{{this.ten_kh}}</option>
                         {{/each}}
@@ -110,7 +110,6 @@
                 <button class="button mr-2" id="u_btn" data-ma_bai_giang={{this.ma_bai_giang}}
                     data-ma_gv={{this.ma_gv}}><i class="fas fa-pen mr-2"></i>Sửa</button>
                 <div type="hidden" id="link_video" class="link_video" style="display: none;"> {{this.link_video}} </div>
-                <div type="hidden" class="baigiang_subject_value" style="display: none;"> {{this.ma_mon_hoc}} </div>
                 <div type="hidden" class="baigiang_subject_value" style="display: none;"> {{this.ma_mon_hoc}} </div>
                 <div type="hidden" class="baigiang_teacher_id" style="display: none;">{{this.ma_gv}}</div>
                 <div type="hidden" class="baigiang_course_id" style="display: none;">{{this.ma_kh}}</div>
@@ -267,4 +266,32 @@
 
         </div>
     </div>
+
+    {{#if filterFlag}}
+    <form action="/lesson-filter" method="POST" role="form" name="lesson-filter-form">
+        <input type="text" class="form-control" id="baigiang_sort_form" name="baigiang_sort_form" hidden
+            value={{filters.baigiang_sort_form}}>
+        <input type="text" class="form-control" id="baigiang_filter_grade_form" name="baigiang_filter_grade_form" hidden
+            value="{{filters.baigiang_filter_grade_form}}">
+        <input type="text" class="form-control" id="baigiang_filter_subject_form" name="baigiang_filter_subject_form" hidden
+            value={{filters.baigiang_filter_subject_form}}>
+        <input type="text" class="form-control" id="baigiang_filter_giaovien_form" name="baigiang_filter_giaovien_form" hidden
+            value={{filters.baigiang_filter_giaovien_form}}>
+        <input type="text" class="form-control" id="baigiang_filter_course_form" name="baigiang_filter_course_form" hidden
+            value={{filters.baigiang_filter_course_form}}>
+    </form>
+    {{else}}
+    <form action="/lesson-filter" method="POST" role="form" name="lesson-filter-form">
+        <input type="text" class="form-control" id="baigiang_sort_form" name="baigiang_sort_form" hidden
+            value="">
+        <input type="text" class="form-control" id="baigiang_filter_grade_form" name="baigiang_filter_grade_form" hidden
+            value="">
+        <input type="text" class="form-control" id="baigiang_filter_subject_form" name="baigiang_filter_subject_form" hidden
+            value="">
+        <input type="text" class="form-control" id="baigiang_filter_giaovien_form" name="baigiang_filter_giaovien_form" hidden
+            value="">
+        <input type="text" class="form-control" id="baigiang_filter_course_form" name="baigiang_filter_course_form" hidden
+            value="">
+    </form>
+    {{/if}}
 </div>

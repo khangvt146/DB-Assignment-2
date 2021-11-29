@@ -30,6 +30,7 @@ router.post('/student-add', studentController.addStudent);
 
 // ROUTE LESSON
 router.get('/baigiang', lessonController.getAllLesson);
+router.post('/lesson-filter', lessonController.filterLesson);
 
 
 

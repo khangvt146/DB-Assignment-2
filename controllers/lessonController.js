@@ -17,23 +17,30 @@ class lessonController {
     }
 
     async filterLesson(req, res) {
-        let course = await courseModel.getAllLesson();
+        let lesson = await lessonModel.getAllLesson();
+        let course = await courseModel.getAllCourse();
+        let teacher = await teacherModel.getAllTeacher();
         const filters = req.body
-        if (filters.filter_grade_form !== ' ')
-            course = course.filter(function (c) { return c.ten.match(filters.filter_grade_form) })
+        // res.json(filters)
+        // if (filters.baigiang_sort_form !== " ")
+        //     course = course.filter(function (c) { return c.ten.match(filters.filter_grade_form) })
 
-        if (filters.filter_subject_form !== ' ')
-            course = course.filter(function (c) { return c.ma_mon_hoc === Number(filters.filter_subject_form) })
+        if (filters.baigiang_filter_grade_form !== '')
+            lesson = lesson.filter(function (c) { return c.ten_lop.match(filters.baigiang_filter_grade_form) })
 
-        if (filters.filter_type_form !== ' ')
-            course = course.filter(function (c) { return Number(c.kieu_kh) === Number(filters.filter_type_form) })
+        if (filters.baigiang_filter_subject_form !== '')
+            lesson = lesson.filter(function (c) { return Number(c.ma_mon_hoc) === Number(filters.baigiang_filter_subject_form) })
 
-        if (filters.filter_gradeType_form !== ' ')
-            course = course.filter(function (c) { return c.loai_trinh_do.match(filters.filter_gradeType_form) })
+        if (filters.baigiang_filter_giaovien_form !== '')
+            lesson = lesson.filter(function (c) { return Number(c.ma_gv) === Number(filters.baigiang_filter_giaovien_form) })
 
-        res.render('khoahoc', {
+        if (filters.baigiang_filter_course_form !== '')
+            lesson = lesson.filter(function (c) { return Number(c.ma_kh) === Number(filters.baigiang_filter_course_form) })
+        res.render('baigiang', {
             title: 'Quản lý bài giảng',
-            LessonArray: course,
+            LessonArray: lesson,
+            CourseArray: course,
+            TeacherArray: teacher,
             filters: filters,
             filterFlag: true
         });

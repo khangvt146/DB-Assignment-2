@@ -89,9 +89,75 @@ outUpdateBaigiang.onclick = function(e) {
 };
 
 
+
+console.log("234")
+const filter_sort_lesson = document.querySelector("#baigiang_sort");
+const filter_grade_lesson = document.querySelector("#baigiang_filter_grade");
+const filter_subject_lesson = document.querySelector("#baigiang_filter_subject");
+const filter_teacher_lesson = document.querySelector("#baigiang_filter_giaovien");
+const filter_course_lesson = document.querySelector("#baigiang_filter_course");
+const filterForm_lesson = document.forms['lesson-filter-form'];
+
+console.log(filter_sort_lesson)
+
+filter_sort_lesson.onchange = function (e) {
+    document.getElementById('baigiang_sort_form').value = filter_sort_lesson.value;
+    document.getElementById('baigiang_filter_grade_form').value = filter_grade_lesson.value;
+    document.getElementById('baigiang_filter_subject_form').value = filter_subject_lesson.value;
+    document.getElementById('baigiang_filter_giaovien_form').value = filter_teacher_lesson.value;
+    document.getElementById('baigiang_filter_course_form').value = filter_course_lesson.value;
+    filterForm_lesson.submit();
+};
+
+filter_grade_lesson.onchange = function (e) {
+    document.getElementById('baigiang_sort_form').value = filter_sort_lesson.value;
+    document.getElementById('baigiang_filter_grade_form').value = filter_grade_lesson.value;
+    document.getElementById('baigiang_filter_subject_form').value = filter_subject_lesson.value;
+    document.getElementById('baigiang_filter_giaovien_form').value = filter_teacher_lesson.value;
+    document.getElementById('baigiang_filter_course_form').value = filter_course_lesson.value;
+    filterForm_lesson.submit();
+};
+
+filter_subject_lesson.onchange = function (e) {
+    document.getElementById('baigiang_sort_form').value = filter_sort_lesson.value;
+    document.getElementById('baigiang_filter_grade_form').value = filter_grade_lesson.value;
+    document.getElementById('baigiang_filter_subject_form').value = filter_subject_lesson.value;
+    document.getElementById('baigiang_filter_giaovien_form').value = filter_teacher_lesson.value;
+    document.getElementById('baigiang_filter_course_form').value = filter_course_lesson.value;
+    filterForm_lesson.submit();
+};
+
+filter_teacher_lesson.onchange = function (e) {
+    document.getElementById('baigiang_sort_form').value = filter_sort_lesson.value;
+    document.getElementById('baigiang_filter_grade_form').value = filter_grade_lesson.value;
+    document.getElementById('baigiang_filter_subject_form').value = filter_subject_lesson.value;
+    document.getElementById('baigiang_filter_giaovien_form').value = filter_teacher_lesson.value;
+    document.getElementById('baigiang_filter_course_form').value = filter_course_lesson.value;
+    filterForm_lesson.submit();
+};
+
+filter_course_lesson.onchange = function (e) {
+    document.getElementById('baigiang_sort_form').value = filter_sort_lesson.value;
+    document.getElementById('baigiang_filter_grade_form').value = filter_grade_lesson.value;
+    document.getElementById('baigiang_filter_subject_form').value = filter_subject_lesson.value;
+    document.getElementById('baigiang_filter_giaovien_form').value = filter_teacher_lesson.value;
+    document.getElementById('baigiang_filter_course_form').value = filter_course_lesson.value;
+    filterForm_lesson.submit();
+};
+
+console.log(document.getElementById('baigiang_sort_form').value)
+filter_sort_lesson.value = document.getElementById('baigiang_sort_form').value;
+filter_grade_lesson.value = document.getElementById('baigiang_filter_grade_form').value;
+filter_subject_lesson.value = document.getElementById('baigiang_filter_subject_form').value;
+filter_teacher_lesson.value = document.getElementById('baigiang_filter_giaovien_form').value;
+filter_course_lesson.value = document.getElementById('baigiang_filter_course_form').value;
+
 function getSubject(id) {
+    console.log(id)
     switch(id) {
-        case 0: return "Tổng hợp nhiều môn"; break;
+        case 0:
+        return "Tổng hợp nhiều môn";
+        break;
         case 1: return "Ngữ Văn"; break;
         case 2: return "Toán học"; break;
         case 3: return "Tiếng Anh"; break;

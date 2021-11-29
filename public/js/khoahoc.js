@@ -159,7 +159,6 @@ function getLevel(str) {
 }
 
 
-console.log("hello");
 const filter_grade = document.querySelector("#filter_grade");
 const filter_subject = document.querySelector("#filter_subject");
 const filter_type = document.querySelector("#filter_type");

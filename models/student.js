@@ -4,19 +4,19 @@ let connection = mysql.createConnection({
     user: "root",
     password: "",
     database: "dbs_211",
-    port: 3310
+    // port: 3310
 });
 
 exports.getAllStudent = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id;`);
@@ -24,14 +24,14 @@ exports.getAllStudent = async function() {
 
 exports.getStudentIDA = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -40,14 +40,14 @@ exports.getStudentIDA = async function() {
 
 exports.getStudentIDD = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -56,14 +56,14 @@ exports.getStudentIDD = async function() {
 
 exports.getStudentHA = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -72,14 +72,14 @@ exports.getStudentHA = async function() {
 
 exports.getStudentHD = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -89,14 +89,14 @@ exports.getStudentHD = async function() {
 
 exports.getStudentNA = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -106,14 +106,14 @@ exports.getStudentNA = async function() {
 
 exports.getStudentND = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -122,14 +122,14 @@ exports.getStudentND = async function() {
 
 exports.getStudentNSA = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
@@ -138,14 +138,14 @@ exports.getStudentNSA = async function() {
 
 exports.getStudentNSD = async function() {
     return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
-    FROM 
+    FROM
         (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
-        nguoi_dung, 
-        (SELECT ma_hv, MAX(tong_diem) AS tong_diem 
-         FROM ketqua_hoctap 
+        nguoi_dung,
+        (SELECT ma_hv, MAX(tong_diem) AS tong_diem
+         FROM ketqua_hoctap
          GROUP BY ma_hv) AS diem,
          (SELECT id, sdt.sdt FROM sdt GROUP BY id) AS so_dien
     WHERE info.ma_hv = nguoi_dung.id AND diem.ma_hv = nguoi_dung.id AND nguoi_dung.id = so_dien.id
