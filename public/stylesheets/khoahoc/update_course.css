@@ -108,7 +108,7 @@
 .update-course-container .btn {
     width: 150px;
     background: var(--primary-color);
-    margin-left: 15px;
+    margin-left: 150px;
     margin-bottom: 10px;
     font-size: 15px;
     font-weight: 600;
@@ -116,12 +116,14 @@
 }
 
 .update-course-container #update_btn {
-    margin-left: 270px;
+    margin-right: 30px;
 }
 
 .update-course-container #delete_btn {
     background-color: #b50a07;
     border-style: none;
+    margin-left: 30px;
+
 }
 
 .update-course-container #update-course_descrip {

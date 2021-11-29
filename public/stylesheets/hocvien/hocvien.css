@@ -97,5 +97,11 @@
 
 .hocvien_container #u_btn {
     margin-right: 10px;
-    background-color: #db5c35 !important;
+    background: none;
+    border-style: none;
+}
+
+.hocvien_container #i_btn {
+    background: none;
+    border-style: none;
 }

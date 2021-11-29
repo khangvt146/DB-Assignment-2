@@ -54,7 +54,8 @@
 }
 
 .giaovien_container .card-img-top {
-    height: 350px;
+    height: 330px;
+    width: 310px;
     padding: 10px;
     border-radius: 20px;
 }

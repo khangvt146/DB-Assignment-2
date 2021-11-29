@@ -31,6 +31,9 @@ router.post('/student-add', studentController.addStudent);
 // ROUTE LESSON
 router.get('/baigiang', lessonController.getAllLesson);
 router.post('/lesson-filter', lessonController.filterLesson);
+router.post('/lesson-add', lessonController.addLesson);
+router.post('/lesson-update', lessonController.updateLesson);
+router.post('/lesson-delete', lessonController.deleteLesson);
 
 
 
