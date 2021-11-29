@@ -58,10 +58,13 @@
 }
 
 .dropdown_baigiang .add_baigiang_button {
-    margin-top: 70px;
-    margin-left: 30px;
-    display: flex;
-    justify-content: right;
+    margin-top: 60px;
+    border: none;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 550;
 }
 
 .dropdown_baigiang .add_baigiang_button:hover {
@@ -167,4 +170,10 @@
 
 .close__add-baigiang-icon:hover {
     color: #db5c35;
+}
+
+.baigiang-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
