@@ -10,6 +10,10 @@ const teacherController = require('../controllers/teacherController')
 // ROUTE COURSE
 router.get('/', courseController.getAllCourse);
 router.post('/course-filter', courseController.filterCourse);
+router.post('/course-add', courseController.addCourse);
+router.post('/course-update', courseController.updateCourse);
+router.post('/course-delete', courseController.deleteCourse);
+
 
 router.get('/giaovien', teacherController.getAllteacher);
 

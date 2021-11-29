@@ -204,6 +204,16 @@ filter_subject.value = document.getElementById('filter_subject_form').value;
 filter_type.value = document.getElementById('filter_type_form').value;
 filter_gradeType.value = document.getElementById('filter_gradeType_form').value;
 
+document.addEventListener('DOMContentLoaded', function() {
+    var btnDeleteFood = document.getElementById('delete_btn');
+    updateForm = document.forms['update-khoahoc-form'];
+    console.log(updateForm);
+    btnDeleteFood.onclick = function () {
+    updateForm.action = '/course-delete';
+    updateForm.submit();
+  }
+  });
+
 /* Call function */
 SetShowDetail();
 SetAddCourse();
