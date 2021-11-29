@@ -35,6 +35,12 @@ outTeacherInfo.onclick = function(e) {
     tem.classList.remove("info-giaovien--active");
 };
 
+var outTeacherupdate = document.querySelector(".close__update-giaovien-icon");
+outTeacherupdate.onclick = function(e) {
+    var tem = document.querySelector(".update-giaovien-container");
+    tem.classList.remove("update-giaovien--active");
+};
+
 
 /* Add teacher js */
 function addTeacher() {
