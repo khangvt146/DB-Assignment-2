@@ -67,10 +67,43 @@ function updateTeacher() {
         teacher.onclick = function(e) {
             var tem = document.querySelector(".update-giaovien-container");
             tem.classList.add("update-giaovien--active");
+            var id = $(this).data("id");
+            setUpdate(id)
         };
         return teacher;
     });
 }
+
+function setUpdate(id) {
+    var teacherList = document.querySelectorAll(".teacher-content");
+    teacherList = Array.from(teacherList);
+    let teacherSelected = teacherList.find((teacher) => {
+        return $(teacher).find("#u_btn").data('id') === id;
+    });
+    document.getElementById('update-giaovien_ID').value = ($(teacherSelected).find("#teacher-id").text());
+    document.getElementById('update-giaovien_FName').value = ($(teacherSelected).find("#teacher-fname").text());
+    document.getElementById('update-giaovien_MName').value = ($(teacherSelected).find("#teacher-mname").text());
+    document.getElementById('update-giaovien_LName').value = ($(teacherSelected).find("#teacher-lname").text());
+    console.log(formatDate($(teacherSelected).find("#teacher-birthday").text()))
+    document.getElementById('update-giaovien_Birthday').value = formatDate($(teacherSelected).find("#teacher-birthday").text());
+    document.getElementById('update-giaovien_Sex').value = ($(teacherSelected).find("#teacher-sex").text());
+    document.getElementById('update-giaovien_Email').value = ($(teacherSelected).find("#teacher-email").text());
+    document.getElementById('update-giaovien_City').value = ($(teacherSelected).find("#teacher-city").text());
+    document.getElementById('update-giaovien_District').value = ($(teacherSelected).find("#teacher-district").text());
+    document.getElementById('update-giaovien_Ward').value = ($(teacherSelected).find("#teacher-ward").text());
+    document.getElementById('update-giaovien_LoginName').value = ($(teacherSelected).find("#teacher-loginname").text());
+    document.getElementById('update-giaovien_Workplace').value = ($(teacherSelected).find("#teacher-school").text());
+    document.getElementById('update-giaovien_description').value = ($(teacherSelected).find("#teacher-des").text());
+}
+
+function formatDate(date) {
+    date = date.replace(/\s+/g, '');
+    var tmpArray = date.split('-');
+    return [tmpArray[2], tmpArray[1], tmpArray[0]].join('-');
+}
+
+
+
 const filter_gra = document.querySelector("#filter_grade-t");
 const filter_sub = document.querySelector("#filter_subject-t");
 const filterF = document.forms['filter-form'];

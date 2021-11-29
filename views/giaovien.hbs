@@ -73,6 +73,18 @@
                             <div type="hidden" id="teacher-subject" style="display: none;"> {{this.ten_mon}} </div>
                             <div type="hidden" id="teacher-email" style="display: none;"> {{this.email}} </div>
                             <div type="hidden" id="teacher-follow" style="display: none;"> {{this.so_luong_theo_doi}} </div>
+                            <div type="hidden" id="teacher-birthday" style="display: none;"> {{this.ngay_sinh}} </div>
+                            <div type="hidden" id="teacher-sex" style="display: none;"> {{this.gioi_tinh}} </div>
+                            <div type="hidden" id="teacher-city" style="display: none;"> {{this.tinh_tp}} </div>
+                            <div type="hidden" id="teacher-district" style="display: none;"> {{this.quan_huyen}} </div>
+                            <div type="hidden" id="teacher-ward" style="display: none;"> {{this.xa_phuong}} </div>
+                            <div type="hidden" id="teacher-id" style="display: none;"> {{this.id}} </div>
+                            <div type="hidden" id="teacher-fname" style="display: none;"> {{this.ho}} </div>
+                            <div type="hidden" id="teacher-mname" style="display: none;"> {{this.ten_lot}} </div>
+                            <div type="hidden" id="teacher-lname" style="display: none;"> {{this.ten}} </div>
+                             <div type="hidden" id="teacher-loginname" style="display: none;"> {{this.ten_dang_nhap}} </div>
+                            
+
 
                         </div>
                     </div>
@@ -230,7 +242,7 @@
             <div class="row" id="update-giaovien__body">
                 <div class="col-lg-6 col-12">
 
-                    <form action="#" class="update-giaovien__input" method="POST" name="update-giaovien-form">
+                    <form action="/" class="update-giaovien__input" method="POST" name="update-giaovien-form">
 
                         {{!-- <label for="">ID món ăn</label> --}}
 
@@ -272,9 +284,6 @@
 
                         <label for="">Tên đăng nhập</label>
                         <input type="text" id="update-giaovien_LoginName" name="update-GV_Login-Name">
-
-                        {{!-- <label for="">Mật khẩu</label>
-                        <input type="password" id="update-giaovien_Password" name="update-GV_Password"> --}}
 
                         <label for="">Nơi công tác hiện tại</label>
                         <input type="text" id="update-giaovien_Workplace" name="update-GV_Workplace">
