@@ -22,8 +22,35 @@ class lessonController {
         let teacher = await teacherModel.getAllTeacher();
         const filters = req.body
         // res.json(filters)
-        // if (filters.baigiang_sort_form !== " ")
-        //     course = course.filter(function (c) { return c.ten.match(filters.filter_grade_form) })
+        if (filters.baigiang_sort_form !== " ") {
+            switch (Number(filters.baigiang_sort_form)) {
+                case 0:
+                    lesson = lesson.sort(function (a, b) {
+                        if (a.upload_time === b.upload_time) return 0;
+                        return a.upload_time > b.upload_time ? -1 : 1;
+                    });
+                    break;
+                case 1:
+                    lesson = lesson.sort(function (a, b) {
+                        if (a.upload_time === b.upload_time) return 0;
+                        return a.upload_time < b.upload_time ? -1 : 1;
+                    });
+                    break;
+                case 2:
+                    lesson = lesson.sort(function (a, b) {
+                        if (a.thoi_luong === b.thoi_luong) return 0;
+                        return a.thoi_luong < b.thoi_luong ? -1 : 1;
+                    });
+                    break;
+                case 3:
+                    lesson = lesson.sort(function (a, b) {
+                        if (a.thoi_luong === b.thoi_luong) return 0;
+                        return a.thoi_luong > b.thoi_luong ? -1 : 1;
+                    });
+                    break;
+                default: break;
+            }
+        }
 
         if (filters.baigiang_filter_grade_form !== '')
             lesson = lesson.filter(function (c) { return c.ten_lop.match(filters.baigiang_filter_grade_form) })
@@ -47,48 +74,19 @@ class lessonController {
     }
 
     async addLesson(req, res, next) {
-        var course_class = req.body.ten_lop;
-        var course_level = req.body.ten_level;
-        if (course_class !== "" & course_level !== "") {
-            let ma_trinh_do = await courseModel.getLevelID(course_class, course_level);
-            req.body.ma_trinh_do = ma_trinh_do[0].ma_trinh_do;
-        }
-        delete req.body.ten_lop;
-        delete req.body.ten_level;
-        console.log(req.body);
-        if (req.body.hinh_anh === "") {
-            delete req.body.hinh_anh
-        }
-        else {
-            req.body.hinh_anh = "./images/course/" + req.body.hinh_anh
-        }
         // res.json(req.body)
-        courseModel.createOneLesson(req.body).then(() => res.redirect('/')).catch(error => next(error));
+        lessonModel.createOneLesson(req.body).then(() => res.redirect('/baigiang')).catch(error => next(error));
     }
 
     async updateLesson(req, res, next) {
-        var course_class = req.body.ten_lop;
-        var course_level = req.body.ten_level;
-        if (course_class !== "" & course_level !== "") {
-            let ma_trinh_do = await courseModel.getLevelID(course_class, course_level);
-            req.body.ma_trinh_do = ma_trinh_do[0].ma_trinh_do;
-        }
-        delete req.body.ten_lop;
-        delete req.body.ten_level;
-        req.body.hoc_phi = req.body.hoc_phi.replace('.', '');
-        console.log(req.body);
-        if (req.body.hinh_anh === "") {
-            delete req.body.hinh_anh
-        }
-        else {
-            req.body.hinh_anh = "./images/course/" + req.body.hinh_anh
-        }
         // res.json(req.body)
-        courseModel.updateOneLesson(req.body).then(() => res.redirect('/')).catch(error => next(error));
+        // req.id = Number(req.id)
+        // req.ma_gv = Number(req.ma_gv)
+        lessonModel.updateOneLesson(req.body).then(() => res.redirect('/baigiang')).catch(error => next(error));
     }
 
     async deleteLesson(req, res) {
-        courseModel.deleteOneLesson(Number(req.body.ma_kh)).then(() => res.redirect('/')).catch(error => next(error));
+        lessonModel.deleteOneLesson(req.body).then(() => res.redirect('/baigiang')).catch(error => next(error));
     }
 
 };

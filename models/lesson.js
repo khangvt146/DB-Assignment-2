@@ -24,14 +24,14 @@ exports.createOneLesson = async function(values) {
     )
 };
 
-exports.deleteOneLesson = async function(id) {
+exports.deleteOneLesson = async function(values) {
     return await connection.awaitQuery(
-        `DELETE FROM bai_giang WHERE ma_kh = ?`, id
+        `DELETE FROM bai_giang WHERE id = ? AND ma_gv = ? AND ma_kh = ? `, [values.id, values.ma_gv, values.ma_kh]
     );
 };
 
 exports.updateOneLesson = async function(values) {
     return await connection.awaitQuery(
-        'UPDATE bai_giang SET ? WHERE ma_kh = ?', [values, values.ma_kh]
+        'UPDATE bai_giang SET ? WHERE id = ? AND ma_gv = ? AND ma_kh = ?',[values, values.id, values.ma_gv, values.ma_kh]
     );
 };
