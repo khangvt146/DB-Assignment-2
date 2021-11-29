@@ -50,6 +50,7 @@
 
 #update-giaovien__body {
     padding: 20px 30px;
+    line-height: 25px;
 }
 
 .close__update-giaovien-icon {
@@ -124,9 +125,11 @@
     border-style: none;
 }
 
-.update-giaovien-container #update-giaovien_description {
+
+/* .update-giaovien-container #update-giaovien_description {
     height: 80px;
-}
+    text-align: justify;
+} */
 
 .update-giaovien-container #update_btn {
     margin-left: 270px;

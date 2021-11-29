@@ -22,7 +22,7 @@
 .add-giaovien__box {
     margin: auto;
     background-color: var(--white-color);
-    width: 800px;
+    width: 700px;
     border-radius: 20px;
     display: block;
     max-width: 90%;
@@ -50,6 +50,7 @@
 
 #add-giaovien__body {
     padding: 20px 30px;
+    line-height: 25px;
 }
 
 .close__add-giaovien-icon {
@@ -116,5 +117,5 @@
 }
 
 .add-giaovien-container #add-giaovien_description {
-    height: 80px;
+    height: 100px;
 }

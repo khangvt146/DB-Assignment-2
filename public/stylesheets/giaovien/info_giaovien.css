@@ -42,7 +42,8 @@
 }
 
 .info__image img {
-    width: 100%;
+    width: 310px;
+    height: 330px;
 }
 
 .info__description {
@@ -95,4 +96,9 @@
     text-align: right;
     width: 70%;
     line-height: 25px;
+}
+
+.info-giaovien-container .giaovien__workplace .giaovien__value {
+    text-align: right;
+    width: 70%;
 }

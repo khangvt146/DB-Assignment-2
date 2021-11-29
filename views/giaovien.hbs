@@ -64,15 +64,19 @@
                     <div class="card-body">
                         <div class="card-title" id="teacher-name">{{this.ho_va_ten}}</div>
                         <div class="info">
-                            <div class="work" id="teacher-school"><i class="fas fa-briefcase mr-2"></i>{{this.noi_cong_tac}}</div>
+                            <div class="work" id="teacher-school"><i
+                                    class="fas fa-briefcase mr-2"></i>{{this.noi_cong_tac}}</div>
 
-                            <div class="grade" id="teacher-degree"><i class="fas fa-graduation-cap mr-2"></i>{{this.bang_cap}}</div>
+                            <div class="grade" id="teacher-degree"><i
+                                    class="fas fa-graduation-cap mr-2"></i>{{this.bang_cap}}</div>
 
-                            <div class="descrip" id="teacher-des"><i class="fas fa-info-circle mr-2"></i>{{this.mo_ta}}</div>
+                            <div class="descrip" id="teacher-des"><i class="fas fa-info-circle mr-2"></i>{{this.mo_ta}}
+                            </div>
 
                             <div type="hidden" id="teacher-subject" style="display: none;"> {{this.ten_mon}} </div>
                             <div type="hidden" id="teacher-email" style="display: none;"> {{this.email}} </div>
-                            <div type="hidden" id="teacher-follow" style="display: none;"> {{this.so_luong_theo_doi}} </div>
+                            <div type="hidden" id="teacher-follow" style="display: none;"> {{this.so_luong_theo_doi}}
+                            </div>
                             <div type="hidden" id="teacher-birthday" style="display: none;"> {{this.ngay_sinh}} </div>
                             <div type="hidden" id="teacher-sex" style="display: none;"> {{this.gioi_tinh}} </div>
                             <div type="hidden" id="teacher-city" style="display: none;"> {{this.tinh_tp}} </div>
@@ -82,15 +86,19 @@
                             <div type="hidden" id="teacher-fname" style="display: none;"> {{this.ho}} </div>
                             <div type="hidden" id="teacher-mname" style="display: none;"> {{this.ten_lot}} </div>
                             <div type="hidden" id="teacher-lname" style="display: none;"> {{this.ten}} </div>
-                             <div type="hidden" id="teacher-loginname" style="display: none;"> {{this.ten_dang_nhap}} </div>
-                            
+                            <div type="hidden" id="teacher-loginname" style="display: none;"> {{this.ten_dang_nhap}}</div>
+                            <div type="hidden" id="teacher-pass" style="display: none;"> {{this.mat_khau}}
+
+                            </div>
+
 
 
                         </div>
                     </div>
                     <div class="info_button">
                         <button class="button" id="u_btn" data-id="{{this.id}}">Sửa </button>
-                        <button class="button" id="i_btn" data-id="{{this.id}}"><i class="fas fa-info-circle mr-2"></i>Chi tiết </button>
+                        <button class="button" id="i_btn" data-id="{{this.id}}"><i
+                                class="fas fa-info-circle mr-2"></i>Chi tiết </button>
                     </div>
                 </div>
             </div>
@@ -113,7 +121,7 @@
 
                     <div class="giaovien__name">
                         <div class="giaovien__title"><i class="fas fa-user mr-2"></i>Họ và tên:</div>
-                        <div class="giaovien__value" id = "detail-teacher-name">Trần Vân Anh</div>
+                        <div class="giaovien__value" id="detail-teacher-name">Trần Vân Anh</div>
                     </div>
 
                     <hr>
@@ -131,7 +139,8 @@
                     <hr>
                     <div class="giaovien__degree">
                         <div class="giaovien__title"><i class="fas fa-graduation-cap mr-2"></i>Bằng cấp:</div>
-                        <div class="giaovien__value" id="detail-teacher-degree">Chứng chỉ tin học đạt chuẩn kỹ năng sử dụng công nghệ thông tin cơ
+                        <div class="giaovien__value" id="detail-teacher-degree">Chứng chỉ tin học đạt chuẩn kỹ năng sử
+                            dụng công nghệ thông tin cơ
                             bản</div>
                     </div>
 
@@ -145,14 +154,15 @@
                     <div class="giaovien__studentFollow">
                         <div class="giaovien__title"><i class="fas fa-user-graduate mr-2"></i>Số lượng học viên
                             theo dõi:</div>
-                        <div class="giaovien__value" id = "detail-teacher-follow">100</div>
+                        <div class="giaovien__value" id="detail-teacher-follow">100</div>
                     </div>
 
                     <hr>
                     <div class="giaovien__description">
-                        <i class="fas fa-info-circle mr-2"></i><div id="detail-teacher-description">Mô tả: Quan điểm giảng dạy: "Muốn giáo dục cho con trẻ,
-                        mỗi người thầy cần
-                        là một tấm gương sáng về nhân cách, tự học và sáng tạo"</div>
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <div id="detail-teacher-description">Mô tả: Quan điểm giảng dạy: "Muốn giáo dục cho con trẻ,
+                            mỗi người thầy cần
+                            là một tấm gương sáng về nhân cách, tự học và sáng tạo"</div>
                     </div>
 
 
@@ -170,87 +180,67 @@
                 <div class="add-giaovien__header-name">THÊM GIÁO VIÊN </div>
                 <i class="fas fa-times close__add-giaovien-icon"></i>
             </div>
-            <div class="row" id="add-giaovien__body">
-                    <form action="/teacher-add" class="add-giaovien__input" method="POST" name="add-giaovien-form">
-
+            <form action="/teacher-add" class="add-giaovien__input" method="POST" name="add-giaovien-form">
+                <div class="row" id="add-giaovien__body">
+                    <div class="col-lg-6 col-12">
                         {{!-- <label for="">ID món ăn</label> --}}
+
                         <input type="text" id="add-giaovien_ID" name="id" hidden>
-                        <div class="form-group row">
-                            <div class="col-lg-6 col-12">
-                                <label for="">Họ</label>
-                                <input type="text" id="add-giaovien_FName" name="ho">
-                            </div>
-                            <div class="col-lg-6 col-12">
-                                <label for="">Quận, huyện</label>
-                                <input type="text" id="add-giaovien_District" name="quan_huyen">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Tên lót</label>
-                                <input type="text" id="add-giaovien_MName" name="ten_lot">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Xã, phường</label>
-                                <input type="text" id="add-giaovien_Ward" name="xa_phuong">
+                        <label for="">Họ</label>
+                        <input type="text" id="add-giaovien_FName" class="form-control" name="ho">
 
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Tên</label>
-                                <input type="text" id="add-giaovien_LName" name="ten">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Tên đăng nhập</label>
-                                <input type="text" id="add-giaovien_LoginName" name="ten_dang_nhap">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Ngày sinh</label>
-                                <input type="date" id="add-giaovien_Birthday" name="ngay_sinh">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Nơi công tác hiện tại</label>
-                                <input type="text" id="add-giaovien_Workplace" name="noi_cong_tac">
+                        <label for="">Tên lót</label>
+                        <input type="text" id="add-giaovien_MName" class="form-control" name="ten_lot">
 
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Giới tính</label>
-                                <select id="add-giaovien_Sex" name="gioi_tinh">
-                                    <option >Nam</option>
-                                    <option >Nữ</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Email</label>
-                                <input type="text" id="add-giaovien_Email" name="email">
-                            </div>
+                        <label for="">Tên</label>
+                        <input type="text" id="add-giaovien_LName" class="form-control" name="ten">
 
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Tỉnh, thành phố sinh sống</label>
-                                <input type="text" id="add-giaovien_City" name="tinh_tp">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Mật khẩu</label>
-                                <input type="text"name="mat_khau">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                                <label for="">Mô tả</label>
-                                <input type="text" id="add-giaovien_description" name="mo_ta">
-                                <input type="text" name="loai" value="2" hidden>
-                        </div>
-                        <div class="row">
-                            <button class="btn btn-primary" type="submit" id="add_btn">Thêm giáo viên</button>
-                        </div>
-                    </form>
+                        <label for="">Ngày sinh</label>
+                        <input type="date" id="add-giaovien_Birthday" class="form-control" name="ngay_sinh">
+
+                        <label for="">Giới tính</label>
+                        <select id="add-giaovien_Sex" class="form-control" name="gioi_tinh">
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                        </select>
+
+                        <label for="">Email</label>
+                        <input type="text" id="add-giaovien_Email" class="form-control" name="email">
+
+                        <label for="">Tỉnh, thành phố sinh sống</label>
+                        <input type="text" id="add-giaovien_City" class="form-control" name="tinh_tp">
+
+                    </div>
+
+
+                    <div class="col-lg-6 col-12">
+
+                        <label for="">Quận, huyện</label>
+                        <input type="text" id="add-giaovien_District" class="form-control" name="quan_huyen">
+
+                        <label for="">Xã, phường</label>
+                        <input type="text" id="add-giaovien_Ward" class="form-control" name="xa_phuong">
+
+                        <label for="">Tên đăng nhập</label>
+                        <input type="text" id="add-giaovien_LoginName" class="form-control" name="ten_dang_nhap">
+
+                        <label for="">Mật khẩu</label>
+                        <input type="password" class="form-control" name="mat_khau">
+
+                        <label for="">Nơi công tác hiện tại</label>
+                        <input type="text" id="add-giaovien_Workplace" class="form-control" name="noi_cong_tac">
+
+                        <label for="">Mô tả</label>
+                        <input type="text" id="add-giaovien_description" class="form-control" name="mo_ta">
+                        <input type="text" name="loai" value="2" hidden>
+                        <input type="text" name="ngay_bat_dau" value="" hidden>
+                        <input type="text" name="he_so_luong" value="3" hidden>
+                    </div>
                 </div>
-
+                 <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>Thêm giáo
+                viên</button>
+            </form>
+           
         </div>
     </div>
     {{!---------------------------------Update GIAO VIEN-------------------------------------}}
@@ -260,82 +250,68 @@
                 <div class="update-giaovien__header-name">CHỈNH SỬA THÔNG TIN GIÁO VIÊN </div>
                 <i class="fas fa-times close__update-giaovien-icon"></i>
             </div>
-            <div class="row" id="update-giaovien__body">
-                    <form action="/teacher-update" class="update-giaovien__input" method="POST" name="update-giaovien-form">
-
+            <form action="/teacher-update" class="update-giaovien__input" method="POST" name="update-giaovien-form">
+                <div class="row" id="update-giaovien__body">
+                    <div class="col-lg-6 col-12">
                         {{!-- <label for="">ID món ăn</label> --}}
-                        <input type="text" id="update-giaovien_ID" name="id" hidden>
-                        <div class="form-group row">
-                            <div class="col-lg-6 col-12">
-                                <label for="">Họ</label>
-                                <input type="text" id="update-giaovien_FName" name="ho">
-                            </div>
-                            <div class="col-lg-6 col-12">
-                                <label for="">Quận, huyện</label>
-                                <input type="text" id="update-giaovien_District" name="quan_huyen">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Tên lót</label>
-                                <input type="text" id="update-giaovien_MName" name="ten_lot">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Xã, phường</label>
-                                <input type="text" id="update-giaovien_Ward" name="xa_phuong">
 
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Tên</label>
-                                <input type="text" id="update-giaovien_LName" name="ten">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Tên đăng nhập</label>
-                                <input type="text" id="update-giaovien_LoginName" name="ten_dang_nhap">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Ngày sinh</label>
-                                <input type="date" id="update-giaovien_Birthday" name="ngay_sinh">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Nơi công tác hiện tại</label>
-                                <input type="text" id="update-giaovien_Workplace" name="noi_cong_tac">
+                        <input type="text" id="update-giaovien_ID" class="form-control" name="id" hidden>
+                        <label for="">Họ</label>
+                        <input type="text" id="update-giaovien_FName" class="form-control" name="ho">
 
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Giới tính</label>
-                                <select id="update-giaovien_Sex" name="gioi_tinh">
-                                    <option >Nam</option>
-                                    <option >Nữ</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Email</label>
-                                <input type="text" id="update-giaovien_Email" name="email">
-                            </div>
+                        <label for="">Tên lót</label>
+                        <input type="text" id="update-giaovien_MName" class="form-control" name="ten_lot">
 
-                        <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label for="">Tỉnh, thành phố sinh sống</label>
-                                <input type="text" id="update-giaovien_City" name="tinh_tp">
-                            </div>
-                            <div class="col-lg-6">
-                                <label for="">Mô tả</label>
-                                <input type="text" id="update-giaovien_description" name="mo_ta">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-                            <a href="#" class="btn btn-primary" type="submit" id="delete_btn">Xóa giáo viên</a>
-                        </div>
-                    </form>
+                        <label for="">Tên</label>
+                        <input type="text" id="update-giaovien_LName" class="form-control" name="ten">
+
+                        <label for="">Ngày sinh</label>
+                        <input type="date" id="update-giaovien_Birthday" class="form-control" name="ngay_sinh">
+
+                        <label for="">Giới tính</label>
+                        <select id="update-giaovien_Sex" class="form-control" name="gioi_tinh">
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                        </select>
+
+                        <label for="">Email</label>
+                        <input type="text" id="update-giaovien_Email" class="form-control" name="email">
+
+                        <label for="">Tỉnh, thành phố sinh sống</label>
+                        <input type="text" id="update-giaovien_City" class="form-control" name="tinh_tp">
+
+                    </div>
+
+
+                    <div class="col-lg-6 col-12">
+
+                        <label for="">Quận, huyện</label>
+                        <input type="text" id="update-giaovien_District" class="form-control" name="quan_huyen">
+
+                        <label for="">Xã, phường</label>
+                        <input type="text" id="update-giaovien_Ward" class="form-control" name="xa_phuong">
+
+                        <label for="">Tên đăng nhập</label>
+                        <input type="text" id="update-giaovien_LoginName" class="form-control" name="ten_dang_nhap">
+
+                        <label for="">Mật khẩu</label>
+                        <input type="text" id="update-giaovien_Password" class="form-control" name="mat_khau">
+
+                        <label for="">Nơi công tác hiện tại</label>
+                        <input type="text" id="update-giaovien_Workplace" class="form-control" name="noi_cong_tac">
+
+                        <label for="">Mô tả</label>
+                        <input type="text" id="update-giaovien_description" class="form-control input-lg" name="mo_ta">
+
+
+                    </div>
                 </div>
+                <div class="row">
+                    <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+                    <button class="btn btn-primary" type="submit" id="delete_btn">Xóa giáo viên</button>
+                </div>
+            </form>
+
 
             {{#if filterFlag}}
             <form action="/teacher-filter" method="POST" role="form" name="filter-form">
