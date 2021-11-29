@@ -3,7 +3,7 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "dbs_211",
+    database: "database assignment 2",
     //port: 3310
 });
 exports.getAllTeacher = async function() {
@@ -77,7 +77,7 @@ exports.updateOneTeacher = async function(values) {
     //     'UPDATE nguoi_dung SET (ho = ?,ten_lot = ?, ten = ?, ten_dang_nhap = ?, ngay_sinh = ?, gioi_tinh = ?, xa_phuong = ?, quan_huyen = ?, tinh_tp = ?, email = ?) WHERE id = ?', [values.GV_FName, values.GV_MName, values.GV_LName, values.GV_Login_Name, values.GV_Birthday, (values.GV_Sex=='Nam')?0:1, values.GV_Ward, values.GV_District, values.GV_City, values.GV_Mail, Number(values.GV_ID)]
     // );
 
-    await connection.awaitQuery(`UPDATE nguoi_dung SET ? WHERE id = ?`,[values, values.id])
+    await connection.awaitQuery(`UPDATE nguoi_dung SET ? WHERE id = ?`, [values, values.id])
 };
 
 exports.updateTeacher = async function(id, values) {
@@ -85,13 +85,13 @@ exports.updateTeacher = async function(id, values) {
     //     'UPDATE nguoi_dung SET (ho = ?,ten_lot = ?, ten = ?, ten_dang_nhap = ?, ngay_sinh = ?, gioi_tinh = ?, xa_phuong = ?, quan_huyen = ?, tinh_tp = ?, email = ?) WHERE id = ?', [values.GV_FName, values.GV_MName, values.GV_LName, values.GV_Login_Name, values.GV_Birthday, (values.GV_Sex=='Nam')?0:1, values.GV_Ward, values.GV_District, values.GV_City, values.GV_Mail, Number(values.GV_ID)]
     // );
 
-    await connection.awaitQuery(`UPDATE giao_vien SET ? WHERE id = ?`,[values, id])
+    await connection.awaitQuery(`UPDATE giao_vien SET ? WHERE id = ?`, [values, id])
 };
 
 exports.deleteOneTeacher = async function(values) {
 
     await connection.awaitQuery(
-        `DELETE FROM giao_vien WHERE id = ?`,[values]
+        `DELETE FROM giao_vien WHERE id = ?`, [values]
     );
     await connection.awaitQuery(
         `DELETE FROM nguoi_dung WHERE id = ?;`, [values]
