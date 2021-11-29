@@ -11,7 +11,7 @@
     <div class="dropdown_baigiang">
         <div class="row baigiang-buttons">
             <div class="col-lg-2 col-md-5 col-sm-12 mr-3">
-                <div class="form-group"> 
+                <div class="form-group">
                     <label for="BG_sort">
                         <div class="filter-title">Sắp xếp theo</div>
                     </label> <select class="form-control" id="baigiang_sort">
@@ -63,10 +63,9 @@
                         <div class="filter-title">Giáo viên</div>
                     </label> <select class="form-control" id="baigiang_filter_giaovien">
                         <option value=" "></option>
-                        <option>Giáo viên 1</option>
-                        <option>Giáo viên 2</option>
-                        <option>Giáo viên 3</option>
-                        <option>.... (lấy từ db)</option>
+                        {{#each TeacherArray}}
+                        <option value='{{this.id}}'>{{this.ho_va_ten}}</option>
+                        {{/each}}
                     </select>
                 </div>
             </div>
@@ -76,9 +75,9 @@
                         <div class="filter-title">Khóa học</div>
                     </label> <select class="form-control" id="">
                         <option value=" "></option>
-                        <option>Khóa học 1</option>
-                        <option>Khóa học 2</option>
-                        <option>.... (lấy từ db)</option>
+                        {{#each CourseArray}}
+                        <option value='{{this.ma_kh}}'>{{this.ten_kh}}</option>
+                        {{/each}}
                     </select>
                 </div>
             </div>
@@ -97,14 +96,25 @@
     <div class="baigiang_container">
         {{#each LessonArray}}
         <div class="baigiang_item">
-            <h4>{{this.ten_bai_giang}}</h4>
+            <h4 class="baigiang_name">{{this.ten_bai_giang}}</h4>
             <div class="lesson-info">
                 <span class="course-name mr-5"><i class="fas fa-book mr-1"></i>Khóa học: <b>{{this.ma_kh}}</b></span>
-                <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: <b>{{this.ma_gv}}</b></span>
-                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: <b>{{this.thoi_luong}}</b> phút</span>
-                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: <b>{{this.upload_time}}</b></span>
-                <button class="button mr-2" id="i_btn"><i class="fas fa-info-circle mr-2"></i>Chi tiết</button>
-                <button class="button mr-2" id="u_btn"><i class="fas fa-pen mr-2"></i>Sửa</button>
+                <span class="teacher-name mr-5"><i class="fas fa-user-tie mr-1"></i>Giáo viên: <b
+                        class="baigiang_teacher_value">{{this.ten_gv}}</b></span>
+                <span class="duration mr-5"><i class="fas fa-clock mr-1"></i>Thời lượng: <b
+                        class="baigiang_thoiluong">{{this.thoi_luong}}</b> phút</span>
+                <span class="upload-time mr-5"><i class="fas fa-calendar-alt mr-1"></i>Thời điểm đưa lên hệ thống: <b
+                        class="baigiang_startDate_value">{{formatDate this.upload_time}}</b></span>
+                <button class="button mr-2" id="i_btn" data-ma_bai_giang={{this.ma_bai_giang}}
+                    data-ma_gv={{this.ma_gv}}><i class="fas fa-info-circle mr-2"></i>Chi tiết</button>
+                <button class="button mr-2" id="u_btn" data-ma_bai_giang={{this.ma_bai_giang}}
+                    data-ma_gv={{this.ma_gv}}><i class="fas fa-pen mr-2"></i>Sửa</button>
+                <div type="hidden" id="link_video" class="link_video" style="display: none;"> {{this.link_video}} </div>
+                <div type="hidden" class="baigiang_subject_value" style="display: none;"> {{this.ma_mon_hoc}} </div>
+                <div type="hidden" class="baigiang_subject_value" style="display: none;"> {{this.ma_mon_hoc}} </div>
+                <div type="hidden" class="baigiang_teacher_id" style="display: none;">{{this.ma_gv}}</div>
+                <div type="hidden" class="baigiang_course_id" style="display: none;">{{this.ma_kh}}</div>
+
             </div>
         </div>
         {{/each}}
@@ -122,22 +132,26 @@
                     <div class="baigiang__name">Bài giảng số 1</div>
                     <hr>
                     <div class="youtube-video">
-                        <iframe width="560" height="315" src='https://www.youtube.com/embed/vVN8vdMaHRE' title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe class="link__video" id="link__video" width="560" height="315"
+                            src='https://www.youtube.com/embed/vVN8vdMaHRE' title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                     <hr>
                     <div class="baigiang_subject">
                         <div class="baigiang_subject_title"><i class="fas fa-chalkboard-teacher mr-1"></i>Môn học:</div>
-                        <div class="baigiang_subject_value">Ngữ Văn</div>
+                        <div class="baigiang__subject_value">Ngữ Văn</div>
                     </div>
 
                     <div class="baigiang_teacher">
                         <div class="baigiang_teacher_title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
-                        <div class="baigiang_teacher_value">Bùi Lương Vinh Hiển</div>
+                        <div class="baigiang__teacher_value">Bùi Lương Vinh Hiển</div>
                     </div>
 
                     <div class="baigiang_startDate">
-                        <div class="baigiang_startDate_title"><i class="fas fa-calendar-alt mr-2"></i>Thời điểm đưa lên hệ thống:</div>
-                        <div class="baigiang_startDate_value">24/11/2021</div>
+                        <div class="baigiang_startDate_title"><i class="fas fa-calendar-alt mr-2"></i>Thời điểm đưa lên
+                            hệ thống:</div>
+                        <div class="baigiang__startDate_value">24/11/2021</div>
                     </div>
                 </div>
             </div>
@@ -163,22 +177,17 @@
                         <label for="">Khóa học</label>
                         <select id="add-baigiang_khoahoc" name="baigiang_khoa_hoc">
                             <option value=" "></option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>.... (lấy từ db)</option>
+                            {{#each CourseArray}}
+                            <option value='{{this.ma_kh}}'>{{this.ten_kh}}</option>
+                            {{/each}}
                         </select>
 
                         <label for="">Giáo viên</label>
                         <select id="add-baigiang_giaovien" name="baigiang_giao_vien">
                             <option value=" "></option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn B</option>
-                            <option>Nguyễn Văn C</option>
-                            <option>Nguyễn Văn D</option>
-                            <option>Nguyễn Văn E</option>
-                            <option>Nguyễn Văn F</option>
-                            <option>.... (lấy từ db)</option>
+                            {{#each TeacherArray}}
+                            <option value='{{this.id}}'>{{this.ho_va_ten}}</option>
+                            {{/each}}
                         </select>
 
                         <label for="">Thời lượng</label>
@@ -224,23 +233,17 @@
                         <label for="">Khóa học</label>
                         <select id="update-baigiang_khoahoc" name="baigiang_khoa_hoc_update">
                             <option value=" "></option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>Khóa học 1</option>
-                            <option>.... (lấy từ db)</option>
+                            {{#each CourseArray}}
+                            <option value={{this.ma_kh}}>{{this.ten_kh}}</option>
+                            {{/each}}
                         </select>
 
                         <label for="">Giáo viên</label>
                         <select id="update-baigiang_giaovien" name="baigiang_giao_vien_update">
                             <option value=" "></option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>Nguyễn Văn A</option>
-                            <option>.... (lấy từ db)</option>
+                            {{#each TeacherArray}}
+                            <option value={{this.id}}>{{this.ho_va_ten}}</option>
+                            {{/each}}
                         </select>
 
                         <label for="">Thời lượng</label>

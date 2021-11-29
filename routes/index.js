@@ -2,11 +2,10 @@ var express = require('express');
 var router = express.Router();
 var teacherapi = require("../public/api/teacher.json");
 var userapi = require("../public/api/user.json");
-var lessonapi = require("../public/api/lesson.json");
 const courseController = require('../controllers/courseController')
 const teacherController = require('../controllers/teacherController')
 const studentController = require('../controllers/studentController')
-
+const lessonController = require('../controllers/lessonController')
 
 // ROUTE COURSE
 router.get('/', courseController.getAllCourse);
@@ -23,12 +22,8 @@ router.get('/hocvien', studentController.getAllstudent);
 router.post('/student-filter', studentController.filterStudent);
 
 
-router.get('/baigiang', function(req, res, next) {
-    res.render('baigiang', {
-        title: 'Quản lý bài giảng',
-        LessonArray: lessonapi,
-    });
-});
+// ROUTE LESSON
+router.get('/baigiang', lessonController.getAllLesson);
 
 
 

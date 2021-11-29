@@ -9,7 +9,7 @@
     display: none;
 }
 
-.info-baigiang__active {
+.lesson-info__active {
     display: flex;
 }
 
@@ -129,7 +129,7 @@
 .youtube-video {
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     text-align: center;
 }
 

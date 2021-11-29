@@ -3,7 +3,7 @@ let connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "database assignment 2",
+    database: "dbs_211",
     //port: 3310
 });
 exports.getAllTeacher = async function() {
@@ -49,7 +49,7 @@ exports.getFullTeacher = async function() {
            (SELECT ten_mon_hoc.ma_gv, ten_mon_hoc.ten_mon, ten_bang_cap.bang_cap, ten_mon_hoc.ten_lop
             FROM
                 (SELECT ten_lop_hoc.ma_gv, ten_lop_hoc.ten_lop, semi_ten_mon.ten_mon
-                 FROM 
+                 FROM
                      (SELECT trinh_do_day_hoc.ma_gv, trinh_do.ten AS ten_lop
                       FROM trinh_do_day_hoc, trinh_do
                       WHERE trinh_do_day_hoc.ma_trinh_do = trinh_do.ma_trinh_do) AS ten_lop_hoc,
