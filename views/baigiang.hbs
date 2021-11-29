@@ -113,7 +113,7 @@
                 <div type="hidden" class="baigiang_subject_value" style="display: none;"> {{this.ma_mon_hoc}} </div>
                 <div type="hidden" class="baigiang_teacher_id" style="display: none;">{{this.ma_gv}}</div>
                 <div type="hidden" class="baigiang_course_id" style="display: none;">{{this.ma_kh}}</div>
-
+                <div type="hidden" class="baigiang_id" style="display: none;">{{this.ma_bai_giang}}</div>
             </div>
         </div>
         {{/each}}
@@ -167,14 +167,12 @@
             <div class="row" id="add-baigiang__body">
                 <div class="col-12">
 
-                    <form action="#" class="add-baigiang__input" method="POST" name="add-baigiang-form">
-                        <input type="text" id="add-baigiang_id" name="id_baigiang" hidden>
-
+                    <form action="/lesson-add" class="add-baigiang__input" method="POST" name="add-baigiang-form">
                         <label for="">Tên bài giảng</label>
                         <input type="text" id="add-baigiang_ten" name="ten_bai_giang">
 
                         <label for="">Khóa học</label>
-                        <select id="add-baigiang_khoahoc" name="baigiang_khoa_hoc">
+                        <select id="add-baigiang_khoahoc" name="ma_kh">
                             <option value=" "></option>
                             {{#each CourseArray}}
                             <option value='{{this.ma_kh}}'>{{this.ten_kh}}</option>
@@ -182,7 +180,7 @@
                         </select>
 
                         <label for="">Giáo viên</label>
-                        <select id="add-baigiang_giaovien" name="baigiang_giao_vien">
+                        <select id="add-baigiang_giaovien" name="ma_gv">
                             <option value=" "></option>
                             {{#each TeacherArray}}
                             <option value='{{this.id}}'>{{this.ho_va_ten}}</option>
@@ -190,21 +188,22 @@
                         </select>
 
                         <label for="">Thời lượng</label>
-                        <input type="text" id="add-baigiang_thoiluong" name="baigiang_thoi_luong">
+                        <input type="text" id="add-baigiang_thoiluong" name="thoi_luong">
 
                         <label for="">Đường dẫn video</label>
-                        <input type="text" id="add-baigiang_videolink" name="baigiang_videolink">
+                        <input type="text" id="add-baigiang_videolink" name="link_video">
 
 
                         <label for="">Thời điểm upload</label>
-                        <input type="date" id="add-baigiang_uploadtime" name="baigiang_upload-time">
+                        <input type="date" id="add-baigiang_uploadtime" name="upload_time">
+
+                        <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
+                            Thêm bài giảng
+                        </button>
                     </form>
                 </div>
 
             </div>
-            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
-                Thêm bài giảng
-            </button>
         </div>
     </div>
 
@@ -220,17 +219,14 @@
             <div class="row" id="update-baigiang__body">
                 <div class="col-12">
 
-                    <form action="#" class="update-baigiang__input" method="POST" name="update-baigiang-form">
-
-                        {{!-- <label for="">ID món ăn</label> --}}
-
-                        <input type="text" id="update-baigiang_id" name="id_baigiang_update" hidden>
+                    <form action="/lesson-update" class="update-baigiang__input" method="POST" name="update-baigiang-form">
+                        <input type="text" id="update-baigiang__id" name="id" hidden>
 
                         <label for="">Tên bài giảng</label>
-                        <input type="text" id="update-baigiang_ten" name="ten_bai_giang_update">
+                        <input type="text" id="update-baigiang_ten" name="ten_bai_giang">
 
                         <label for="">Khóa học</label>
-                        <select id="update-baigiang_khoahoc" name="baigiang_khoa_hoc_update">
+                        <select id="update-baigiang_khoahoc" name="ma_kh">
                             <option value=" "></option>
                             {{#each CourseArray}}
                             <option value={{this.ma_kh}}>{{this.ten_kh}}</option>
@@ -238,7 +234,7 @@
                         </select>
 
                         <label for="">Giáo viên</label>
-                        <select id="update-baigiang_giaovien" name="baigiang_giao_vien_update">
+                        <select id="update-baigiang_giaovien" name="ma_gv">
                             <option value=" "></option>
                             {{#each TeacherArray}}
                             <option value={{this.id}}>{{this.ho_va_ten}}</option>
@@ -246,22 +242,23 @@
                         </select>
 
                         <label for="">Thời lượng</label>
-                        <input type="text" id="update-baigiang_thoiluong" name="baigiang_thoi_luong_update">
+                        <input type="text" id="update-baigiang_thoiluong" name="thoi_luong">
 
                         <label for="">Đường dẫn video</label>
-                        <input type="text" id="update-baigiang_videolink" name="baigiang_videolink_update">
+                        <input type="text" id="update-baigiang_videolink" name="link_video">
 
 
                         <label for="">Thời điểm upload</label>
-                        <input type="date" id="update-baigiang_uploadtime" name="baigiang_upload-time_update">
+                        <input type="date" id="update-baigiang_uploadtime" name="upload_time">
+
+                        <div class="row baigiang-button-list">
+                            <button class="btn btn-primary" type="submit" id="update_baigiang_btn">Cập nhật</button>
+                            <button class="btn btn-primary" type="submit" id="delete_baigiang_btn">Xóa bài
+                                giảng</button>
+                        </div>
                     </form>
                 </div>
 
-            </div>
-
-            <div class="row baigiang-button-list">
-                <button class="btn btn-primary" type="submit" id="update_baigiang_btn">Cập nhật</button>
-                <button class="btn btn-primary" type="submit" id="delete_baigiang_btn">Xóa bài giảng</button>
             </div>
 
         </div>
@@ -273,25 +270,24 @@
             value={{filters.baigiang_sort_form}}>
         <input type="text" class="form-control" id="baigiang_filter_grade_form" name="baigiang_filter_grade_form" hidden
             value="{{filters.baigiang_filter_grade_form}}">
-        <input type="text" class="form-control" id="baigiang_filter_subject_form" name="baigiang_filter_subject_form" hidden
-            value={{filters.baigiang_filter_subject_form}}>
-        <input type="text" class="form-control" id="baigiang_filter_giaovien_form" name="baigiang_filter_giaovien_form" hidden
-            value={{filters.baigiang_filter_giaovien_form}}>
-        <input type="text" class="form-control" id="baigiang_filter_course_form" name="baigiang_filter_course_form" hidden
-            value={{filters.baigiang_filter_course_form}}>
+        <input type="text" class="form-control" id="baigiang_filter_subject_form" name="baigiang_filter_subject_form"
+            hidden value={{filters.baigiang_filter_subject_form}}>
+        <input type="text" class="form-control" id="baigiang_filter_giaovien_form" name="baigiang_filter_giaovien_form"
+            hidden value={{filters.baigiang_filter_giaovien_form}}>
+        <input type="text" class="form-control" id="baigiang_filter_course_form" name="baigiang_filter_course_form"
+            hidden value={{filters.baigiang_filter_course_form}}>
     </form>
     {{else}}
     <form action="/lesson-filter" method="POST" role="form" name="lesson-filter-form">
-        <input type="text" class="form-control" id="baigiang_sort_form" name="baigiang_sort_form" hidden
-            value="">
+        <input type="text" class="form-control" id="baigiang_sort_form" name="baigiang_sort_form" hidden value="">
         <input type="text" class="form-control" id="baigiang_filter_grade_form" name="baigiang_filter_grade_form" hidden
             value="">
-        <input type="text" class="form-control" id="baigiang_filter_subject_form" name="baigiang_filter_subject_form" hidden
-            value="">
-        <input type="text" class="form-control" id="baigiang_filter_giaovien_form" name="baigiang_filter_giaovien_form" hidden
-            value="">
-        <input type="text" class="form-control" id="baigiang_filter_course_form" name="baigiang_filter_course_form" hidden
-            value="">
+        <input type="text" class="form-control" id="baigiang_filter_subject_form" name="baigiang_filter_subject_form"
+            hidden value="">
+        <input type="text" class="form-control" id="baigiang_filter_giaovien_form" name="baigiang_filter_giaovien_form"
+            hidden value="">
+        <input type="text" class="form-control" id="baigiang_filter_course_form" name="baigiang_filter_course_form"
+            hidden value="">
     </form>
     {{/if}}
 </div>

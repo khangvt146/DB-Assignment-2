@@ -19,6 +19,7 @@ function setDetail(ma_bai_giang, ma_gv) {
     let lessonSelected = lessonList.find((lesson) => {
         return $(lesson).find("#i_btn").data('ma_bai_giang') === ma_bai_giang && $(lesson).find("#i_btn").data('ma_gv') === ma_gv;
     });
+
     $('.baigiang__name').text($(lessonSelected).find(".baigiang_name").text());
     $('.baigiang__subject_value').text(getSubject(Number($(lessonSelected).find(".baigiang_subject_value").text())));
     $('.baigiang__teacher_value').text($(lessonSelected).find(".baigiang_teacher_value").text());
@@ -72,14 +73,16 @@ function setUpdateDetail(ma_bai_giang, ma_gv) {
     let lessonSelected = lessonList.find((lesson) => {
         return $(lesson).find("#u_btn").data('ma_bai_giang') === ma_bai_giang && $(lesson).find("#u_btn").data('ma_gv') === ma_gv;
     });
+
+    document.getElementById('update-baigiang__id').value = ($(lessonSelected).find(".baigiang_id").text());
+    console.log(($(lessonSelected).find(".baigiang_id").text()))
+    console.log(document.getElementById('update-baigiang__id').value)
     document.getElementById('update-baigiang_ten').value = ($(lessonSelected).find(".baigiang_name").text());
     document.getElementById('update-baigiang_giaovien').value = Number($(lessonSelected).find(".baigiang_teacher_id").text());
     document.getElementById('update-baigiang_thoiluong').value = ($(lessonSelected).find(".baigiang_thoiluong").text());
     document.getElementById('update-baigiang_videolink').value = ($(lessonSelected).find(".link_video").text());
     document.getElementById('update-baigiang_uploadtime').value = formatDate($(lessonSelected).find(".baigiang_startDate_value").text());
     document.getElementById('update-baigiang_khoahoc').value = ($(lessonSelected).find(".baigiang_course_id").text());
-    console.log(document.getElementById('update-baigiang_khoahoc'))
-    console.log($(lessonSelected).find(".baigiang_course_id").text())
 }
 
 var outUpdateBaigiang = document.querySelector(".close__update-baigiang-icon");
@@ -145,12 +148,35 @@ filter_course_lesson.onchange = function (e) {
     filterForm_lesson.submit();
 };
 
-console.log(document.getElementById('baigiang_sort_form').value)
 filter_sort_lesson.value = document.getElementById('baigiang_sort_form').value;
 filter_grade_lesson.value = document.getElementById('baigiang_filter_grade_form').value;
 filter_subject_lesson.value = document.getElementById('baigiang_filter_subject_form').value;
 filter_teacher_lesson.value = document.getElementById('baigiang_filter_giaovien_form').value;
 filter_course_lesson.value = document.getElementById('baigiang_filter_course_form').value;
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var btnDeleteLesson = document.getElementById('delete_baigiang_btn');
+    updateLessonForm = document.forms['update-baigiang-form'];
+    console.log(updateLessonForm);
+    btnDeleteLesson.onclick = function () {
+    updateLessonForm.action = '/lesson-delete';
+    updateLessonForm.submit();
+  }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function getSubject(id) {
     console.log(id)
