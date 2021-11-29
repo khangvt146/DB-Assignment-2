@@ -121,6 +121,7 @@
         document.getElementById('update-giaovien_District').value = ($(teacherSelected).find("#teacher-district").text());
         document.getElementById('update-giaovien_Ward').value = ($(teacherSelected).find("#teacher-ward").text());
         document.getElementById('update-giaovien_LoginName').value = ($(teacherSelected).find("#teacher-loginname").text());
+        document.getElementById('update-giaovien_Password').value = ($(teacherSelected).find("#teacher-pass").text());
         document.getElementById('update-giaovien_Workplace').value = ($(teacherSelected).find("#teacher-school").text());
         document.getElementById('update-giaovien_description').value = ($(teacherSelected).find("#teacher-des").text());
     }

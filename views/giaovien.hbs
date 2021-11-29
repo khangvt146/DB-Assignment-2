@@ -86,7 +86,9 @@
                             <div type="hidden" id="teacher-fname" style="display: none;"> {{this.ho}} </div>
                             <div type="hidden" id="teacher-mname" style="display: none;"> {{this.ten_lot}} </div>
                             <div type="hidden" id="teacher-lname" style="display: none;"> {{this.ten}} </div>
-                            <div type="hidden" id="teacher-loginname" style="display: none;"> {{this.ten_dang_nhap}}
+                            <div type="hidden" id="teacher-loginname" style="display: none;"> {{this.ten_dang_nhap}}</div>
+                            <div type="hidden" id="teacher-pass" style="display: none;"> {{this.mat_khau}}
+
                             </div>
 
 
@@ -231,13 +233,14 @@
                         <label for="">Mô tả</label>
                         <input type="text" id="add-giaovien_description" class="form-control" name="mo_ta">
                         <input type="text" name="loai" value="2" hidden>
-
-
+                        <input type="text" name="ngay_bat_dau" value="" hidden>
+                        <input type="text" name="he_so_luong" value="3" hidden>
                     </div>
                 </div>
-            </form>
-            <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>Thêm giáo
+                 <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>Thêm giáo
                 viên</button>
+            </form>
+           
         </div>
     </div>
     {{!---------------------------------Update GIAO VIEN-------------------------------------}}
@@ -247,7 +250,7 @@
                 <div class="update-giaovien__header-name">CHỈNH SỬA THÔNG TIN GIÁO VIÊN </div>
                 <i class="fas fa-times close__update-giaovien-icon"></i>
             </div>
-            <form action="#" class="update-giaovien__input" method="POST" name="update-giaovien-form">
+            <form action="/teacher-update" class="update-giaovien__input" method="POST" name="update-giaovien-form">
                 <div class="row" id="update-giaovien__body">
                     <div class="col-lg-6 col-12">
                         {{!-- <label for="">ID món ăn</label> --}}
@@ -292,7 +295,7 @@
                         <input type="text" id="update-giaovien_LoginName" class="form-control" name="ten_dang_nhap">
 
                         <label for="">Mật khẩu</label>
-                        <input type="password" id="update-giaovien_Password" class="form-control" name="mat_khau">
+                        <input type="text" id="update-giaovien_Password" class="form-control" name="mat_khau">
 
                         <label for="">Nơi công tác hiện tại</label>
                         <input type="text" id="update-giaovien_Workplace" class="form-control" name="noi_cong_tac">
@@ -303,11 +306,12 @@
 
                     </div>
                 </div>
+                <div class="row">
+                    <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+                    <button class="btn btn-primary" type="submit" id="delete_btn">Xóa giáo viên</button>
+                </div>
             </form>
-            <div class="row">
-                <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-                <button class="btn btn-primary" type="submit" id="delete_btn">Xóa giáo viên</button>
-            </div>
+
 
             {{#if filterFlag}}
             <form action="/teacher-filter" method="POST" role="form" name="filter-form">
