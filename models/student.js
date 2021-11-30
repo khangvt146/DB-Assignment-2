@@ -8,9 +8,9 @@ let connection = mysql.createConnection({
 });
 
 exports.getAllStudent = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -23,9 +23,9 @@ exports.getAllStudent = async function() {
 };
 
 exports.getStudentIDA = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -39,9 +39,9 @@ exports.getStudentIDA = async function() {
 };
 
 exports.getStudentIDD = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -55,9 +55,9 @@ exports.getStudentIDD = async function() {
 };
 
 exports.getStudentHA = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -71,9 +71,9 @@ exports.getStudentHA = async function() {
 };
 
 exports.getStudentHD = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -88,9 +88,9 @@ exports.getStudentHD = async function() {
 
 
 exports.getStudentNA = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -105,9 +105,9 @@ exports.getStudentNA = async function() {
 
 
 exports.getStudentND = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -121,9 +121,9 @@ exports.getStudentND = async function() {
 };
 
 exports.getStudentNSA = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,
@@ -137,9 +137,9 @@ exports.getStudentNSA = async function() {
 };
 
 exports.getStudentNSD = async function() {
-    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau
+    return await connection.awaitQuery(`SELECT DISTINCT nguoi_dung.id, CONCAT(ho,  ' ', ten_lot, ' ', ten) AS ho_va_ten, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, nguoi_dung.ngay_sinh, nguoi_dung.gioi_tinh, nguoi_dung.xa_phuong, nguoi_dung.quan_huyen, nguoi_dung.tinh_tp, nguoi_dung.email, truong_hoc, so_KHTG, diem.tong_diem, so_dien.sdt, nguoi_dung.ten, nguoi_dung.ten_lot, nguoi_dung.ho, nguoi_dung.ten_dang_nhap, nguoi_dung.mat_khau, hinh_anh
     FROM
-        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG
+        (SELECT hoc_vien.ma_hv, hoc_vien.truong_hoc, COUNT(tham_gia.ma_kh) AS so_KHTG, hinh_anh
         FROM hoc_vien, tham_gia
         WHERE hoc_vien.ma_hv = tham_gia.ma_hv
         GROUP BY hoc_vien.ma_hv) AS info,

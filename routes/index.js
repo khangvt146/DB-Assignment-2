@@ -29,6 +29,7 @@ router.post('/student-filter', studentController.filterStudent);
 router.post('/student-update', studentController.updateStudent);
 router.post('/student-delete', studentController.deleteStudent);
 router.post('/student-add', studentController.addStudent);
+router.post('/student-search', studentController.searchStudent);
 
 
 // ROUTE LESSON
