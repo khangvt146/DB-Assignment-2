@@ -50,6 +50,7 @@ function setStudentDetail(id) {
     $('#detail-student-provine').text($(studentSelected).find("#student-tinh").text());
     $('#detail-student-attend').text($(studentSelected).find("#student-KHTG").text());
     $('#detail-student-grade').text($(studentSelected).find("#student-diem").text());
+    $('#detail-student-image').attr('src',$(studentSelected).find("#student-image").text());
 }
 
 var outInfoHocvien = document.querySelector(".close__info-hocvien-icon");
