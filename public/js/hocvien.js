@@ -94,11 +94,7 @@ function setHocVienUpdate(id) {
     document.getElementById('update-user-ten_lot').value = ($(studentSelected).find("#student-ten_lot").text());
     document.getElementById('update-user-ten').value = ($(studentSelected).find("#student-ten_semi").text());
     document.getElementById('update-user-ngay_sinh').value = formatDateStu($(studentSelected).find("#student-ngay_sinh").text());
-    if (Number($(studentSelected).find("#student-gioi_tinh").text()) == 0) {
-        document.getElementById('update-hocvien_hocvienType').value = 'Nam';
-    } else {
-        document.getElementById('update-hocvien_hocvienType').value = 'Nữ'
-    }
+    document.getElementById('update-hocvien_hocvienType').value = ($(studentSelected).find("#student-gioi_tinh").text());
     document.getElementById('update-user-email').value = ($(studentSelected).find("#student-email").text());
     document.getElementById('update-user-ten_dn').value = ($(studentSelected).find("#student-ten_dn").text());
     document.getElementById('update-user-mat_khau').value = ($(studentSelected).find("#student-mk").text());

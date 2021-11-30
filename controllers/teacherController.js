@@ -19,7 +19,6 @@ class teacherController {
 
     async filterTeacher(req, res) {
         let teacher = await teacherModel.getFullTeacher();
-        console.log(teacher);
         const filters = req.body
         if (filters.filter_grade_form !== ' ')
             teacher = teacher.filter( function (c) {return c.ten_lop.match(filters.filter_grade_form)})
@@ -101,6 +100,28 @@ class teacherController {
         await teacherModel.addOneTeacher({id:id,noi_cong_tac:noi_cong_tac, ngay_bat_dau_day:ngay_bat_dau, he_so_luong:hesoluong, hinh_anh: linkanh, mo_ta:mo_ta});
         res.redirect('/giaovien');
     }
+
+    async nameTeacher(req, res) {
+        let teacher = await teacherModel.getFullTeacher();
+        const filters = req.body
+        console.log(filters);
+        if (filters.filter_grade_form_name !== ' ')
+            teacher = teacher.filter( function (c) {return c.ten_lop.match(filters.filter_grade_form_name)})
+
+        if (filters.filter_subject_form_name !== ' ')
+            teacher = teacher.filter( function (c) {return c.ten_mon.match(filters.filter_subject_form_name)})
+
+        if (filters.search !== ' ')
+            teacher = teacher.filter( function (c) {return c.ten.match(filters.search) })
+
+
+        res.render('giaovien', {
+            title: 'Quản lý giáo viên',
+            TeacherArray: teacher,
+            filters: {filter_grade_form:filters.filter_grade_form_name, filter_subject_form:filters.filter_subject_form_name},
+            filterFlag: true
+        });
+    };
 
 
 };

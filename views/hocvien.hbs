@@ -222,7 +222,7 @@
         <div class="add-hocvien__header-name">THÊM HỌC VIÊN</div>
         <i class="fas fa-times close__add-hocvien-icon"></i>
       </div>
-      <form action="#" class="add-hocvien__input" method="POST" name="add-hocvien-form">
+      <form action="/student-add" class="add-hocvien__input" method="POST" name="add-hocvien-form">
         <div class="row" id="add-hocvien__body">
           <div class="col-lg-6 col-12">
 
@@ -261,7 +261,7 @@
           <div class="col-lg-6 col-12">
 
             <label for="">Tên đăng nhập</label>
-            <input type="text" id="add-user-ten_dn" class="form-control" name="ten_dn">
+            <input type="text" id="add-user-ten_dn" class="form-control" name="ten_dang_nhap">
 
             <label for="">Mật khẩu</label>
             <input type="password" id="add-user-mat_khau" class="form-control" name="mat_khau">
@@ -280,10 +280,11 @@
 
           </div>
         </div>
-      </form>
-      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
+              <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-plus mr-2"></i>
         Thêm học viên
       </button>
+      </form>
+
     </div>
   </div>
 
@@ -299,7 +300,7 @@
         <div class="update-hocvien__header-name">CHỈNH SỬA THÔNG TIN HỌC VIÊN</div>
         <i class="fas fa-times close__update-hocvien-icon"></i>
       </div>
-      <form action="#" class="update-hocvien__input" method="POST" name="update-hocvien-form">
+      <form action="/student-update" class="update-hocvien__input" method="POST" name="update-hocvien-form">
         <div class="row" id="update-hocvien__body">
           <div class="col-lg-6 col-12">
 
@@ -327,8 +328,8 @@
             <label for="">Giới tính</label>
             <select id="update-hocvien_hocvienType" class="form-control" name="gioi_tinh">
               <option value=" "></option>
-              <option value=1>Nam</option>
-              <option value=0>Nữ</option>
+              <option >Nam</option>
+              <option >Nữ</option>
             </select>
 
           </div>
@@ -357,12 +358,13 @@
 
           </div>
         </div>
+        <div class="row">
+          <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
+          <button class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</button>
+      </div>
       </form>
 
-      <div class="row">
-        <button class="btn btn-primary" type="submit" id="update_btn">Cập nhật</button>
-        <button class="btn btn-primary" type="submit" id="delete_btn">Xóa học viên</button>
-      </div>
+      
 
       {{#if filterFlag}}
       <form action="/student-filter" method="POST" role="form" name="filter-form">
