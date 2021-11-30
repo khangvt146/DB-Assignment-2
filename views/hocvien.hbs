@@ -5,8 +5,11 @@
 
     <div class="row">
       <div class="search-class">
-        <form class="search-class" action="#" method="POST">
+        <form class="search-class" action="/student-search" method="POST">
           <input type="text" name="search" class="search-input" placeholder="Nhập tên học viên cần tìm">
+          <input type="text" class="form-control" id="filter_sort_name" name="filter_sort" hidden value=" ">
+          <input type="text" class="form-control" id="filter_student_num_name" name="filter_student_num" hidden value=" ">
+          <input type="text" class="form-control" id="filter_sex_name" name="filter_sex" hidden value=" ">
           <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
         </form>
       </div>
@@ -116,6 +119,7 @@
             <td style="display:none;" id="student-ten_lot">{{this.ten_lot}}</td>
             <td style="display:none;" id="student-ten_dn">{{this.ten_dang_nhap}}</td>
             <td style="display:none;" id="student-mk">{{this.mat_khau}}</td>
+            <td style="display:none;" id="student-image">{{this.hinh_anh}}</td>
           </tr>
 
           {{/each}}

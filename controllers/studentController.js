@@ -126,7 +126,17 @@ class studentController {
         res.redirect('/hocvien');
     }
 
+    async searchStudent(req, res) {
+        let student = await studentModel.getAllStudent()
+        student = student.filter(function (c) {return c.ten.match(req.body.search)});
 
+        res.render('hocvien', {
+            title: 'Quản lý học viên',
+            UserArray: student,
+            filters: req.body,
+            filterFlag: true
+        });
+    };
 
 };
 
