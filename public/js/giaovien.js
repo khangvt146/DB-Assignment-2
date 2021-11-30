@@ -18,7 +18,7 @@
         let teacherSelected = teacherList.find((teacher) => {
             return $(teacher).find("#i_btn").data('id') === id;
         });
-        console.log(teacherSelected);
+        // console.log(teacherSelected);
         $('#detail-teacher-name').text($(teacherSelected).find("#teacher-name").text());
         $('#detail-teacher-school').text($(teacherSelected).find("#teacher-school").text());
         $('#detail-teacher-subject').text($(teacherSelected).find("#teacher-subject").text());
@@ -154,17 +154,16 @@
 
     filter_gra.value = document.getElementById('filter_grade_form').value;
     filter_sub.value = document.getElementById('filter_subject_form').value;
+    document.getElementById('grade_name').value = filter_gra.value;
+    document.getElementById('subject_name').value = filter_sub.value;
 
 
-    function convertGender() {
-        var gender = document.querySelector("")
-    }
 
 
     document.addEventListener('DOMContentLoaded', function() {
         var btnDeleteFood = document.getElementById('delete_btn');
         teacherForm = document.forms['update-giaovien-form'];
-        console.log(teacherForm);
+        // console.log(teacherForm);
         btnDeleteFood.onclick = function() {
             teacherForm.action = '/teacher-delete';
             teacherForm.submit();

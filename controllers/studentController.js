@@ -88,13 +88,14 @@ class studentController {
         req.body.id = Number(req.body.id);
         await studentModel.updateOneStudent(req.body);
         await studentModel.updateStudent(Number(id_nd), {truong_hoc: truonghoc})
-        res.redirect('/');
+        res.redirect('/hocvien');
 
     };
 
     async deleteStudent(req, res) {
+        console.log(req.body)
         await studentModel.deleteOneStudent(Number(req.body.id));
-        res.redirect('/');
+        res.redirect('/hocvien');
     }
 
 
@@ -122,7 +123,7 @@ class studentController {
         req.body.gioi_tinh = Number(req.body.gioi_tinh);
         await studentModel.addOneStudent(req.body);
         await studentModel.addStudent({ma_hv:ID, truong_hoc: truonghoc});
-        res.redirect('/');
+        res.redirect('/hocvien');
     }
 
 

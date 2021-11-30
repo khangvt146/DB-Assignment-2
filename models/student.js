@@ -153,26 +153,21 @@ exports.getStudentNSD = async function() {
 };
 
 exports.deleteOneStudent = async function(values) {
+    console.log(values);
     await connection.awaitQuery(
         `DELETE FROM hoc_vien WHERE ma_hv = ?`, [values]
     );
     await connection.awaitQuery(
-        `DELETE FROM nguoi_dung WHERE id = ?;`, [values]
+        `DELETE FROM nguoi_dung WHERE id = ?`, [values]
     );
 };
 
 exports.updateOneStudent = async function(values) {
-    // await connection.awaitQuery(
-    //     'UPDATE nguoi_dung SET (ho = ?,ten_lot = ?, ten = ?, ten_dang_nhap = ?, ngay_sinh = ?, gioi_tinh = ?, xa_phuong = ?, quan_huyen = ?, tinh_tp = ?, email = ?) WHERE id = ?', [values.GV_FName, values.GV_MName, values.GV_LName, values.GV_Login_Name, values.GV_Birthday, (values.GV_Sex=='Nam')?0:1, values.GV_Ward, values.GV_District, values.GV_City, values.GV_Mail, Number(values.GV_ID)]
-    // );
     console.log(values);
     await connection.awaitQuery(`UPDATE nguoi_dung SET ? WHERE id = ?`, [values, values.id])
 };
 
 exports.updateStudent = async function(id, values) {
-    // await connection.awaitQuery(
-    //     'UPDATE nguoi_dung SET (ho = ?,ten_lot = ?, ten = ?, ten_dang_nhap = ?, ngay_sinh = ?, gioi_tinh = ?, xa_phuong = ?, quan_huyen = ?, tinh_tp = ?, email = ?) WHERE id = ?', [values.GV_FName, values.GV_MName, values.GV_LName, values.GV_Login_Name, values.GV_Birthday, (values.GV_Sex=='Nam')?0:1, values.GV_Ward, values.GV_District, values.GV_City, values.GV_Mail, Number(values.GV_ID)]
-    // );
 
     await connection.awaitQuery(`UPDATE hoc_vien SET ? WHERE ma_hv = ?`, [values, id])
 };

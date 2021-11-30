@@ -37,9 +37,12 @@
 
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <div class="search-class">
-                    <form class="search-class" action="#" method="POST">
+                    <form class="search-class" role = 'form' action="/teacher-filter-name" method="POST">
                         <input type="text" name="search" class="search-input" placeholder="Nhập tên giáo viên cần tìm">
+                        <input type="text" class="form-control" id="grade_name" name="filter_grade_form_name" hidden value=" ">
+                        <input type="text" class="form-control" id="subject_name" name="filter_subject_form_name" hidden value=" ">
                         <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+
                     </form>
                 </div>
             </div>
