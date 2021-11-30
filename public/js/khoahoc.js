@@ -7,9 +7,9 @@ function SetShowDetail() {
     courseSelected.forEach((course) => {
         course.onclick = function (e) {
             var tem = document.querySelector(".info-course-container");
-            tem.classList.add("info__active");
-            var id = $(this).data("id");
-            setDetail(id)
+            tem.classList.add("course_info__active");
+            var course_id = $(this).data("id");
+            setDetailCourse(course_id);
         };
         return course;
     });
@@ -17,24 +17,25 @@ function SetShowDetail() {
 
 
 
-function setDetail(id) {
+function setDetailCourse(id) {
     var courseList = document.querySelectorAll(".course-content");
     courseList = Array.from(courseList);
+    console.log(id)
     let courseSelected = courseList.find((course) => {
         return $(course).find("#i_btn").data('id') === id;
     });
-    console.log(courseSelected);
     $('#detail-course-name').text($(courseSelected).find("#course-name").text());
     $('#detail-course-tuition').text($(courseSelected).find("#course-tuition").text());
     $('#detail-course-startDate').text($(courseSelected).find("#course-startDate").text());
-    $('#detail-course-closeDate').text($(courseSelected).find("#course-closeDate").text());
+    $('#detail-course-submitDate').text($(courseSelected).find("#course-submitDate").text());
     $('#detail-course-endDate').text($(courseSelected).find("#course-endDate").text());
     $('#detail-course-description').text($(courseSelected).find("#course-description").text());
-    document.getElementById('detail-course-subject').value = Number($(courseSelected).find("#course-subject").text());
-    console.log($(courseSelected).find("#course-class").text())
+    $('#detail-course-subject').text(getSubjectCourse(Number($(courseSelected).find("#course-subject").text())));
     $('#detail-course-class').text($(courseSelected).find("#course-class").text());
     $('#detail-course-level').text($(courseSelected).find("#course-level").text());
     document.getElementById("detail-course-image").src = ($(courseSelected).find("#course-image").attr('src'));
+    $('#detail-course-teacher').text($(courseSelected).find("#course-teacher").text());
+
 }
 
 
@@ -42,7 +43,7 @@ function setDetail(id) {
 var outinfo = document.querySelector(".close__info-icon");
 outinfo.onclick = function (e) {
     var tem = document.querySelector(".info-course-container");
-    tem.classList.remove("info__active");
+    tem.classList.remove("course_info__active");
 };
 
 /* Add course js */
@@ -206,13 +207,29 @@ filter_gradeType.value = document.getElementById('filter_gradeType_form').value;
 document.addEventListener('DOMContentLoaded', function() {
     var btnDeleteFood = document.getElementById('delete_btn');
     updateForm = document.forms['update-khoahoc-form'];
-    console.log(updateForm);
     btnDeleteFood.onclick = function () {
     updateForm.action = '/course-delete';
     updateForm.submit();
   }
   });
 
+
+  function getSubjectCourse(id) {
+    switch(id) {
+        case 0:
+        return "Tổng hợp nhiều môn";
+        break;
+        case 1: return "Ngữ Văn"; break;
+        case 2: return "Toán học"; break;
+        case 3: return "Tiếng Anh"; break;
+        case 4: return "Tin học"; break;
+        case 5: return "Vật lý"; break;
+        case 6: return "Hóa học"; break;
+        case 7: return "Sinh học"; break;
+        case 8: return "Lịch sử"; break;
+        default: return "Tổng hợp nhiều môn";
+    }
+}
 /* Call function */
 SetShowDetail();
 SetAddCourse();

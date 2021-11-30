@@ -3,6 +3,7 @@ class courseController {
 
     async getAllCourse(req, res) {
         let course = await courseModel.getAllCourse();
+        // res.json(course)
         res.render('khoahoc', {
             title: 'Quản lý bài giảng',
             CourseArray: course,
@@ -66,7 +67,7 @@ class courseController {
     async updateCourse(req, res, next) {
         var course_class = req.body.ten_lop;
         var course_level = req.body.ten_level;
-        if (course_class !== "" & course_level !== "") {
+        if (course_class & course_level) {
             let ma_trinh_do = await courseModel.getLevelID(course_class, course_level);
             req.body.ma_trinh_do = ma_trinh_do[0].ma_trinh_do;
         }

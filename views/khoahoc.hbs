@@ -105,7 +105,7 @@
                             </div>
                             <div class="teacher">
                                 <div class="title"><i class="fas fa-user-tie mr-2"></i>Giảng viên:</div>
-                                <div class="value">"{{this.teacher}}"</div>
+                                <div class="value" id="course-teacher">{{this.ten_gv}}</div>
                             </div>
                             <div type="hidden" id="course-endDate" style="display: none;"> {{formatDate
                                 this.ngay_ket_thuc}} </div>
@@ -118,8 +118,8 @@
 
                         </div>
                         <div class="info_button">
-                            <button class="button" id="u_btn" data-id="{{this.ma_kh}}">Sửa </button>
-                            <button class="button" id="i_btn" data-id="{{this.ma_kh}}"><i
+                            <button class="button" id="u_btn" data-id={{this.ma_kh}}>Sửa </button>
+                            <button class="button" id="i_btn" data-id={{this.ma_kh}}><i
                                     class="fas fa-info-circle mr-2"></i>Chi tiết </button>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                     <hr>
                     <div class="course__subject">
                         <div class="course__title"><i class="fas fa-chalkboard-teacher mr-1"></i>Môn học:</div>
-                        <select class="course__value" id="detail-course-subject">
+                        {{!-- <select class="course__value" id="detail-course-subject">
                             <option value=0>Tổng hợp nhiều môn</option>
                             <option value=1>Ngữ Văn</option>
                             <option value=2>Toán Học</option>
@@ -157,7 +157,9 @@
                             <option value=6>Hóa Học</option>
                             <option value=7>Sinh Học</option>
                             <option value=8>Lịch Sử</option>
-                        </select>
+                        </select> --}}
+                        <div class="course__value" id="detail-course-subject">Lớp 6</div>
+
                     </div>
 
 
@@ -321,7 +323,7 @@
                     </div>
 
                     <div class="row">
-                            <button class="btn btn-primary" type="submit" id="add_btn">Thêm khóa học</button>
+                        <button class="btn btn-primary" type="submit" id="add_btn">Thêm khóa học</button>
                     </div>
                 </form>
             </div>
@@ -340,37 +342,39 @@
             <div id="update-course__body">
                 <form action="/course-update" class="update-course__input" method="POST" name="update-khoahoc-form">
 
-                    <input type="text" id="update-course-courseID" name="ma_kh" hidden>
+                    <input type="text" id="update-course-courseID" name="ma_kh" hidden value="">
 
                     <div class="form-group row">
                         <div class="col-lg-6 col-12">
                             <label for="">Tên Khóa học</label>
-                            <input type="text" id="update-course-name" class="form-control" name="ten_kh">
+                            <input type="text" id="update-course-name" class="form-control" name="ten_kh" value="">
                         </div>
                         <div class="col-lg-6 col-12">
                             <label for="">Ngày kết thúc</label>
-                            <input type="date" id="update-course-endDate" class="form-control" name="ngay_ket_thuc">
+                            <input type="date" id="update-course-endDate" class="form-control" name="ngay_ket_thuc"
+                                value="">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-lg-6">
                             <label for="">Loại khóa học</label>
-                            <select id="update-course-courseType" class="form-control" name="ma_combo">
+                            <select id="update-course-courseType" class="form-control" name="ma_combo" value="">
                                 <option value=0>Đơn lẻ</option>
                                 <option value=1>Combo</option>
                             </select>
                         </div>
                         <div class="col-lg-6">
                             <label for="">Hạn đăng ký</label>
-                            <input type="date" id="update-course-submitDate" class="form-control" name="han_dk">
+                            <input type="date" id="update-course-submitDate" class="form-control" name="han_dk"
+                                value="">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-lg-6">
                             <label for="">Lớp</label>
-                            <select id="update-course-class" class="form-control" name="ten_lop">
+                            <select id="update-course-class" class="form-control" name="ten_lop" value="">
                                 <option value=""></option>
                                 <option value="Lớp 6">Lớp 6</option>
                                 <option value="Lớp 7">Lớp 7</option>
@@ -383,14 +387,14 @@
                         </div>
                         <div class="col-lg-6">
                             <label for="">Học phí</label>
-                            <input type="text" id="update-course-tuition" class="form-control" name="hoc_phi">
+                            <input type="text" id="update-course-tuition" class="form-control" name="hoc_phi" value="">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-lg-6">
                             <label for="">Loại trình độ</label>
-                            <select id="update-course-level" class="form-control" name="ten_level">
+                            <select id="update-course-level" class="form-control" name="ten_level" value="">
                                 <option value=" "></option>
                                 <option value="HOCTOT">Học Tốt</option>
                                 <option value="MASTER">Master</option>
@@ -403,7 +407,7 @@
                         </div>
                         <div class="col-lg-6">
                             <label>Ảnh minh họa</label>
-                            <input type="file" id="update-course-image" class="form-control" name="hinh_anh">
+                            <input type="file" id="update-course-image" class="form-control" name="hinh_anh" value="">
                         </div>
                     </div>
 
@@ -411,7 +415,7 @@
                     <div class="form-group row">
                         <div class="col-lg-6">
                             <label for="">Môn học</label>
-                            <select id="update-course-subject" class="form-control" name="ma_mon_hoc">
+                            <select id="update-course-subject" class="form-control" name="ma_mon_hoc" value="">
                                 <option value=0>Tổng hợp nhiều môn</option>
                                 <option value=1>Ngữ Văn</option>
                                 <option value=2>Toán Học</option>
@@ -425,7 +429,8 @@
                         </div>
                         <div class="col-lg-6">
                             <label for="">Mô tả</label>
-                            <input type="text" id="update-course-description" class="form-control" name="mo_ta">
+                            <input type="text" id="update-course-description" class="form-control" name="mo_ta"
+                                value="">
                         </div>
                     </div>
 
@@ -433,13 +438,15 @@
                     <div class="form-group row">
                         <div class="col-lg-6">
                             <label for="">Ngày bắt đầu</label>
-                            <input type="date" id="update-course-startDate" class="form-control" name="ngay_bat_dau">
+                            <input type="date" id="update-course-startDate" class="form-control" name="ngay_bat_dau"
+                                value="">
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <button class="btn btn-primary" class="form-control" type="submit" id="update_btn">Cập nhật</button>
+                            <button class="btn btn-primary" class="form-control" type="submit" id="update_btn">Cập
+                                nhật</button>
                         </div>
                         <div class="col-lg-6">
                             <a href="#" class="btn btn-primary" class="form-control" id="delete_btn">Xóa khóa học</a>
