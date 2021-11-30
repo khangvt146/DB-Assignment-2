@@ -61,8 +61,7 @@ class courseController {
         }
         delete req.body.ten_lop;
         delete req.body.ten_level;
-        req.body.hoc_phi = req.body.hoc_phi.replace('.', '');
-        console.log(req.body);
+        req.body.hoc_phi = req.body.hoc_phi.split(".").join("");
         if (req.body.hinh_anh === "") {
             delete req.body.hinh_anh
         }
@@ -72,10 +71,9 @@ class courseController {
         courseModel.updateOneCourse(req.body).then(() => res.redirect('/')).catch(error => next(error));
     }
 
-    async deleteCourse(req, res) {
+    async deleteCourse(req, res, next) {
         courseModel.deleteOneCourse(Number(req.body.ma_kh)).then(() => res.redirect('/')).catch(error => next(error));
     }
-
 };
 
 module.exports = new courseController();
