@@ -13,6 +13,8 @@ router.post('/course-filter', courseController.filterCourse);
 router.post('/course-add', courseController.addCourse);
 router.post('/course-update', courseController.updateCourse);
 router.post('/course-delete', courseController.deleteCourse);
+router.post('/course-search', courseController.searchCourse);
+
 
 
 router.get('/giaovien', teacherController.getAllteacher);
@@ -36,6 +38,7 @@ router.post('/lesson-filter', lessonController.filterLesson);
 router.post('/lesson-add', lessonController.addLesson);
 router.post('/lesson-update', lessonController.updateLesson);
 router.post('/lesson-delete', lessonController.deleteLesson);
+router.post('/lesson-search', lessonController.searchLesson);
 
 
 
