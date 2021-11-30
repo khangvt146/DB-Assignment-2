@@ -73,6 +73,23 @@ class lessonController {
         });
     }
 
+    async searchLesson(req, res) {
+        let lesson = await lessonModel.getAllLesson();
+        let course = await courseModel.getAllCourse();
+        let teacher = await teacherModel.getAllTeacher();
+        const search = req.body.search
+        // res.json(search)
+        // res.json(lesson)
+        if (search !== '')
+            lesson = lesson.filter(function (c) { return c.ten_gv.includes(search)})
+        res.render('baigiang', {
+            title: 'Quản lý bài giảng',
+            LessonArray: lesson,
+            CourseArray: course,
+            TeacherArray: teacher,
+        });
+    }
+
     async addLesson(req, res, next) {
         // res.json(req.body)
         lessonModel.createOneLesson(req.body).then(() => res.redirect('/baigiang')).catch(error => next(error));

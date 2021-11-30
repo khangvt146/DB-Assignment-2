@@ -32,6 +32,17 @@ class courseController {
         });
     }
 
+    async searchCourse(req, res) {
+        let course = await courseModel.getAllCourse();
+        const search = req.body.search
+        if (search !== '')
+            course = course.filter(function (c) { return c.ten_kh.includes(search)})
+        res.render('khoahoc', {
+            title: 'Quản lý bài giảng',
+            CourseArray: course
+        });
+    }
+
     async addCourse(req, res, next) {
         var course_class = req.body.ten_lop;
         var course_level = req.body.ten_level;
